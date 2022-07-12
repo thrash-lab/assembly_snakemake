@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "/opt/anaconda3/envs/assembly/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.pythonPath": "/opt/anaconda3/envs/assembly/bin/python"
+    
+}

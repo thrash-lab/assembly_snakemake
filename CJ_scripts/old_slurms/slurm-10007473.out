@@ -1,0 +1,1423 @@
+==========================================
+SLURM_JOB_ID = 10007473
+SLURM_JOB_NODELIST = a03-10
+TMPDIR = /tmp/SLURM_10007473
+==========================================
+Command line: /spack/apps/linux-centos7-x86_64/gcc-8.3.0/spades-3.13.0-mhnshnbjknsqyxomigdagurqzf52oh2g/bin/metaspades.py	--12	/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq	-o	/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly	--memory	998	-t	64	
+
+System information:
+  SPAdes version: 3.13.0
+  Python version: 3.8.8
+  OS: Linux-3.10.0-1062.4.1.el7.x86_64-x86_64-with-glibc2.10
+
+Output dir: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Metagenomic mode
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: not specified
+      right reads: not specified
+      interlaced reads: ['/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq']
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/tmp
+  Threads: 64
+  Memory limit (in Gb): 998
+
+
+======= SPAdes pipeline started. Log can be found here: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/spades.log
+
+== Splitting /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq into left and right reads (in /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input directory)
+
+===== Read error correction started. 
+
+
+== Running read error correction tool: /spack/apps/linux-centos7-x86_64/gcc-8.3.0/spades-3.13.0-mhnshnbjknsqyxomigdagurqzf52oh2g/bin/spades-hammer /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/corrected/configs/config.info
+
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  76)   Loading config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/corrected/configs/config.info
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 64
+  0:00:00.001     4M / 4M    INFO    General                 (memory_limit.cpp          :  49)   Memory limit set to 998 Gb
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.031     4M / 4M    INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.031     4M / 4M    INFO    General                 (hammer_tools.cpp          :  36)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.031     4M / 4M    INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.031     4M / 4M    INFO   K-mer Counting           (kmer_data.cpp             : 280)   Estimating k-mer count
+  0:00:00.101     1G / 1G    INFO   K-mer Counting           (kmer_data.cpp             : 285)   Processing /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_1.fastq
+  0:04:08.969     1G / 1G    INFO   K-mer Counting           (kmer_data.cpp             : 294)   Processed 52053623 reads
+  0:04:08.969     1G / 1G    INFO   K-mer Counting           (kmer_data.cpp             : 285)   Processing /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_2.fastq
+  0:08:09.751     1G / 1G    INFO   K-mer Counting           (kmer_data.cpp             : 294)   Processed 104107246 reads
+  0:08:09.751     1G / 1G    INFO   K-mer Counting           (kmer_data.cpp             : 299)   Total 104107246 reads processed
+  0:08:11.364     1G / 1G    INFO   K-mer Counting           (kmer_data.cpp             : 306)   Estimated 14699312517 distinct kmers
+  0:08:11.369   256M / 1G    INFO   K-mer Counting           (kmer_data.cpp             : 311)   Filtering singleton k-mers
+43 8 0
+nslots: 34359738368
+bits per slot: 8 range: 0000080000000000
+  0:08:11.369    40G / 40G   INFO   K-mer Counting           (kmer_data.cpp             : 317)   Processing /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_1.fastq
+  0:46:23.729    40G / 40G   INFO   K-mer Counting           (kmer_data.cpp             : 326)   Processed 52053623 reads
+  0:46:23.729    40G / 40G   INFO   K-mer Counting           (kmer_data.cpp             : 317)   Processing /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_2.fastq
+  1:22:08.974    40G / 40G   INFO   K-mer Counting           (kmer_data.cpp             : 326)   Processed 104107246 reads
+  1:22:08.974    40G / 40G   INFO   K-mer Counting           (kmer_data.cpp             : 331)   Total 104107246 reads processed
+  1:22:08.978    40G / 40G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  1:22:08.978    40G / 40G   INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 1024 files using 64 threads. This might take a while.
+  1:22:08.979    40G / 40G   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 1152
+  1:22:08.979    40G / 40G   INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 4.98545 Gb
+  1:22:08.979    40G / 40G   INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 65536
+  1:22:09.874    76G / 76G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_1.fastq
+  1:23:58.598    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 23690599 reads
+  1:25:47.923    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 47864370 reads
+  1:26:09.599    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 52053623 reads
+  1:26:09.599    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_2.fastq
+  1:27:31.775    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 69536556 reads
+  1:28:56.677    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 86308670 reads
+  1:30:17.892    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 103560436 reads
+  1:30:22.495    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 104107246 reads
+  1:30:22.499    76G / 77G   INFO   K-mer Splitting          (kmer_data.cpp             : 112)   Total 104107246 reads processed
+  1:30:23.889    40G / 77G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  1:30:47.577    40G / 77G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 3688606628 kmers in total.
+  1:30:47.577    40G / 77G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  1:32:40.584    40G / 77G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  1:34:03.922    42G / 77G   INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  1:35:04.119    42G / 77G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 1710425342 bytes occupied (3.70964 bits per kmer).
+  1:35:04.195     1G / 77G   INFO   K-mer Counting           (kmer_data.cpp             : 356)   Arranging kmers in hash map order
+  1:38:00.006    56G / 77G   INFO    General                 (main.cpp                  : 148)   Clustering Hamming graph.
+  1:55:43.045    56G / 77G   INFO    General                 (main.cpp                  : 155)   Extracting clusters
+  2:02:48.448    56G / 188G  INFO    General                 (main.cpp                  : 167)   Clustering done. Total clusters: 2745141021
+  2:02:48.488    29G / 188G  INFO   K-mer Counting           (kmer_data.cpp             : 376)   Collecting K-mer information, this takes a while.
+  2:02:54.993   111G / 188G  INFO   K-mer Counting           (kmer_data.cpp             : 382)   Processing /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_1.fastq
+  2:06:03.333   111G / 188G  INFO   K-mer Counting           (kmer_data.cpp             : 382)   Processing /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_2.fastq
+  2:09:16.906   111G / 188G  INFO   K-mer Counting           (kmer_data.cpp             : 389)   Collection done, postprocessing.
+  2:09:25.364   111G / 188G  INFO   K-mer Counting           (kmer_data.cpp             : 403)   There are 3688606628 kmers in total. Among them 18419140 (0.499352%) are singletons.
+  2:09:25.364   111G / 188G  INFO    General                 (main.cpp                  : 173)   Subclustering Hamming graph
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 649)   Subclustering done. Total 575839 non-read kmers were generated.
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 650)   Subclustering statistics:
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 651)     Total singleton hamming clusters: 2412633626. Among them 2182267392 (90.4517%) are good
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 652)     Total singleton subclusters: 49531590. Among them 49481571 (99.899%) are good
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 653)     Total non-singleton subcluster centers: 373057853. Among them 358566522 (96.1155%) are good
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 654)     Average size of non-trivial subcluster: 3.42229 kmers
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 655)     Average number of sub-clusters per non-singleton cluster: 1.27092
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 656)     Total solid k-mers: 2590315485
+  2:39:49.850   111G / 188G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 657)     Substitution probabilities: [4,4]((0.91425,0.0226239,0.0345407,0.028586),(0.0206043,0.906249,0.0373178,0.0358285),(0.0321992,0.0344691,0.910345,0.0229863),(0.0261148,0.030604,0.0201677,0.923113))
+  2:39:51.508   111G / 188G  INFO    General                 (main.cpp                  : 178)   Finished clustering.
+  2:39:51.508   111G / 188G  INFO    General                 (main.cpp                  : 197)   Starting solid k-mers expansion in 64 threads.
+  2:46:08.757   111G / 188G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 0 produced 176613673 new k-mers.
+  2:52:23.738   111G / 188G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 1 produced 7336069 new k-mers.
+  2:58:38.344   111G / 188G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 2 produced 328125 new k-mers.
+  3:04:54.012   111G / 188G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 3 produced 18084 new k-mers.
+  3:11:08.198   111G / 188G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 4 produced 1455 new k-mers.
+  3:17:23.217   111G / 188G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 5 produced 178 new k-mers.
+  3:23:36.190   111G / 188G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 6 produced 6 new k-mers.
+  3:23:36.190   111G / 188G  INFO    General                 (main.cpp                  : 222)   Solid k-mers finalized
+  3:23:36.190   111G / 188G  INFO    General                 (hammer_tools.cpp          : 220)   Starting read correction in 64 threads.
+  3:23:36.190   111G / 188G  INFO    General                 (hammer_tools.cpp          : 233)   Correcting pair of reads: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_1.fastq and /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/split_input/CJ_V2_S8_all_trimmed_2.fastq
+  3:24:01.751   117G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 0 of 6400000 reads.
+  3:24:39.400   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 0
+  3:24:51.318   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 0
+  3:25:19.340   119G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 1 of 6400000 reads.
+  3:25:57.178   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 1
+  3:26:08.408   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 1
+  3:26:34.283   119G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 2 of 6400000 reads.
+  3:27:12.091   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 2
+  3:27:23.962   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 2
+  3:27:51.346   119G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 3 of 6400000 reads.
+  3:28:29.363   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 3
+  3:28:41.349   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 3
+  3:29:07.534   119G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 4 of 6400000 reads.
+  3:29:45.641   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 4
+  3:29:56.933   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 4
+  3:30:22.989   119G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 5 of 6400000 reads.
+  3:31:00.867   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 5
+  3:31:12.038   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 5
+  3:31:38.068   119G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 6 of 6400000 reads.
+  3:32:15.825   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 6
+  3:32:26.768   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 6
+  3:32:52.912   119G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 7 of 6400000 reads.
+  3:33:30.853   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 7
+  3:33:41.322   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 7
+  3:33:44.899   119G / 188G  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 8 of 853623 reads.
+  3:33:50.171   119G / 188G  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 8
+  3:33:51.646   119G / 188G  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 8
+  3:33:54.017   111G / 188G  INFO    General                 (hammer_tools.cpp          : 274)   Correction done. Changed 42835442 bases in 22290606 reads.
+  3:33:54.017   111G / 188G  INFO    General                 (hammer_tools.cpp          : 275)   Failed to correct 3315192 bases out of 15177217371.
+  3:33:54.214   292M / 188G  INFO    General                 (main.cpp                  : 255)   Saving corrected dataset description to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/corrected/corrected.yaml
+  3:33:54.270   292M / 188G  INFO    General                 (main.cpp                  : 262)   All done. Exiting.
+
+== Compressing corrected reads (with gzip)
+
+== Dataset description file was created: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/corrected/corrected.yaml
+
+
+===== Read error correction finished. 
+
+
+===== Assembling started.
+
+
+== Running assembler: K21
+
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K21/configs/config.info
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K21/configs/mda_mode.info
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K21/configs/meta_mode.info
+  0:00:00.000     4M / 4M    INFO    General                 (memory_limit.cpp          :  49)   Memory limit set to 998 Gb
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  87)   Starting SPAdes, built from N/A, git revision N/A
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  88)   Maximum k-mer length: 128
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  89)   Assembling dataset (/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/dataset.info) with K=21
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  90)   Maximum # of threads to use (adjusted due to OMP capabilities): 64
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  51)   SPAdes started
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  58)   Starting from stage: construction
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  65)   Two-step RR enabled: 0
+  0:00:00.000     4M / 4M    INFO   StageManager             (stage.cpp                 : 132)   STAGE == de Bruijn graph construction
+  0:00:00.001     4M / 4M    INFO    General                 (read_converter.hpp        :  77)   Converting reads to binary format for library #0 (takes a while)
+  0:00:00.001     4M / 4M    INFO    General                 (read_converter.hpp        :  78)   Converting paired reads
+  0:00:00.356    80M / 80M   INFO    General                 (binary_converter.hpp      :  93)   16384 reads processed
+  0:00:00.628    92M / 92M   INFO    General                 (binary_converter.hpp      :  93)   32768 reads processed
+  0:00:01.094   116M / 116M  INFO    General                 (binary_converter.hpp      :  93)   65536 reads processed
+  0:00:01.699   168M / 168M  INFO    General                 (binary_converter.hpp      :  93)   131072 reads processed
+  0:00:02.900   268M / 268M  INFO    General                 (binary_converter.hpp      :  93)   262144 reads processed
+  0:00:06.069   340M / 340M  INFO    General                 (binary_converter.hpp      :  93)   524288 reads processed
+  0:00:12.965   376M / 376M  INFO    General                 (binary_converter.hpp      :  93)   1048576 reads processed
+  0:00:25.691   392M / 392M  INFO    General                 (binary_converter.hpp      :  93)   2097152 reads processed
+  0:00:51.612   396M / 396M  INFO    General                 (binary_converter.hpp      :  93)   4194304 reads processed
+  0:01:43.529   392M / 396M  INFO    General                 (binary_converter.hpp      :  93)   8388608 reads processed
+  0:03:28.509   380M / 396M  INFO    General                 (binary_converter.hpp      :  93)   16777216 reads processed
+  0:06:52.554   380M / 396M  INFO    General                 (binary_converter.hpp      :  93)   33554432 reads processed
+  0:09:01.258   124M / 396M  INFO    General                 (binary_converter.hpp      : 117)   44474985 reads written
+  0:09:01.282     4M / 396M  INFO    General                 (read_converter.hpp        :  87)   Converting single reads
+  0:09:01.517   140M / 396M  INFO    General                 (binary_converter.hpp      :  93)   16384 reads processed
+  0:09:01.614   144M / 396M  INFO    General                 (binary_converter.hpp      :  93)   32768 reads processed
+  0:09:01.775   156M / 396M  INFO    General                 (binary_converter.hpp      :  93)   65536 reads processed
+  0:09:02.067   180M / 396M  INFO    General                 (binary_converter.hpp      :  93)   131072 reads processed
+  0:09:02.634   232M / 396M  INFO    General                 (binary_converter.hpp      :  93)   262144 reads processed
+  0:09:03.773   328M / 396M  INFO    General                 (binary_converter.hpp      :  93)   524288 reads processed
+  0:09:06.273   524M / 524M  INFO    General                 (binary_converter.hpp      :  93)   1048576 reads processed
+  0:09:12.778   692M / 692M  INFO    General                 (binary_converter.hpp      :  93)   2097152 reads processed
+  0:09:25.899   768M / 768M  INFO    General                 (binary_converter.hpp      :  93)   4194304 reads processed
+  0:09:37.468   576M / 792M  INFO    General                 (binary_converter.hpp      : 117)   6023235 reads written
+  0:09:37.734     8M / 792M  INFO    General                 (read_converter.hpp        :  95)   Converting merged reads
+  0:09:37.788   136M / 792M  INFO    General                 (binary_converter.hpp      : 117)   0 reads written
+  0:09:39.194     8M / 792M  INFO    General                 (construction.cpp          : 111)   Max read length 150
+  0:09:39.194     8M / 792M  INFO    General                 (construction.cpp          : 117)   Average read length 146.667
+  0:09:39.194     8M / 792M  INFO    General                 (stage.cpp                 : 101)   PROCEDURE == k+1-mer counting
+  0:09:39.195     8M / 792M  INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 4096 files using 64 threads. This might take a while.
+  0:09:39.197     8M / 792M  INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  0:09:39.197     8M / 792M  INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.19788 Gb
+  0:09:39.197     8M / 792M  INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 16384
+  0:10:06.145    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 25124642 reads
+  0:10:25.005    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 50343297 reads
+  0:10:43.371    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 79613415 reads
+  0:11:01.932    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 110192616 reads
+  0:11:20.832    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 137775805 reads
+  0:11:43.604    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 167952612 reads
+  0:12:06.308    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 189889239 reads
+  0:12:16.460    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 189946410 reads
+  0:12:16.460    36G / 36G   INFO    General                 (kmer_splitters.hpp        : 295)   Adding contigs from previous K
+  0:12:17.906   276M / 36G   INFO    General                 (kmer_splitters.hpp        : 308)   Used 189946410 reads
+  0:12:17.906   276M / 36G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  0:13:18.079   276M / 36G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 5969294657 kmers in total.
+  0:13:18.079   276M / 36G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  0:27:19.591   256M / 36G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Extension index construction
+  0:27:19.591   256M / 36G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  0:27:19.591   256M / 36G   INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 1024 files using 64 threads. This might take a while.
+  0:27:19.592   256M / 36G   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  0:27:19.592   256M / 36G   INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.19661 Gb
+  0:27:19.592   256M / 36G   INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 65536
+  0:27:24.017    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 4335112 kmers
+  0:27:26.151    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 8985502 kmers
+  0:27:27.942    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 14147320 kmers
+  0:27:29.760    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 20087861 kmers
+  0:27:31.780    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 27700111 kmers
+  0:27:36.124    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 97472300 kmers
+  0:27:38.056    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 102113039 kmers
+  0:27:39.921    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 107255286 kmers
+  0:27:41.838    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 113170861 kmers
+  0:27:43.886    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 120718421 kmers
+  0:27:47.940    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 190736954 kmers
+  0:27:49.744    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 195377176 kmers
+  0:27:51.667    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 200519833 kmers
+  0:27:53.543    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 206437107 kmers
+  0:27:55.413    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 213986666 kmers
+  0:27:58.838    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 284000979 kmers
+  0:28:00.599    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 288640216 kmers
+  0:28:02.340    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 293781767 kmers
+  0:28:04.324    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 299693735 kmers
+  0:28:30.723    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 563816516 kmers
+  0:29:35.064    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 1123402539 kmers
+  0:31:33.381    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 2149405134 kmers
+  0:35:44.957    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 4299269784 kmers
+  0:38:59.770    35G / 36G   INFO    General                 (kmer_splitters.hpp        : 385)   Used 5969315137 kmers.
+  0:39:01.222   260M / 36G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  0:39:48.294   260M / 36G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 5899564893 kmers in total.
+  0:39:48.294   260M / 36G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  0:43:36.476   260M / 36G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  0:46:38.950     2G / 36G   INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  0:48:14.930     2G / 36G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 2735687934 bytes occupied (3.70968 bits per kmer).
+  0:48:16.834     8G / 36G   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build:  99)   Building k-mer extensions from k+1-mers
+  0:50:10.371     8G / 36G   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 103)   Building k-mer extensions from k+1-mers finished.
+  0:50:10.386     8G / 36G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Early tip clipping
+  0:50:10.386     8G / 36G   INFO    General                 (construction.cpp          : 253)   Early tip clipper length bound set as (RL - K)
+  0:50:10.386     8G / 36G   INFO   Early tip clipping       (early_simplification.hpp  : 181)   Early tip clipping
+  0:55:21.811     8G / 36G   INFO   Early tip clipping       (early_simplification.hpp  : 184)   1776079240 22-mers were removed by early tip clipper
+  0:55:21.811     8G / 36G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Condensing graph
+  0:55:24.485     8G / 36G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 355)   Extracting unbranching paths
+  0:57:44.668    18G / 36G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 374)   Extracting unbranching paths finished. 201509228 sequences extracted
+  0:58:27.272    18G / 36G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 310)   Collecting perfect loops
+  0:59:28.366    19G / 36G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 343)   Collecting perfect loops finished. 23640 loops collected
+  1:00:00.054    62G / 80G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Filling coverage indices (PHM)
+  1:00:00.054    62G / 80G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  1:00:00.054    62G / 80G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  1:00:55.433    65G / 80G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 2768072990 bytes occupied (3.70975 bits per kmer).
+  1:00:58.139    87G / 87G   INFO    General                 (construction.cpp          : 388)   Collecting k-mer coverage information from reads, this takes a while.
+  1:02:50.892    87G / 87G   INFO    General                 (construction.cpp          : 508)   Filling coverage and flanking coverage from PHM
+  1:03:07.967    87G / 87G   INFO    General                 (construction.cpp          : 464)   Processed 64000000 edges
+  1:03:20.449    87G / 87G   INFO    General                 (construction.cpp          : 464)   Processed 128000000 edges
+  1:03:32.906    87G / 87G   INFO    General                 (construction.cpp          : 464)   Processed 192000000 edges
+  1:03:45.403    87G / 87G   INFO    General                 (construction.cpp          : 464)   Processed 256000000 edges
+  1:03:57.946    87G / 87G   INFO    General                 (construction.cpp          : 464)   Processed 320000000 edges
+  1:04:10.470    87G / 87G   INFO    General                 (construction.cpp          : 464)   Processed 384000000 edges
+  1:04:14.249    87G / 87G   INFO    General                 (construction.cpp          : 464)   Processed 403022738 edges
+  1:04:24.937    53G / 87G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Raw Simplification
+  1:04:24.937    53G / 87G   INFO    General                 (simplification.cpp        : 128)   PROCEDURE == InitialCleaning
+  1:04:24.937    53G / 87G   INFO    General                 (graph_simplification.hpp  : 662)   Flanking coverage based disconnection disabled
+  1:04:24.937    53G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Self conjugate edge remover
+  1:04:29.966    53G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Self conjugate edge remover triggered 0 times
+  1:04:29.966    53G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial tip clipper
+  1:05:17.293    54G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Initial tip clipper triggered 2804416 times
+  1:05:17.293    54G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial ec remover
+  1:25:57.335    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Initial ec remover triggered 49256377 times
+  1:25:57.335    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial isolated edge remover
+  1:26:06.444    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Initial isolated edge remover triggered 1177626 times
+  1:26:21.149    58G / 87G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Simplification
+  1:26:21.149    58G / 87G   INFO    General                 (simplification.cpp        : 357)   Graph simplification started
+  1:26:21.149    58G / 87G   INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  1:26:21.149    58G / 87G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 1
+  1:26:21.149    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:27:03.684    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 3997100 times
+  1:27:03.684    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:37:57.841    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 3916275 times
+  1:37:57.841    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:38:18.199    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  1:38:18.199    58G / 87G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 2
+  1:38:18.199    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:38:27.257    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 181482 times
+  1:38:27.257    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:38:29.059    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 2552 times
+  1:38:29.059    58G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:40:44.129    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 3839530 times
+  1:40:44.129    57G / 87G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 3
+  1:40:44.129    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:40:54.716    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 380504 times
+  1:40:54.716    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:41:57.650    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 128077 times
+  1:41:57.650    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:44:11.867    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 4853640 times
+  1:44:11.867    57G / 87G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 4
+  1:44:11.867    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:44:18.176    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 155967 times
+  1:44:18.176    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:46:42.247    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 161786 times
+  1:46:42.247    57G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:46:46.610    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 840 times
+  1:46:46.610    56G / 87G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 5
+  1:46:46.610    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:46:47.133    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 427 times
+  1:46:47.133    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 34 times
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  1:46:47.520    56G / 87G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 6
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 0 times
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:46:47.520    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  1:46:47.521    56G / 87G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Simplification Cleanup
+  1:46:47.521    56G / 87G   INFO    General                 (simplification.cpp        : 196)   PROCEDURE == Post simplification
+  1:46:47.521    56G / 87G   INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  1:46:47.521    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  1:47:17.850    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 394501 times
+  1:47:17.850    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  1:50:24.345    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 350103 times
+  1:50:24.345    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  1:50:28.124    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 97579 times
+  1:50:28.124    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  1:52:56.318    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 30303 times
+  1:52:56.318    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:53:03.591    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 267073 times
+  1:53:03.591    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  1:53:07.913    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 131812 times
+  1:53:07.913    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:54:55.626    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 44032 times
+  1:54:55.626    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  1:54:58.186    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  1:54:58.186    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  1:55:11.227    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 8903 times
+  1:55:11.227    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  1:57:19.140    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 156281 times
+  1:57:19.140    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  1:57:20.932    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 7100 times
+  1:57:20.932    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  1:59:42.980    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 2197 times
+  1:59:42.980    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:59:48.928    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 120637 times
+  1:59:48.928    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  1:59:51.583    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 3492 times
+  1:59:51.583    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:01:33.307    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 9260 times
+  2:01:33.307    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  2:01:35.304    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  2:01:35.304    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  2:01:47.209    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 1855 times
+  2:01:47.209    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  2:01:56.836    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 2005 times
+  2:01:56.836    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  2:01:58.466    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 210 times
+  2:01:58.466    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  2:04:20.273    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 251 times
+  2:04:20.273    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:04:20.324    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 1504 times
+  2:04:20.324    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  2:04:20.344    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 88 times
+  2:04:20.344    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:04:21.216    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 327 times
+  2:04:21.216    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  2:04:21.231    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  2:04:21.231    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  2:04:33.031    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 66 times
+  2:04:33.032    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  2:04:33.202    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 31 times
+  2:04:33.202    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  2:04:34.948    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 8 times
+  2:04:34.948    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  2:06:55.719    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 7 times
+  2:06:55.719    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:06:55.720    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 16 times
+  2:06:55.720    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  2:06:55.720    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 0 times
+  2:06:55.720    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:06:55.776    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 14 times
+  2:06:55.776    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  2:06:55.776    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  2:06:55.776    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  2:07:08.188    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 1 times
+  2:07:08.188    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  2:07:08.195    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 1 times
+  2:07:08.195    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  2:07:10.343    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 0 times
+  2:07:10.343    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  2:09:28.237    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 0 times
+  2:09:28.237    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:09:28.238    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 1 times
+  2:09:28.238    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  2:09:28.238    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 0 times
+  2:09:28.238    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:09:28.238    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  2:09:28.238    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  2:09:28.238    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  2:09:28.238    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  2:09:39.786    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 0 times
+  2:09:39.786    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  2:09:39.787    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 0 times
+  2:09:39.787    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  2:09:41.557    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 0 times
+  2:09:41.557    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 0 times
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 0 times
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 0 times
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  2:11:55.023    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  2:11:55.023    56G / 87G   INFO    General                 (simplification.cpp        : 326)   Running Hidden EC remover (meta)
+  2:11:58.685    56G / 87G   INFO    General                 (simplification.cpp        : 330)   Disrupting self-conjugate edges
+  2:13:30.089    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Removing isolated edges
+  2:13:32.030    56G / 87G   INFO   Simplification           (parallel_processing.hpp   : 167)   Removing isolated edges triggered 30213 times
+  2:13:32.032    56G / 87G   INFO    General                 (simplification.cpp        : 470)   Counting average coverage
+  2:13:52.508    56G / 87G   INFO    General                 (simplification.cpp        : 476)   Average coverage = 3.48913
+  2:13:52.508    56G / 87G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Contig Output
+  2:13:52.508    56G / 87G   INFO    General                 (contig_output_stage.cpp   :  40)   Writing GFA to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/assembly_graph_with_scaffolds.gfa
+  2:15:18.078    56G / 87G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/before_rr.fasta
+  2:16:31.679    56G / 87G   INFO    General                 (contig_output_stage.cpp   :  51)   Outputting FastG graph to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/assembly_graph.fastg
+  2:20:43.473    56G / 87G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/simplified_contigs.fasta
+  2:21:55.247    56G / 87G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/final_contigs.fasta
+  2:23:06.679    56G / 87G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Contig Output
+  2:23:06.679    56G / 87G   INFO    General                 (contig_output_stage.cpp   :  40)   Writing GFA to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/assembly_graph_with_scaffolds.gfa
+  2:24:23.920    56G / 87G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/before_rr.fasta
+  2:25:35.553    56G / 87G   INFO    General                 (contig_output_stage.cpp   :  51)   Outputting FastG graph to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/assembly_graph.fastg
+  2:29:47.165    56G / 87G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/simplified_contigs.fasta
+  2:30:58.701    56G / 87G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K21/final_contigs.fasta
+  2:32:10.016    56G / 87G   INFO    General                 (launch.hpp                : 149)   SPAdes finished
+  2:34:23.936   256M / 87G   INFO    General                 (main.cpp                  : 109)   Assembling time: 2 hours 34 minutes 23 seconds
+Max read length detected as 150
+
+== Running assembler: K33
+
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K33/configs/config.info
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K33/configs/mda_mode.info
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K33/configs/meta_mode.info
+  0:00:00.000     4M / 4M    INFO    General                 (memory_limit.cpp          :  49)   Memory limit set to 998 Gb
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  87)   Starting SPAdes, built from N/A, git revision N/A
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  88)   Maximum k-mer length: 128
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  89)   Assembling dataset (/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/dataset.info) with K=33
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  90)   Maximum # of threads to use (adjusted due to OMP capabilities): 64
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  51)   SPAdes started
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  58)   Starting from stage: construction
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  65)   Two-step RR enabled: 0
+  0:00:00.000     4M / 4M    INFO   StageManager             (stage.cpp                 : 132)   STAGE == de Bruijn graph construction
+  0:00:00.064     4M / 4M    INFO    General                 (read_converter.hpp        :  59)   Binary reads detected
+  0:00:06.347     4M / 4M    INFO    General                 (construction.cpp          : 111)   Max read length 150
+  0:00:06.347     4M / 4M    INFO    General                 (construction.cpp          : 117)   Average read length 146.667
+  0:00:06.347     4M / 4M    INFO    General                 (stage.cpp                 : 101)   PROCEDURE == k+1-mer counting
+  0:00:06.348     4M / 4M    INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 4096 files using 64 threads. This might take a while.
+  0:00:06.349     8M / 8M    INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  0:00:06.349     8M / 8M    INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.19788 Gb
+  0:00:06.349     8M / 8M    INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 16384
+  0:00:39.695    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 30670057 reads
+  0:01:21.729    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 60222041 reads
+  0:02:05.028    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 96961304 reads
+  0:02:55.759    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 131906142 reads
+  0:03:43.459    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 166902429 reads
+  0:04:29.531    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 189946410 reads
+  0:04:29.531    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 295)   Adding contigs from previous K
+  0:21:45.278   280M / 71G   INFO    General                 (kmer_splitters.hpp        : 308)   Used 189946410 reads
+  0:21:45.278   280M / 71G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  0:23:08.751   276M / 71G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 6003094020 kmers in total.
+  0:23:08.751   276M / 71G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  0:37:13.938   256M / 71G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Extension index construction
+  0:37:13.939   256M / 71G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  0:37:13.939   256M / 71G   INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 1024 files using 64 threads. This might take a while.
+  0:37:13.939   256M / 71G   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  0:37:13.939   256M / 71G   INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.19661 Gb
+  0:37:13.939   256M / 71G   INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 32768
+  0:37:18.582    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 5695331 kmers
+  0:37:20.975    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 13091671 kmers
+  0:37:23.893    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 20716831 kmers
+  0:37:26.119    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 27141146 kmers
+  0:37:28.165    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 35203003 kmers
+  0:37:31.176    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 43635669 kmers
+  0:37:33.271    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 50823205 kmers
+  0:37:35.949    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 59770773 kmers
+  0:37:38.283    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 69221365 kmers
+  0:37:40.266    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 77543073 kmers
+  0:37:42.206    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 88033024 kmers
+  0:37:44.653    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 99457958 kmers
+  0:37:46.484    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 106859610 kmers
+  0:37:48.319    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 114482786 kmers
+  0:37:50.657    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 120896717 kmers
+  0:37:53.022    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 128933915 kmers
+  0:37:55.009    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 137377610 kmers
+  0:37:56.838    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 144563571 kmers
+  0:38:28.806    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 275563562 kmers
+  0:39:38.297    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 538127601 kmers
+  0:41:56.256    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 1075390925 kmers
+  0:46:29.134    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 2151550597 kmers
+  0:55:42.686    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 4298466289 kmers
+  1:03:09.610    35G / 71G   INFO    General                 (kmer_splitters.hpp        : 385)   Used 6003139076 kmers.
+  1:03:11.158   264M / 71G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  1:04:06.992   260M / 71G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 6014349526 kmers in total.
+  1:04:06.992   260M / 71G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  1:09:27.916   260M / 71G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  1:12:27.704     3G / 71G   INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  1:14:34.627     3G / 71G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 2788886850 bytes occupied (3.70964 bits per kmer).
+  1:14:36.550     8G / 71G   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build:  99)   Building k-mer extensions from k+1-mers
+  1:16:34.162     8G / 71G   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 103)   Building k-mer extensions from k+1-mers finished.
+  1:16:34.174     8G / 71G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Early tip clipping
+  1:16:34.174     8G / 71G   INFO    General                 (construction.cpp          : 253)   Early tip clipper length bound set as (RL - K)
+  1:16:34.174     8G / 71G   INFO   Early tip clipping       (early_simplification.hpp  : 181)   Early tip clipping
+  1:22:52.293     8G / 71G   INFO   Early tip clipping       (early_simplification.hpp  : 184)   983285579 34-mers were removed by early tip clipper
+  1:22:52.293     8G / 71G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Condensing graph
+  1:22:57.761     8G / 71G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 355)   Extracting unbranching paths
+  1:25:34.221    12G / 71G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 374)   Extracting unbranching paths finished. 61023739 sequences extracted
+  1:26:21.507    12G / 71G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 310)   Collecting perfect loops
+  1:27:33.437    13G / 71G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 343)   Collecting perfect loops finished. 51248 loops collected
+  1:27:49.633    29G / 71G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Filling coverage indices (PHM)
+  1:27:49.633    29G / 71G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  1:27:49.633    29G / 71G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  1:28:58.735    32G / 71G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 2783764364 bytes occupied (3.70977 bits per kmer).
+  1:29:01.471    54G / 71G   INFO    General                 (construction.cpp          : 388)   Collecting k-mer coverage information from reads, this takes a while.
+  1:30:46.154    54G / 71G   INFO    General                 (construction.cpp          : 508)   Filling coverage and flanking coverage from PHM
+  1:31:38.013    54G / 71G   INFO    General                 (construction.cpp          : 464)   Processed 64000000 edges
+  1:32:22.715    54G / 71G   INFO    General                 (construction.cpp          : 464)   Processed 122133187 edges
+  1:32:36.382    20G / 71G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Raw Simplification
+  1:32:36.382    20G / 71G   INFO    General                 (simplification.cpp        : 128)   PROCEDURE == InitialCleaning
+  1:32:36.382    20G / 71G   INFO    General                 (graph_simplification.hpp  : 662)   Flanking coverage based disconnection disabled
+  1:32:36.382    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Self conjugate edge remover
+  1:32:39.118    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Self conjugate edge remover triggered 3341 times
+  1:32:39.118    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial tip clipper
+  1:33:27.497    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Initial tip clipper triggered 2897286 times
+  1:33:27.497    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial ec remover
+  1:36:16.509    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Initial ec remover triggered 5644596 times
+  1:36:16.509    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial isolated edge remover
+  1:37:30.570    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Initial isolated edge remover triggered 15136967 times
+  1:37:33.368    21G / 71G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Simplification
+  1:37:33.368    21G / 71G   INFO    General                 (simplification.cpp        : 357)   Graph simplification started
+  1:37:33.368    21G / 71G   INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  1:37:33.368    21G / 71G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 1
+  1:37:33.368    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:37:52.333    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 1396115 times
+  1:37:52.333    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:41:26.805    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 2844020 times
+  1:41:26.805    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:41:28.851    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 12476 times
+  1:41:28.851    21G / 71G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 2
+  1:41:28.851    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:41:32.328    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 78779 times
+  1:41:32.328    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:41:32.661    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 2080 times
+  1:41:32.661    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:41:38.420    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 173559 times
+  1:41:38.420    21G / 71G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 3
+  1:41:38.420    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:41:39.067    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 19210 times
+  1:41:39.067    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:41:43.421    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 26526 times
+  1:41:43.421    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:41:55.006    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 345727 times
+  1:41:55.006    21G / 71G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 4
+  1:41:55.006    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:41:56.573    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 17374 times
+  1:41:56.574    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:42:14.270    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 91085 times
+  1:42:14.270    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:42:15.404    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 66 times
+  1:42:15.404    21G / 71G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 5
+  1:42:15.404    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:42:15.507    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 315 times
+  1:42:15.507    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 13 times
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  1:42:15.542    21G / 71G   INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 6
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 0 times
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  1:42:15.542    21G / 71G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Simplification Cleanup
+  1:42:15.542    21G / 71G   INFO    General                 (simplification.cpp        : 196)   PROCEDURE == Post simplification
+  1:42:15.542    21G / 71G   INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  1:42:15.542    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  1:42:22.410    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 153563 times
+  1:42:22.410    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  1:42:41.442    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 75717 times
+  1:42:41.442    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  1:42:42.754    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 6428 times
+  1:42:42.754    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  1:44:28.321    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 71354 times
+  1:44:28.321    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:44:30.678    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 52393 times
+  1:44:30.678    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  1:44:36.146    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 179149 times
+  1:44:36.146    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:44:42.265    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 20345 times
+  1:44:42.265    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  1:44:43.211    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  1:44:43.211    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  1:44:44.963    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 3359 times
+  1:44:44.963    21G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  1:44:55.367    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 24387 times
+  1:44:55.367    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  1:44:56.581    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 1156 times
+  1:44:56.581    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  1:46:34.289    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 3562 times
+  1:46:34.289    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:46:35.872    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 20674 times
+  1:46:35.872    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  1:46:37.083    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 3691 times
+  1:46:37.083    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:46:40.960    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 4678 times
+  1:46:40.960    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  1:46:41.965    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  1:46:41.965    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  1:46:43.498    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 641 times
+  1:46:43.498    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  1:46:44.235    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 761 times
+  1:46:44.235    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  1:46:45.409    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 73 times
+  1:46:45.409    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  1:48:21.173    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 699 times
+  1:48:21.173    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:48:21.202    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 555 times
+  1:48:21.202    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  1:48:21.212    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 64 times
+  1:48:21.212    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:48:21.250    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 322 times
+  1:48:21.250    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  1:48:21.254    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  1:48:21.254    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  1:48:22.835    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 38 times
+  1:48:22.836    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  1:48:22.862    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 44 times
+  1:48:22.862    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  1:48:24.104    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 5 times
+  1:48:24.104    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  1:49:57.188    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 34 times
+  1:49:57.188    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:49:57.191    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 33 times
+  1:49:57.191    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  1:49:57.191    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 1 times
+  1:49:57.191    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:49:57.194    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 22 times
+  1:49:57.194    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  1:49:57.195    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  1:49:57.195    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  1:49:58.763    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 2 times
+  1:49:58.763    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  1:49:58.765    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 4 times
+  1:49:58.765    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  1:50:00.038    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 0 times
+  1:50:00.038    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  1:51:36.989    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 4 times
+  1:51:36.989    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:51:36.989    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 4 times
+  1:51:36.989    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  1:51:36.989    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 0 times
+  1:51:36.989    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:51:36.990    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 3 times
+  1:51:36.990    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  1:51:36.990    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  1:51:36.990    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  1:51:38.826    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 0 times
+  1:51:38.827    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  1:51:38.828    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 0 times
+  1:51:38.828    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  1:51:40.155    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 0 times
+  1:51:40.155    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  1:53:12.232    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 0 times
+  1:53:12.232    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:53:12.232    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 0 times
+  1:53:12.232    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  1:53:12.232    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 0 times
+  1:53:12.232    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  1:53:12.233    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  1:53:12.233    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  1:53:12.233    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  1:53:12.233    20G / 71G   INFO    General                 (simplification.cpp        : 326)   Running Hidden EC remover (meta)
+  1:53:14.627    20G / 71G   INFO    General                 (simplification.cpp        : 330)   Disrupting self-conjugate edges
+  1:53:35.868    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 165)   Running Removing isolated edges
+  1:53:37.423    20G / 71G   INFO   Simplification           (parallel_processing.hpp   : 167)   Removing isolated edges triggered 61964 times
+  1:53:37.429    20G / 71G   INFO    General                 (simplification.cpp        : 470)   Counting average coverage
+  1:53:44.352    20G / 71G   INFO    General                 (simplification.cpp        : 476)   Average coverage = 2.86941
+  1:53:44.352    20G / 71G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Contig Output
+  1:53:44.352    20G / 71G   INFO    General                 (contig_output_stage.cpp   :  40)   Writing GFA to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/assembly_graph_with_scaffolds.gfa
+  1:54:23.469    20G / 71G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/before_rr.fasta
+  1:55:01.760    20G / 71G   INFO    General                 (contig_output_stage.cpp   :  51)   Outputting FastG graph to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/assembly_graph.fastg
+  1:56:54.928    20G / 71G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/simplified_contigs.fasta
+  1:57:33.030    20G / 71G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/final_contigs.fasta
+  1:58:10.969    20G / 71G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Contig Output
+  1:58:10.969    20G / 71G   INFO    General                 (contig_output_stage.cpp   :  40)   Writing GFA to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/assembly_graph_with_scaffolds.gfa
+  1:58:47.460    20G / 71G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/before_rr.fasta
+  1:59:25.402    20G / 71G   INFO    General                 (contig_output_stage.cpp   :  51)   Outputting FastG graph to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/assembly_graph.fastg
+  2:01:18.389    20G / 71G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/simplified_contigs.fasta
+  2:01:56.384    20G / 71G   INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K33/final_contigs.fasta
+  2:02:34.293    20G / 71G   INFO    General                 (launch.hpp                : 149)   SPAdes finished
+  2:03:12.447   256M / 71G   INFO    General                 (main.cpp                  : 109)   Assembling time: 2 hours 3 minutes 12 seconds
+
+== Running assembler: K55
+
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K55/configs/config.info
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K55/configs/mda_mode.info
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/K55/configs/meta_mode.info
+  0:00:00.000     4M / 4M    INFO    General                 (memory_limit.cpp          :  49)   Memory limit set to 998 Gb
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  87)   Starting SPAdes, built from N/A, git revision N/A
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  88)   Maximum k-mer length: 128
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  89)   Assembling dataset (/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/dataset.info) with K=55
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  90)   Maximum # of threads to use (adjusted due to OMP capabilities): 64
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  51)   SPAdes started
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  58)   Starting from stage: construction
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  65)   Two-step RR enabled: 1
+  0:00:00.000     4M / 4M    INFO    General                 (launch.hpp                :  76)   Will need read mapping, kmer mapper will be attached
+  0:00:00.000     4M / 4M    INFO   StageManager             (stage.cpp                 : 132)   STAGE == de Bruijn graph construction
+  0:00:00.033     4M / 4M    INFO    General                 (read_converter.hpp        :  59)   Binary reads detected
+  0:00:03.246     4M / 4M    INFO    General                 (construction.cpp          : 111)   Max read length 150
+  0:00:03.246     4M / 4M    INFO    General                 (construction.cpp          : 117)   Average read length 146.667
+  0:00:03.246     4M / 4M    INFO    General                 (stage.cpp                 : 101)   PROCEDURE == k+1-mer counting
+  0:00:03.247     4M / 4M    INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 4096 files using 64 threads. This might take a while.
+  0:00:03.248     8M / 8M    INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  0:00:03.248     8M / 8M    INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.19788 Gb
+  0:00:03.248     8M / 8M    INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 16384
+  0:00:37.753    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 41504959 reads
+  0:01:27.471    71G / 71G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 85864941 reads
+  0:02:20.666    71G / 72G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 132838234 reads
+  0:03:14.712    71G / 72G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 180262501 reads
+  0:03:56.287    71G / 72G   INFO    General                 (kmer_splitters.hpp        : 289)   Processed 189946410 reads
+  0:03:56.287    71G / 72G   INFO    General                 (kmer_splitters.hpp        : 295)   Adding contigs from previous K
+  0:22:58.966   280M / 72G   INFO    General                 (kmer_splitters.hpp        : 308)   Used 189946410 reads
+  0:22:58.966   280M / 72G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  0:24:19.383   276M / 72G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 5462464399 kmers in total.
+  0:24:19.384   276M / 72G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  0:36:53.731   256M / 72G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Extension index construction
+  0:36:53.732   256M / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  0:36:53.732   256M / 72G   INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 1024 files using 64 threads. This might take a while.
+  0:36:53.732   256M / 72G   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  0:36:53.732   256M / 72G   INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.19661 Gb
+  0:36:53.732   256M / 72G   INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 32768
+  0:36:58.782    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 6566399 kmers
+  0:37:01.255    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 13952192 kmers
+  0:37:03.953    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 20901168 kmers
+  0:37:06.227    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 30306541 kmers
+  0:37:08.911    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 39819910 kmers
+  0:37:11.479    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 48893618 kmers
+  0:37:14.600    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 58545977 kmers
+  0:37:17.129    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 66768967 kmers
+  0:37:19.225    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 74248895 kmers
+  0:37:21.233    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 81730817 kmers
+  0:37:23.497    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 91913189 kmers
+  0:37:25.392    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 99302936 kmers
+  0:37:27.304    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 106246697 kmers
+  0:37:30.069    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 115641899 kmers
+  0:37:32.596    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 125141683 kmers
+  0:37:34.836    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 134224039 kmers
+  0:37:36.795    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 143876447 kmers
+  0:37:38.705    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 152107999 kmers
+  0:38:11.389    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 269985838 kmers
+  0:39:23.838    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 542422333 kmers
+  0:41:44.942    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 1082756016 kmers
+  0:46:28.838    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 2147743097 kmers
+  0:56:23.750    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 380)   Processed 4297873138 kmers
+  1:01:41.146    35G / 72G   INFO    General                 (kmer_splitters.hpp        : 385)   Used 5462505359 kmers.
+  1:01:42.581   264M / 72G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  1:02:39.906   264M / 72G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 5488855137 kmers in total.
+  1:02:39.906   264M / 72G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  1:07:04.486   264M / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  1:09:17.592     2G / 72G   INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  1:10:49.275     2G / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 2545218572 bytes occupied (3.70965 bits per kmer).
+  1:10:51.043     8G / 72G   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build:  99)   Building k-mer extensions from k+1-mers
+  1:12:37.319     8G / 72G   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 103)   Building k-mer extensions from k+1-mers finished.
+  1:12:37.330     8G / 72G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Condensing graph
+  1:12:37.594     8G / 72G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 355)   Extracting unbranching paths
+  1:16:10.768    14G / 72G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 374)   Extracting unbranching paths finished. 92257729 sequences extracted
+  1:17:03.331    14G / 72G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 310)   Collecting perfect loops
+  1:18:06.871    14G / 72G   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 343)   Collecting perfect loops finished. 4678 loops collected
+  1:18:29.522    39G / 72G   INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Filling coverage indices (PHM)
+  1:18:29.522    39G / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  1:18:29.522    39G / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  1:19:32.146    42G / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 2533022530 bytes occupied (3.70971 bits per kmer).
+  1:19:34.639    62G / 72G   INFO    General                 (construction.cpp          : 388)   Collecting k-mer coverage information from reads, this takes a while.
+  1:21:02.314    62G / 72G   INFO    General                 (construction.cpp          : 508)   Filling coverage and flanking coverage from PHM
+  1:21:41.073    62G / 72G   INFO    General                 (construction.cpp          : 464)   Processed 64000000 edges
+  1:22:16.007    62G / 72G   INFO    General                 (construction.cpp          : 464)   Processed 128000000 edges
+  1:22:46.854    62G / 72G   INFO    General                 (construction.cpp          : 464)   Processed 184521547 edges
+  1:22:59.452    31G / 72G   INFO   StageManager             (stage.cpp                 : 132)   STAGE == Gap Closer
+  1:22:59.452    31G / 72G   INFO    General                 (graph_pack.hpp            : 101)   Index refill
+  1:22:59.452    31G / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  1:22:59.453    31G / 72G   INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 1024 files using 64 threads. This might take a while.
+  1:22:59.453    31G / 72G   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  1:22:59.453    31G / 72G   INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.03151 Gb
+  1:22:59.453    31G / 72G   INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 32768
+  1:23:22.130    67G / 72G   INFO    General                 (edge_index_builders.hpp   :  77)   Processed 67219419 edges
+  1:23:37.964    67G / 72G   INFO    General                 (edge_index_builders.hpp   :  77)   Processed 134408952 edges
+  1:23:49.717    67G / 72G   INFO    General                 (edge_index_builders.hpp   :  77)   Processed 184521675 edges
+  1:23:49.717    67G / 72G   INFO    General                 (edge_index_builders.hpp   :  82)   Used 184521675 sequences.
+  1:23:51.036    31G / 72G   INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  1:24:19.206    31G / 72G   INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 5462464399 kmers in total.
+  1:24:19.206    31G / 72G   INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  1:27:41.576    31G / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  1:30:49.523    34G / 72G   INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  1:32:24.961    34G / 72G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 2532972994 bytes occupied (3.70964 bits per kmer).
+  1:33:02.678   156G / 156G  INFO    General                 (edge_index_builders.hpp   : 107)   Collecting edge information from graph, this takes a while.
+  1:34:05.587   156G / 156G  INFO    General                 (edge_index.hpp            :  92)   Index refilled
+  1:34:06.395   156G / 156G  INFO    General                 (gap_closer.cpp            : 159)   Preparing shift maps
+  1:36:38.235   171G / 171G  INFO    General                 (gap_closer.cpp            : 119)   Processing paired reads (takes a while)
+  1:36:46.140   178G / 178G  INFO    General                 (gap_closer.cpp            : 138)   Used 44474985 paired reads
+  1:36:46.140   178G / 178G  INFO    General                 (gap_closer.cpp            : 140)   Merging paired indices
+  1:38:33.983   160G / 178G  INFO   GapCloser                (gap_closer.cpp            : 346)   Closing short gaps
+  1:46:31.195   160G / 178G  INFO   GapCloser                (gap_closer.cpp            : 380)   Closing short gaps complete: filled 244623 gaps after checking 6721824 candidates
+  1:47:37.409   156G / 178G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Raw Simplification
+  1:47:37.553    32G / 178G  INFO    General                 (simplification.cpp        : 128)   PROCEDURE == InitialCleaning
+  1:47:37.553    32G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Self conjugate edge remover
+  1:47:42.122    32G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Self conjugate edge remover triggered 1402 times
+  1:47:42.122    32G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial tip clipper
+  1:52:17.885    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Initial tip clipper triggered 16436635 times
+  1:52:17.885    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial ec remover
+  1:53:04.120    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Initial ec remover triggered 1416869 times
+  1:53:04.120    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with low flanking coverage
+  1:54:42.999    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with low flanking coverage triggered 3146966 times
+  1:54:42.999    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Initial isolated edge remover
+  1:57:16.226    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Initial isolated edge remover triggered 25724604 times
+  1:57:20.384    33G / 178G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Preliminary Simplification
+  1:57:20.384    33G / 178G  INFO    General                 (simplification.cpp        : 357)   Graph simplification started
+  1:57:20.384    33G / 178G  INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  1:57:20.384    33G / 178G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 1
+  1:57:20.384    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  1:58:33.731    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 5175669 times
+  1:58:33.731    33G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:02:12.181    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 651828 times
+  2:02:12.182    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  2:02:16.972    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 344 times
+  2:02:16.972    35G / 178G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 2
+  2:02:16.972    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:02:18.941    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 23646 times
+  2:02:18.941    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:02:19.476    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 681 times
+  2:02:19.476    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  2:03:02.408    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 961612 times
+  2:03:02.408    35G / 178G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 3
+  2:03:02.408    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:03:05.848    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 83378 times
+  2:03:05.848    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:03:53.077    36G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 86810 times
+  2:03:53.077    36G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  2:04:09.185    36G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 275443 times
+  2:04:09.185    36G / 178G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 4
+  2:04:09.185    36G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:04:11.974    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 10398 times
+  2:04:11.974    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:04:37.459    36G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 35767 times
+  2:04:37.459    36G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  2:04:40.049    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 38 times
+  2:04:40.049    35G / 178G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 5
+  2:04:40.049    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:04:40.108    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 205 times
+  2:04:40.108    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:04:40.112    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 8 times
+  2:04:40.112    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  2:04:40.112    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  2:04:40.112    35G / 178G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 6
+  2:04:40.112    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:04:40.113    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 0 times
+  2:04:40.113    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  2:04:40.113    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  2:04:40.113    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  2:04:40.113    35G / 178G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  2:04:40.113    35G / 178G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Gap Closer
+  2:04:40.113    35G / 178G  INFO    General                 (graph_pack.hpp            : 101)   Index refill
+  2:04:40.115    35G / 178G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  2:04:40.115    35G / 178G  INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 1024 files using 64 threads. This might take a while.
+  2:04:40.116    35G / 178G  INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  2:04:40.116    35G / 178G  INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 5.0107 Gb
+  2:04:40.116    35G / 178G  INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 32768
+  2:05:01.644    71G / 178G  INFO    General                 (edge_index_builders.hpp   :  77)   Processed 17887500 edges
+  2:05:07.309    71G / 178G  INFO    General                 (edge_index_builders.hpp   :  77)   Processed 20020912 edges
+  2:05:07.309    71G / 178G  INFO    General                 (edge_index_builders.hpp   :  82)   Used 20020912 sequences.
+  2:05:09.117    35G / 178G  INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  2:05:23.673    35G / 178G  INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 2344774711 kmers in total.
+  2:05:23.673    35G / 178G  INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  2:07:14.241    35G / 178G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  2:08:22.671    37G / 178G  INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  2:09:02.714    37G / 178G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 1087314136 bytes occupied (3.70974 bits per kmer).
+  2:09:18.939    89G / 178G  INFO    General                 (edge_index_builders.hpp   : 107)   Collecting edge information from graph, this takes a while.
+  2:09:43.292    89G / 178G  INFO    General                 (edge_index.hpp            :  92)   Index refilled
+  2:09:44.231    89G / 178G  INFO    General                 (gap_closer.cpp            : 159)   Preparing shift maps
+  2:10:17.599    91G / 178G  INFO    General                 (gap_closer.cpp            : 119)   Processing paired reads (takes a while)
+  2:11:40.894    94G / 178G  INFO    General                 (gap_closer.cpp            : 138)   Used 44474985 paired reads
+  2:11:40.894    94G / 178G  INFO    General                 (gap_closer.cpp            : 140)   Merging paired indices
+  2:12:33.062    90G / 178G  INFO   GapCloser                (gap_closer.cpp            : 346)   Closing short gaps
+  2:13:41.610    90G / 178G  INFO   GapCloser                (gap_closer.cpp            : 380)   Closing short gaps complete: filled 46181 gaps after checking 1752722 candidates
+  2:14:31.261    89G / 178G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Preliminary Paired Information Counting
+  2:17:05.291    94G / 178G  INFO    General                 (graph_pack.hpp            : 109)   Normalizing k-mer map. Total 101629558 kmers to process
+  2:18:24.567    94G / 178G  INFO    General                 (graph_pack.hpp            : 111)   Normalizing done
+  2:18:24.567    94G / 178G  INFO    General                 (pair_info_count.cpp       : 320)   Min edge length for estimation: 900
+  2:18:24.567    94G / 178G  INFO    General                 (pair_info_count.cpp       : 331)   Estimating insert size for library #0
+  2:18:24.567    94G / 178G  INFO    General                 (pair_info_count.cpp       : 190)   Estimating insert size (takes a while)
+  2:18:25.537    95G / 178G  INFO    General                 (pair_info_count.cpp       :  39)   Selecting usual mapper
+  2:18:49.205    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 200000 reads
+  2:18:49.291    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 400000 reads
+  2:18:49.314    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 600000 reads
+  2:18:49.337    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 800000 reads
+  2:18:49.361    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1000000 reads
+  2:18:49.384    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1200000 reads
+  2:18:49.504    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 2200000 reads
+  2:18:49.734    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 4200000 reads
+  2:18:54.291    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 8400000 reads
+  2:19:13.473    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 16800000 reads
+  2:19:49.590    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 34118747 reads
+  2:20:10.106    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  98)   Total 44474985 reads processed
+  2:20:10.277    95G / 178G  INFO    General                 (pair_info_count.cpp       : 209)   Edge pairs: 67108864 (rough upper limit)
+  2:20:10.277    95G / 178G  INFO    General                 (pair_info_count.cpp       : 213)   6370794 paired reads (14.3244% of all) aligned to long edges
+  2:20:10.300    94G / 178G  INFO    General                 (pair_info_count.cpp       : 354)     Insert size = 367.229, deviation = 136.968, left quantile = 218, right quantile = 558, read length = 150
+  2:20:10.318    94G / 178G  INFO    General                 (pair_info_count.cpp       : 371)   Filtering data for library #0
+  2:20:10.359    94G / 178G  INFO    General                 (pair_info_count.cpp       :  39)   Selecting usual mapper
+  2:20:35.187    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 200000 reads
+  2:20:35.227    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 400000 reads
+  2:20:35.265    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 600000 reads
+  2:20:35.281    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 800000 reads
+  2:20:35.284    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1000000 reads
+  2:20:35.390    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1200000 reads
+  2:20:35.481    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 2200000 reads
+  2:20:35.646    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 4200000 reads
+  2:20:37.681    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 8400000 reads
+  2:21:02.235    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 16800000 reads
+  2:21:30.951    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 33600000 reads
+  2:21:46.062    94G / 178G  INFO    General                 (sequence_mapper_notifier.h:  98)   Total 44474985 reads processed
+  2:21:46.081    94G / 178G  INFO    General                 (pair_info_count.cpp       : 383)   Mapping library #0
+  2:21:46.081    94G / 178G  INFO    General                 (pair_info_count.cpp       : 385)   Mapping paired reads (takes a while)
+  2:21:46.081    94G / 178G  INFO    General                 (pair_info_count.cpp       : 289)   Left insert size quantile 218, right insert size quantile 558, filtering threshold 1, rounding threshold 0
+  2:21:46.125    94G / 178G  INFO    General                 (pair_info_count.cpp       :  39)   Selecting usual mapper
+  2:22:12.864    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 200000 reads
+  2:22:12.892    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 400000 reads
+  2:22:12.910    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 600000 reads
+  2:22:12.943    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 800000 reads
+  2:22:12.963    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1000000 reads
+  2:22:13.007    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1200000 reads
+  2:22:13.091    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 2200000 reads
+  2:22:13.236    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 4200000 reads
+  2:22:13.405    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 8400000 reads
+  2:22:39.684    95G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 16800000 reads
+  2:23:06.934    96G / 178G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 33600000 reads
+  2:23:21.448    96G / 178G  INFO    General                 (sequence_mapper_notifier.h:  98)   Total 44474985 reads processed
+  2:23:23.654    95G / 178G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Preliminary Distance Estimation
+  2:23:23.654    95G / 178G  INFO    General                 (distance_estimation.cpp   : 173)   Processing library #0
+  2:23:23.654    95G / 178G  INFO    General                 (distance_estimation.cpp   : 149)   Weight Filter Done
+  2:23:23.654    95G / 178G  INFO   DistanceEstimator        (distance_estimation.hpp   : 116)   Using SIMPLE distance estimator
+  2:24:22.755    96G / 178G  INFO    General                 (distance_estimation.cpp   :  34)   Filtering info
+  2:24:22.755    96G / 178G  INFO    General                 (pair_info_filters.hpp     : 242)   Start filtering; index size: 52886980
+  2:25:03.027    98G / 178G  INFO    General                 (pair_info_filters.hpp     : 263)   Done filtering
+  2:25:03.029    96G / 178G  INFO    General                 (distance_estimation.cpp   : 156)   Refining clustered pair information
+  2:25:12.859    96G / 178G  INFO    General                 (distance_estimation.cpp   : 158)   The refining of clustered pair information has been finished
+  2:25:12.859    96G / 178G  INFO    General                 (distance_estimation.cpp   : 160)   Improving paired information
+  2:26:33.667    97G / 178G  INFO   PairInfoImprover         (pair_info_improver.hpp    : 103)   Paired info stats: missing = 2994834; contradictional = 0
+  2:28:00.386    97G / 178G  INFO   PairInfoImprover         (pair_info_improver.hpp    : 103)   Paired info stats: missing = 406657; contradictional = 0
+  2:28:00.386    97G / 178G  INFO    General                 (distance_estimation.cpp   : 103)   Filling scaffolding index
+  2:28:00.386    97G / 178G  INFO   DistanceEstimator        (distance_estimation.hpp   : 116)   Using SMOOTHING distance estimator
+  2:28:23.944    97G / 178G  INFO    General                 (distance_estimation.cpp   :  34)   Filtering info
+  2:28:23.944    97G / 178G  INFO    General                 (pair_info_filters.hpp     : 242)   Start filtering; index size: 20947430
+  2:28:38.422    98G / 178G  INFO    General                 (pair_info_filters.hpp     : 263)   Done filtering
+  2:28:38.423    97G / 178G  INFO    General                 (distance_estimation.cpp   : 182)   Clearing raw paired index
+  2:28:51.539    96G / 178G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Preliminary Repeat Resolving
+  2:28:51.539    96G / 178G  INFO    General                 (repeat_resolving.cpp      :  56)   Setting up preliminary path extend settings
+  2:28:51.539    96G / 178G  INFO    General                 (repeat_resolving.cpp      :  69)   Using Path-Extend repeat resolving
+  2:28:51.539    96G / 178G  INFO    General                 (launcher.cpp              : 477)   ExSPAnder repeat resolving tool started
+  2:30:01.331   135G / 178G  INFO    General                 (launcher.cpp              : 392)   Creating main extenders, unique edge length = 2000
+  2:30:31.621   136G / 178G  INFO    General                 (extenders_logic.cpp       : 472)   Using 1 paired-end library
+  2:30:31.621   136G / 178G  INFO    General                 (extenders_logic.cpp       : 473)   Using 1 paired-end scaffolding library
+  2:30:31.621   136G / 178G  INFO    General                 (extenders_logic.cpp       : 474)   Using 0 single read libraries
+  2:30:31.621   136G / 178G  INFO    General                 (launcher.cpp              : 420)   Total number of extenders is 3
+  2:30:31.621   136G / 178G  INFO    General                 (path_extender.hpp         : 885)   Processed 0 paths from 9916318 (0%)
+  2:30:31.769   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 128 paths from 9916318 (0%)
+  2:30:31.899   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 256 paths from 9916318 (0%)
+  2:30:31.995   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 512 paths from 9916318 (0%)
+  2:30:32.163   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 1024 paths from 9916318 (0%)
+  2:30:32.603   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 2048 paths from 9916318 (0%)
+  2:30:33.154   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 4096 paths from 9916318 (0%)
+  2:30:34.161   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 8192 paths from 9916318 (0%)
+  2:30:35.765   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 16384 paths from 9916318 (0%)
+  2:30:38.783   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 32768 paths from 9916318 (0%)
+  2:30:43.872   136G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 65536 paths from 9916318 (0%)
+  2:30:52.126   137G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 131072 paths from 9916318 (1%)
+  2:31:05.583   138G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 262144 paths from 9916318 (2%)
+  2:31:26.800   140G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 524288 paths from 9916318 (5%)
+  2:31:55.028   143G / 178G  INFO    General                 (path_extender.hpp         : 885)   Processed 991632 paths from 9916318 (10%)
+  2:31:58.288   144G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 1048576 paths from 9916318 (10%)
+  2:32:41.818   151G / 178G  INFO    General                 (path_extender.hpp         : 885)   Processed 1983264 paths from 9916318 (20%)
+  2:32:46.954   152G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 2097152 paths from 9916318 (21%)
+  2:33:24.331   159G / 178G  INFO    General                 (path_extender.hpp         : 885)   Processed 2974896 paths from 9916318 (30%)
+  2:33:57.874   167G / 178G  INFO    General                 (path_extender.hpp         : 885)   Processed 3966528 paths from 9916318 (40%)
+  2:34:05.439   169G / 178G  INFO    General                 (path_extender.hpp         : 883)   Processed 4194304 paths from 9916318 (42%)
+  2:34:31.004   175G / 178G  INFO    General                 (path_extender.hpp         : 885)   Processed 4958160 paths from 9916318 (50%)
+  2:35:03.370   183G / 183G  INFO    General                 (path_extender.hpp         : 885)   Processed 5949792 paths from 9916318 (60%)
+  2:35:37.159   191G / 191G  INFO    General                 (path_extender.hpp         : 885)   Processed 6941424 paths from 9916318 (70%)
+  2:36:34.617   199G / 199G  INFO    General                 (path_extender.hpp         : 885)   Processed 7933056 paths from 9916318 (80%)
+  2:37:17.130   203G / 203G  INFO    General                 (path_extender.hpp         : 883)   Processed 8388608 paths from 9916318 (84%)
+  2:39:23.409   207G / 207G  INFO    General                 (path_extender.hpp         : 885)   Processed 8924688 paths from 9916318 (90%)
+  2:41:45.941   211G / 211G  INFO    General                 (launcher.cpp              : 234)   Finalizing paths
+  2:41:45.941   211G / 211G  INFO    General                 (launcher.cpp              : 236)   Deduplicating paths
+  2:42:10.868   210G / 211G  INFO    General                 (launcher.cpp              : 240)   Paths deduplicated
+  2:42:10.868   210G / 211G  INFO    General                 (launcher.cpp              : 247)   Overlaps will not be removed
+  2:42:51.589   210G / 211G  INFO    General                 (launcher.cpp              : 257)   Paths finalized
+  2:42:51.589   210G / 211G  INFO    General                 (launcher.cpp              : 427)   Closing gaps in paths
+  2:43:33.840   211G / 211G  INFO    General                 (launcher.cpp              : 455)   Gap closing completed
+  2:43:48.922   213G / 213G  INFO    General                 (launcher.cpp              : 286)   Traversing tandem repeats
+  2:45:22.404   213G / 214G  INFO    General                 (launcher.cpp              : 296)   Traversed 196 loops
+  2:45:22.404   213G / 214G  INFO    General                 (launcher.cpp              : 234)   Finalizing paths
+  2:45:22.404   213G / 214G  INFO    General                 (launcher.cpp              : 236)   Deduplicating paths
+  2:45:30.971   213G / 214G  INFO    General                 (launcher.cpp              : 240)   Paths deduplicated
+  2:45:30.971   213G / 214G  INFO    General                 (launcher.cpp              : 247)   Overlaps will not be removed
+  2:46:05.428   213G / 214G  INFO    General                 (launcher.cpp              : 257)   Paths finalized
+  2:46:19.833   213G / 244G  INFO    General                 (launcher.cpp              : 529)   ExSPAnder repeat resolving tool finished
+  2:47:19.774   162G / 244G  INFO    General                 (repeat_resolving.cpp      :  75)   Restoring initial path extend settings
+  2:47:19.774   162G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Contig Output
+  2:47:19.774   162G / 244G  INFO    General                 (contig_output_stage.cpp   :  40)   Writing GFA to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/assembly_graph_with_scaffolds.gfa
+  2:48:13.968   162G / 244G  INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/before_rr.fasta
+  2:49:04.234   162G / 244G  INFO    General                 (contig_output_stage.cpp   :  51)   Outputting FastG graph to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/assembly_graph.fastg
+  2:53:00.122   165G / 244G  INFO    General                 (contig_output_stage.cpp   :  20)   Outputting FastG paths to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/final_contigs.paths
+  2:55:27.284   162G / 244G  INFO    General                 (contig_output_stage.cpp   :  20)   Outputting FastG paths to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/scaffolds.paths
+  2:57:43.799   162G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Second Phase Setup
+  2:57:43.799   162G / 244G  INFO    General                 (second_phase_setup.cpp    :  20)   Preparing second phase
+  2:58:35.262    89G / 244G  INFO    General                 (second_phase_setup.cpp    :  28)   Moving preliminary contigs from /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/final_contigs.fasta to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/first_pe_contigs.fasta
+  2:58:35.263    89G / 244G  INFO    General                 (second_phase_setup.cpp    :  40)   Ready to run second phase
+  2:58:35.263    89G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Simplification
+  2:58:35.421    36G / 244G  INFO    General                 (simplification.cpp        : 357)   Graph simplification started
+  2:58:35.421    36G / 244G  INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  2:58:35.421    36G / 244G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 1
+  2:58:35.421    36G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  2:58:37.311    36G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 2 times
+  2:58:37.312    36G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:02:24.976    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 438884 times
+  3:02:24.976    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  3:02:26.823    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  3:02:26.824    38G / 244G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 2
+  3:02:26.824    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:02:27.175    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 2142 times
+  3:02:27.175    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:02:27.200    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 33 times
+  3:02:27.200    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  3:02:27.200    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 2 times
+  3:02:27.200    38G / 244G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 3
+  3:02:27.200    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:02:27.200    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 2 times
+  3:02:27.200    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:02:27.200    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  3:02:27.200    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  3:02:27.201    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 7 times
+  3:02:27.201    38G / 244G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 4
+  3:02:27.201    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:02:28.434    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 13 times
+  3:02:28.434    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:02:30.403    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 43 times
+  3:02:30.403    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  3:02:31.520    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  3:02:31.520    38G / 244G  INFO    General                 (simplification.cpp        : 362)   PROCEDURE == Simplification cycle, iteration 5
+  3:02:31.520    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:02:31.520    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 0 times
+  3:02:31.520    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:02:31.520    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  3:02:31.520    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Low coverage edge remover
+  3:02:31.520    38G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Low coverage edge remover triggered 0 times
+  3:02:31.520    38G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Gap Closer
+  3:02:31.520    38G / 244G  INFO    General                 (graph_pack.hpp            : 101)   Index refill
+  3:02:31.523    38G / 244G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  3:02:31.523    38G / 244G  INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 1024 files using 64 threads. This might take a while.
+  3:02:31.523    38G / 244G  INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 4224
+  3:02:31.523    38G / 244G  INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 4.99772 Gb
+  3:02:31.523    38G / 244G  INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 32768
+  3:02:53.275    73G / 244G  INFO    General                 (edge_index_builders.hpp   :  77)   Processed 15696516 edges
+  3:03:00.132    73G / 244G  INFO    General                 (edge_index_builders.hpp   :  77)   Processed 17301268 edges
+  3:03:00.132    73G / 244G  INFO    General                 (edge_index_builders.hpp   :  82)   Used 17301268 sequences.
+  3:03:02.442    38G / 244G  INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  3:03:14.992    38G / 244G  INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 2312909841 kmers in total.
+  3:03:14.992    38G / 244G  INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  3:05:18.086    38G / 244G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  3:06:33.775    39G / 244G  INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  3:07:25.675    39G / 244G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 1072541104 bytes occupied (3.70975 bits per kmer).
+  3:07:42.043    91G / 244G  INFO    General                 (edge_index_builders.hpp   : 107)   Collecting edge information from graph, this takes a while.
+  3:08:09.328    91G / 244G  INFO    General                 (edge_index.hpp            :  92)   Index refilled
+  3:08:11.236    91G / 244G  INFO    General                 (gap_closer.cpp            : 159)   Preparing shift maps
+  3:08:49.280    93G / 244G  INFO    General                 (gap_closer.cpp            : 119)   Processing paired reads (takes a while)
+  3:10:31.933    96G / 244G  INFO    General                 (gap_closer.cpp            : 138)   Used 44474985 paired reads
+  3:10:31.933    96G / 244G  INFO    General                 (gap_closer.cpp            : 140)   Merging paired indices
+  3:11:35.294    92G / 244G  INFO   GapCloser                (gap_closer.cpp            : 346)   Closing short gaps
+  3:12:41.256    92G / 244G  INFO   GapCloser                (gap_closer.cpp            : 380)   Closing short gaps complete: filled 374 gaps after checking 1725430 candidates
+  3:12:48.963    91G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Simplification Cleanup
+  3:12:48.963    91G / 244G  INFO    General                 (simplification.cpp        : 196)   PROCEDURE == Post simplification
+  3:12:48.963    91G / 244G  INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  3:12:48.963    91G / 244G  INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  3:12:48.963    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  3:13:40.448    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 29638 times
+  3:13:40.448    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  3:14:12.570    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 16394 times
+  3:14:12.570    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  3:14:16.018    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 1597 times
+  3:14:16.018    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  3:18:54.661    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 53048 times
+  3:18:54.661    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:19:10.160    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 11099 times
+  3:19:10.160    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  3:20:58.486    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 40867 times
+  3:20:58.486    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:21:12.558    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 6041 times
+  3:21:12.558    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final bulge remover
+  3:23:06.718    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final bulge remover triggered 14802 times
+  3:23:06.718    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  3:23:09.453    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  3:23:09.453    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  3:23:12.361    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 578 times
+  3:23:12.361    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  3:23:25.728    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 4273 times
+  3:23:25.728    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  3:23:28.056    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 201 times
+  3:23:28.057    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  3:25:27.499    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 3045 times
+  3:25:27.499    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:25:34.152    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 3438 times
+  3:25:34.152    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  3:25:41.648    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 1127 times
+  3:25:41.648    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:25:48.196    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 1422 times
+  3:25:48.196    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final bulge remover
+  3:25:53.759    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final bulge remover triggered 404 times
+  3:25:53.759    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  3:25:55.240    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  3:25:55.240    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  3:25:56.910    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 128 times
+  3:25:56.910    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  3:25:57.208    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 115 times
+  3:25:57.208    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  3:25:58.797    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 18 times
+  3:25:58.797    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  3:27:37.991    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 417 times
+  3:27:37.991    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:27:38.123    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 90 times
+  3:27:38.123    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  3:27:38.204    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 18 times
+  3:27:38.205    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:27:38.450    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 98 times
+  3:27:38.450    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final bulge remover
+  3:27:38.590    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final bulge remover triggered 16 times
+  3:27:38.590    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  3:27:38.592    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  3:27:38.592    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  3:27:40.262    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 8 times
+  3:27:40.262    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  3:27:40.324    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 21 times
+  3:27:40.324    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  3:27:41.944    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 3 times
+  3:27:41.944    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  3:29:21.285    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 13 times
+  3:29:21.285    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:29:21.293    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 6 times
+  3:29:21.293    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  3:29:21.294    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 1 times
+  3:29:21.294    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:29:21.311    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 7 times
+  3:29:21.311    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final bulge remover
+  3:29:21.329    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final bulge remover triggered 1 times
+  3:29:21.329    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  3:29:21.330    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  3:29:21.330    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  3:29:23.187    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 3 times
+  3:29:23.187    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  3:29:23.189    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 1 times
+  3:29:23.189    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  3:29:24.740    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 0 times
+  3:29:24.740    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  3:31:03.722    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 2 times
+  3:31:03.722    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:31:03.722    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 0 times
+  3:31:03.722    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  3:31:03.722    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 0 times
+  3:31:03.722    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:31:03.723    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 1 times
+  3:31:03.723    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final bulge remover
+  3:31:03.723    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final bulge remover triggered 0 times
+  3:31:03.723    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  3:31:03.723    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  3:31:03.723    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Relative coverage component remover
+  3:31:05.350    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Relative coverage component remover triggered 0 times
+  3:31:05.350    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Disconnecting edges with relatively low coverage
+  3:31:05.350    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Disconnecting edges with relatively low coverage triggered 0 times
+  3:31:05.350    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex tip clipper
+  3:31:06.858    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex tip clipper triggered 0 times
+  3:31:06.858    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Complex bulge remover
+  3:32:44.000    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Complex bulge remover triggered 0 times
+  3:32:44.000    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Tip clipper
+  3:32:44.000    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Tip clipper triggered 0 times
+  3:32:44.000    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final tip clipper
+  3:32:44.000    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final tip clipper triggered 0 times
+  3:32:44.000    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Bulge remover
+  3:32:44.001    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Bulge remover triggered 0 times
+  3:32:44.001    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Final bulge remover
+  3:32:44.001    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Final bulge remover triggered 0 times
+  3:32:44.001    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Thorn remover (meta)
+  3:32:44.001    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Thorn remover (meta) triggered 0 times
+  3:32:44.001    92G / 244G  INFO    General                 (simplification.cpp        : 326)   Running Hidden EC remover (meta)
+  3:32:46.331    92G / 244G  INFO    General                 (simplification.cpp        : 330)   Disrupting self-conjugate edges
+  3:33:19.256    92G / 244G  INFO   Simplification           (parallel_processing.hpp   : 165)   Running Removing isolated edges
+  3:34:04.331    91G / 244G  INFO   Simplification           (parallel_processing.hpp   : 167)   Removing isolated edges triggered 532607 times
+  3:34:04.335    91G / 244G  INFO    General                 (simplification.cpp        : 470)   Counting average coverage
+  3:34:19.465    91G / 244G  INFO    General                 (simplification.cpp        : 476)   Average coverage = 2.40191
+  3:34:19.466    91G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Mismatch Correction
+  3:34:19.466    91G / 244G  INFO    General                 (graph_pack.hpp            : 109)   Normalizing k-mer map. Total 198562847 kmers to process
+  3:37:53.130    91G / 244G  INFO    General                 (graph_pack.hpp            : 111)   Normalizing done
+  3:54:52.882   141G / 244G  INFO    General                 (mismatch_shall_not_pass.hp: 189)   Finished collecting potential mismatches positions
+  3:59:34.495    93G / 244G  INFO    General                 (mismatch_shall_not_pass.hp: 290)   All edges processed
+  3:59:37.562    91G / 244G  INFO    General                 (mismatch_correction.cpp   :  27)   Corrected 24082 nucleotides
+  3:59:37.592    91G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Contig Output
+  3:59:37.592    91G / 244G  INFO    General                 (contig_output_stage.cpp   :  40)   Writing GFA to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/assembly_graph_with_scaffolds.gfa
+  4:00:22.245    91G / 244G  INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/before_rr.fasta
+  4:01:00.461    91G / 244G  INFO    General                 (contig_output_stage.cpp   :  51)   Outputting FastG graph to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/assembly_graph.fastg
+  4:02:48.387    91G / 244G  INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/simplified_contigs.fasta
+  4:03:28.742    91G / 244G  INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/intermediate_contigs.fasta
+  4:04:08.343    91G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Paired Information Counting
+  4:06:05.064    95G / 244G  INFO    General                 (graph_pack.hpp            : 109)   Normalizing k-mer map. Total 200272873 kmers to process
+  4:09:11.577    95G / 244G  INFO    General                 (graph_pack.hpp            : 111)   Normalizing done
+  4:09:11.577    95G / 244G  INFO    General                 (pair_info_count.cpp       : 320)   Min edge length for estimation: 900
+  4:09:11.577    95G / 244G  INFO    General                 (pair_info_count.cpp       : 331)   Estimating insert size for library #0
+  4:09:11.577    95G / 244G  INFO    General                 (pair_info_count.cpp       : 190)   Estimating insert size (takes a while)
+  4:09:13.023    96G / 244G  INFO    General                 (pair_info_count.cpp       :  39)   Selecting usual mapper
+  4:09:39.037    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 200000 reads
+  4:09:39.085    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 400000 reads
+  4:09:39.133    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 600000 reads
+  4:09:39.158    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 800000 reads
+  4:09:39.182    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1000000 reads
+  4:09:39.207    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1200000 reads
+  4:09:39.333    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 2200000 reads
+  4:09:39.590    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 4200000 reads
+  4:09:46.975    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 8400000 reads
+  4:10:06.522    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 16800000 reads
+  4:10:49.464    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 35057808 reads
+  4:11:11.774    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  98)   Total 44474985 reads processed
+  4:11:11.949    96G / 244G  INFO    General                 (pair_info_count.cpp       : 209)   Edge pairs: 67108864 (rough upper limit)
+  4:11:11.949    96G / 244G  INFO    General                 (pair_info_count.cpp       : 213)   12607859 paired reads (28.3482% of all) aligned to long edges
+  4:11:11.979    95G / 244G  INFO    General                 (pair_info_count.cpp       : 354)     Insert size = 374.489, deviation = 142.084, left quantile = 218, right quantile = 559, read length = 150
+  4:11:11.998    96G / 244G  INFO    General                 (pair_info_count.cpp       : 371)   Filtering data for library #0
+  4:11:12.048    96G / 244G  INFO    General                 (pair_info_count.cpp       :  39)   Selecting usual mapper
+  4:11:40.514    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 200000 reads
+  4:11:40.653    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 400000 reads
+  4:11:40.672    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 600000 reads
+  4:11:40.703    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 800000 reads
+  4:11:40.722    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1000000 reads
+  4:11:40.723    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1200000 reads
+  4:11:40.930    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 2200000 reads
+  4:11:41.175    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 4200000 reads
+  4:11:43.117    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 8400000 reads
+  4:12:10.832    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 16800000 reads
+  4:12:43.942    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 33600000 reads
+  4:13:00.777    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  98)   Total 44474985 reads processed
+  4:13:00.796    96G / 244G  INFO    General                 (pair_info_count.cpp       : 383)   Mapping library #0
+  4:13:00.796    96G / 244G  INFO    General                 (pair_info_count.cpp       : 385)   Mapping paired reads (takes a while)
+  4:13:00.796    96G / 244G  INFO    General                 (pair_info_count.cpp       : 289)   Left insert size quantile 218, right insert size quantile 559, filtering threshold 1, rounding threshold 0
+  4:13:00.843    96G / 244G  INFO    General                 (pair_info_count.cpp       :  39)   Selecting usual mapper
+  4:13:30.840    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 200000 reads
+  4:13:30.903    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 400000 reads
+  4:13:30.974    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 600000 reads
+  4:13:30.986    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 800000 reads
+  4:13:31.054    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1000000 reads
+  4:13:31.102    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1200000 reads
+  4:13:31.210    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 2200000 reads
+  4:13:31.345    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 4200000 reads
+  4:13:31.661    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 8400000 reads
+  4:14:01.582    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 16800000 reads
+  4:14:33.584    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 33600000 reads
+  4:14:50.307    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  98)   Total 44474985 reads processed
+  4:14:51.604    96G / 244G  INFO    General                 (pair_info_count.cpp       : 327)   Mapping contigs library #1
+  4:14:51.604    96G / 244G  INFO    General                 (pair_info_count.cpp       :  39)   Selecting usual mapper
+  4:16:05.004    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 200000 reads
+  4:17:00.970    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 400000 reads
+  4:17:34.596    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 600000 reads
+  4:18:02.704    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 800000 reads
+  4:18:25.422    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1000000 reads
+  4:18:43.862    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 1200000 reads
+  4:19:32.812    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 2200000 reads
+  4:20:25.945    96G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 4200000 reads
+  4:22:32.556    97G / 244G  INFO    General                 (sequence_mapper_notifier.h:  80)   Processed 8400000 reads
+  4:22:35.479    97G / 244G  INFO    General                 (sequence_mapper_notifier.h:  98)   Total 8544566 reads processed
+  4:22:35.479    97G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Distance Estimation
+  4:22:35.479    97G / 244G  INFO    General                 (distance_estimation.cpp   : 173)   Processing library #0
+  4:22:35.479    97G / 244G  INFO    General                 (distance_estimation.cpp   : 149)   Weight Filter Done
+  4:22:35.479    97G / 244G  INFO   DistanceEstimator        (distance_estimation.hpp   : 116)   Using SIMPLE distance estimator
+  4:22:55.134    97G / 244G  INFO    General                 (distance_estimation.cpp   :  34)   Filtering info
+  4:22:55.134    97G / 244G  INFO    General                 (pair_info_filters.hpp     : 242)   Start filtering; index size: 22329184
+  4:23:19.982    98G / 244G  INFO    General                 (pair_info_filters.hpp     : 263)   Done filtering
+  4:23:19.983    97G / 244G  INFO    General                 (distance_estimation.cpp   : 156)   Refining clustered pair information
+  4:23:23.334    97G / 244G  INFO    General                 (distance_estimation.cpp   : 158)   The refining of clustered pair information has been finished
+  4:23:23.334    97G / 244G  INFO    General                 (distance_estimation.cpp   : 160)   Improving paired information
+  4:23:59.652    97G / 244G  INFO   PairInfoImprover         (pair_info_improver.hpp    : 103)   Paired info stats: missing = 624420; contradictional = 0
+  4:24:35.174    97G / 244G  INFO   PairInfoImprover         (pair_info_improver.hpp    : 103)   Paired info stats: missing = 125467; contradictional = 0
+  4:24:35.174    97G / 244G  INFO    General                 (distance_estimation.cpp   : 103)   Filling scaffolding index
+  4:24:35.174    97G / 244G  INFO   DistanceEstimator        (distance_estimation.hpp   : 116)   Using SMOOTHING distance estimator
+  4:24:48.330    97G / 244G  INFO    General                 (distance_estimation.cpp   :  34)   Filtering info
+  4:24:48.330    97G / 244G  INFO    General                 (pair_info_filters.hpp     : 242)   Start filtering; index size: 15691226
+  4:25:03.294    98G / 244G  INFO    General                 (pair_info_filters.hpp     : 263)   Done filtering
+  4:25:03.295    97G / 244G  INFO    General                 (distance_estimation.cpp   : 182)   Clearing raw paired index
+  4:25:06.685    97G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Repeat Resolving
+  4:25:06.685    97G / 244G  INFO    General                 (repeat_resolving.cpp      :  69)   Using Path-Extend repeat resolving
+  4:25:06.685    97G / 244G  INFO    General                 (launcher.cpp              : 477)   ExSPAnder repeat resolving tool started
+  4:25:57.485   126G / 244G  INFO    General                 (launcher.cpp              : 392)   Creating main extenders, unique edge length = 2000
+  4:26:26.608   128G / 244G  INFO    General                 (extenders_logic.cpp       :  34)   resolvable_repeat_length_bound set to 10000
+  4:27:09.577   129G / 244G  INFO    General                 (extenders_logic.cpp       : 472)   Using 1 paired-end library
+  4:27:09.577   129G / 244G  INFO    General                 (extenders_logic.cpp       : 473)   Using 1 paired-end scaffolding library
+  4:27:09.577   129G / 244G  INFO    General                 (extenders_logic.cpp       : 474)   Using 1 single read library
+  4:27:19.022   129G / 244G  INFO    General                 (launcher.cpp              : 359)   Filling backbone edges for long reads scaffolding...
+  4:27:19.022   129G / 244G  INFO    General                 (launcher.cpp              : 361)    with long reads paths
+  4:27:19.022   129G / 244G  INFO    General                 (launcher.cpp              : 370)   Removing fake unique with paired-end libs
+  4:27:19.022   129G / 244G  INFO    General                 (launcher.cpp              : 381)   0 unique edges
+  4:27:19.022   129G / 244G  INFO    General                 (extenders_logic.cpp       : 386)   Using 0 long reads scaffolding libraries
+  4:27:19.022   129G / 244G  INFO    General                 (extenders_logic.cpp       : 396)   Using additional coordinated coverage extender
+  4:27:21.302   129G / 244G  INFO    General                 (launcher.cpp              : 420)   Total number of extenders is 5
+  4:27:21.302   129G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 0 paths from 7519870 (0%)
+  4:27:21.652   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 128 paths from 7519870 (0%)
+  4:27:21.896   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 256 paths from 7519870 (0%)
+  4:27:22.264   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 512 paths from 7519870 (0%)
+  4:27:22.844   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 1024 paths from 7519870 (0%)
+  4:27:23.883   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 2048 paths from 7519870 (0%)
+  4:27:25.688   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 4096 paths from 7519870 (0%)
+  4:27:28.161   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 8192 paths from 7519870 (0%)
+  4:27:31.740   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 16384 paths from 7519870 (0%)
+  4:27:36.787   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 32768 paths from 7519870 (0%)
+  4:27:44.491   129G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 65536 paths from 7519870 (0%)
+  4:27:55.620   130G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 131072 paths from 7519870 (1%)
+  4:28:11.799   131G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 262144 paths from 7519870 (3%)
+  4:28:34.750   133G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 524288 paths from 7519870 (6%)
+  4:28:50.332   135G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 751988 paths from 7519870 (10%)
+  4:29:08.191   137G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 1048576 paths from 7519870 (13%)
+  4:29:32.352   141G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 1503976 paths from 7519870 (20%)
+  4:30:01.535   145G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 2097152 paths from 7519870 (27%)
+  4:30:08.841   147G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 2255964 paths from 7519870 (30%)
+  4:30:41.999   153G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 3007952 paths from 7519870 (40%)
+  4:31:12.969   159G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 3759940 paths from 7519870 (50%)
+  4:31:30.701   162G / 244G  INFO    General                 (path_extender.hpp         : 883)   Processed 4194304 paths from 7519870 (55%)
+  4:31:43.554   165G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 4511928 paths from 7519870 (60%)
+  4:32:13.386   171G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 5263916 paths from 7519870 (70%)
+  4:32:43.417   177G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 6015904 paths from 7519870 (80%)
+  4:33:13.041   183G / 244G  INFO    General                 (path_extender.hpp         : 885)   Processed 6767892 paths from 7519870 (90%)
+  4:34:19.515   189G / 244G  INFO    General                 (launcher.cpp              : 234)   Finalizing paths
+  4:34:19.515   189G / 244G  INFO    General                 (launcher.cpp              : 236)   Deduplicating paths
+  4:34:36.470   189G / 244G  INFO    General                 (launcher.cpp              : 240)   Paths deduplicated
+  4:34:36.470   189G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 295)   Removing overlaps
+  4:34:36.470   189G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 305)   Marking overlaps
+  4:34:36.470   189G / 244G  INFO   OverlapRemover           (pe_resolver.hpp           : 130)   Marking start/end overlaps
+  4:34:47.438   189G / 244G  INFO   OverlapRemover           (pe_resolver.hpp           : 133)   Marking remaining overlaps
+  4:34:58.340   189G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 308)   Splitting paths
+  4:35:00.056   189G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 313)   Deduplicating paths
+  4:35:05.182   189G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 315)   Overlaps removed
+  4:35:36.575   189G / 244G  INFO    General                 (launcher.cpp              : 257)   Paths finalized
+  4:35:36.575   189G / 244G  INFO    General                 (launcher.cpp              : 427)   Closing gaps in paths
+  4:36:10.048   189G / 244G  INFO    General                 (launcher.cpp              : 455)   Gap closing completed
+  4:36:20.402   190G / 244G  INFO    General                 (launcher.cpp              : 286)   Traversing tandem repeats
+  4:37:30.547   190G / 244G  INFO    General                 (launcher.cpp              : 296)   Traversed 2292 loops
+  4:37:30.547   190G / 244G  INFO    General                 (launcher.cpp              : 234)   Finalizing paths
+  4:37:30.547   190G / 244G  INFO    General                 (launcher.cpp              : 236)   Deduplicating paths
+  4:37:36.498   190G / 244G  INFO    General                 (launcher.cpp              : 240)   Paths deduplicated
+  4:37:36.498   190G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 295)   Removing overlaps
+  4:37:36.498   190G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 305)   Marking overlaps
+  4:37:36.498   190G / 244G  INFO   OverlapRemover           (pe_resolver.hpp           : 130)   Marking start/end overlaps
+  4:37:47.511   190G / 244G  INFO   OverlapRemover           (pe_resolver.hpp           : 133)   Marking remaining overlaps
+  4:37:57.506   190G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 308)   Splitting paths
+  4:37:57.871   190G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 313)   Deduplicating paths
+  4:38:02.392   190G / 244G  INFO   PEResolver               (pe_resolver.hpp           : 315)   Overlaps removed
+  4:38:35.200   190G / 244G  INFO    General                 (launcher.cpp              : 257)   Paths finalized
+  4:38:47.755   190G / 244G  INFO    General                 (launcher.cpp              : 529)   ExSPAnder repeat resolving tool finished
+  4:39:34.298   153G / 244G  INFO   StageManager             (stage.cpp                 : 132)   STAGE == Contig Output
+  4:39:34.298   153G / 244G  INFO    General                 (contig_output_stage.cpp   :  40)   Writing GFA to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/assembly_graph_with_scaffolds.gfa
+  4:40:18.457   153G / 244G  INFO    General                 (contig_output.hpp         :  22)   Outputting contigs to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/before_rr.fasta
+  4:40:57.455   153G / 244G  INFO    General                 (contig_output_stage.cpp   :  51)   Outputting FastG graph to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/assembly_graph.fastg
+  4:44:00.582   155G / 244G  INFO    General                 (contig_output_stage.cpp   :  20)   Outputting FastG paths to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/final_contigs.paths
+  4:45:53.228   153G / 244G  INFO    General                 (contig_output_stage.cpp   :  20)   Outputting FastG paths to /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly//K55/scaffolds.paths
+  4:47:37.992   153G / 244G  INFO    General                 (launch.hpp                : 149)   SPAdes finished
+  4:50:42.851   364M / 244G  INFO    General                 (main.cpp                  : 109)   Assembling time: 4 hours 50 minutes 42 seconds
+
+===== Assembling finished. Used k-mer sizes: 21, 33, 55 
+
+ * Corrected reads are in /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/corrected/
+ * Assembled contigs are in /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/contigs.fasta
+ * Assembled scaffolds are in /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/scaffolds.fasta
+ * Assembly graph is in /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/assembly_graph.fastg
+ * Assembly graph in GFA format is in /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/assembly_graph_with_scaffolds.gfa
+ * Paths in the assembly graph corresponding to the contigs are in /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/contigs.paths
+ * Paths in the assembly graph corresponding to the scaffolds are in /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/scaffolds.paths
+
+======= SPAdes pipeline finished.
+
+SPAdes log can be found here: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/spades.log
+
+Thank you for using SPAdes!

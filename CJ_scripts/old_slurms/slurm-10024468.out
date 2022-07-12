@@ -1,0 +1,13 @@
+==========================================
+SLURM_JOB_ID = 10024468
+SLURM_JOB_NODELIST = a01-11
+TMPDIR = /tmp/SLURM_10024468
+==========================================
+
+DAS Tool 1.1.4
+ 
+Analyzing assembly 
+Predicting genes 
+Annotating single copy genes using diamond 
+Dereplicating, aggregating, and scoring bins 
+Writing bins 

@@ -1,0 +1,11 @@
+==========================================
+SLURM_JOB_ID = 10007464
+SLURM_JOB_NODELIST = a03-18
+TMPDIR = /tmp/SLURM_10007464
+==========================================
+
+FastQ paired records kept: 104107246 (52053623 pairs)
+FastQ single records kept: 281317
+FastQ paired records discarded: 5414 (2707 pairs)
+FastQ single records discarded: 281317
+

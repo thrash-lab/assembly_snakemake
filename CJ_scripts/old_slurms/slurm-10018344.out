@@ -1,0 +1,18 @@
+==========================================
+SLURM_JOB_ID = 10018344
+SLURM_JOB_NODELIST = a03-16
+TMPDIR = /tmp/SLURM_10018344
+==========================================
+Output depth matrix to /project/thrash_89/db/EAGER_metaG_for_ck/_investigation/read_mapping/CJ_V2_S8_depth.txt
+Output pairedContigs lower triangle to /project/thrash_89/db/EAGER_metaG_for_ck/_investigation/read_mapping/CJ_V2_S8_paired.txt
+jgi_summarize_bam_contig_depths 2.15 (Bioconda) 2020-01-04T21:10:40
+Output matrix to /project/thrash_89/db/EAGER_metaG_for_ck/_investigation/read_mapping/CJ_V2_S8_depth.txt
+0: Opening bam: /project/thrash_89/db/EAGER_metaG_for_ck/_investigation/read_mapping/CJ_V2_S8.bam
+[E::hts_open_format] Failed to open file /project/thrash_89/db/EAGER_metaG_for_ck/_investigation/read_mapping/CJ_V2_S8.bam
+0ERROR: Could not open bam: /project/thrash_89/db/EAGER_metaG_for_ck/_investigation/read_mapping/CJ_V2_S8.bam
+/var/spool/slurm/d/job10018344/slurm_script: line 17:  9581 Segmentation fault      jgi_summarize_bam_contig_depths --outputDepth ${dir}/${sample}_depth.txt --pairedContigs ${dir}/${sample}_paired.txt ${dir}/${sample}.bam
+MetaBAT 2 (2.15 (Bioconda)) using minContig 2000, minCV 0.1, minCVSum 0.1, maxP 95%, minS 60, maxEdges 200 and minClsSize 200000. with random seed=1657306035
+[00:00:00] Executing with 16 threads
+[00:00:00] Parsing abundance file
+[Error!] can't open input file /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/read_mapping/CJ_V2_S8_depth.txt
+[Error!] There are no lines in the abundance depth file or fasta file!

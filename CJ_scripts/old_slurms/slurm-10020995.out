@@ -1,0 +1,2587 @@
+==========================================
+SLURM_JOB_ID = 10020995
+SLURM_JOB_NODELIST = a03-05
+TMPDIR = /tmp/SLURM_10020995
+==========================================
+MaxBin 2.2.7
+Input contig: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/contigs.fasta
+Located reads file [/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq]
+Thread: 32
+out header: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin
+Running Bowtie2 on reads file [/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq]...this may take a while...
+Searching against 107 marker genes to find starting seed contigs for [/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/contigs.fasta]...
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin -min_contig_length 1000 -thread 32
+Loaded 100000 sequences
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_3_length_226836_cov_8.642660 [14.025560]
+	NODE_13_length_176389_cov_21.322173 [33.714818]
+	NODE_31_length_144002_cov_9.720453 [16.070687]
+	NODE_37_length_128099_cov_19.910304 [30.585516]
+	NODE_92_length_89215_cov_8.187932 [13.194799]
+	NODE_110_length_79693_cov_9.671765 [15.405556]
+	NODE_118_length_78055_cov_15.443231 [24.795913]
+	NODE_164_length_65156_cov_7.705150 [12.382037]
+	NODE_203_length_60281_cov_11.806213 [18.818434]
+	NODE_229_length_57862_cov_9.200616 [15.573589]
+	NODE_321_length_48698_cov_34.325967 [56.405027]
+	NODE_399_length_44079_cov_8.343176 [13.268654]
+	NODE_511_length_39210_cov_10.232793 [17.035374]
+	NODE_557_length_37544_cov_4.536904 [7.886746]
+	NODE_595_length_35981_cov_9.921812 [16.250327]
+	NODE_712_length_32654_cov_23.560232 [38.278802]
+	NODE_741_length_31836_cov_7.205909 [11.757193]
+	NODE_758_length_31571_cov_9.820028 [16.324190]
+	NODE_921_length_28639_cov_6.837566 [12.348790]
+	NODE_1035_length_26892_cov_17.912248 [31.579094]
+	NODE_1038_length_26818_cov_5.995404 [9.590611]
+	NODE_1170_length_25165_cov_4.440940 [7.180966]
+	NODE_1197_length_24828_cov_5.363541 [8.867086]
+	NODE_1227_length_24596_cov_12.579479 [21.137827]
+	NODE_1665_length_20336_cov_5.947586 [9.409323]
+	NODE_1745_length_19710_cov_4.663394 [7.678894]
+	NODE_2110_length_17527_cov_4.970810 [8.067211]
+	NODE_2277_length_16641_cov_5.282949 [8.538489]
+	NODE_2352_length_16301_cov_41.065862 [68.737562]
+	NODE_3007_length_13847_cov_11.197506 [19.026287]
+	NODE_3010_length_13831_cov_8.246733 [13.940207]
+	NODE_3757_length_11893_cov_4.530748 [7.788279]
+	NODE_3912_length_11570_cov_7.178897 [13.028608]
+	NODE_3913_length_11567_cov_7.714124 [12.057145]
+	NODE_4601_length_10392_cov_5.479733 [9.092475]
+	NODE_4865_length_10003_cov_8.083836 [12.864941]
+	NODE_5333_length_9386_cov_7.523417 [12.434583]
+	NODE_5448_length_9236_cov_52.699488 [86.318969]
+	NODE_6553_length_8118_cov_6.580801 [11.079330]
+	NODE_7211_length_7618_cov_2.948698 [5.247178]
+	NODE_7239_length_7598_cov_75.084449 [112.806002]
+	NODE_7918_length_7129_cov_3.281877 [5.264974]
+	NODE_7943_length_7113_cov_3.649051 [6.068607]
+	NODE_7967_length_7099_cov_3.792447 [6.232145]
+	NODE_8426_length_6831_cov_8.589433 [14.901771]
+	NODE_8501_length_6793_cov_4.763283 [7.902252]
+	NODE_8545_length_6776_cov_15.764916 [24.814787]
+	NODE_8557_length_6767_cov_5.339243 [8.588296]
+	NODE_9218_length_6433_cov_7.841173 [15.458418]
+	NODE_9524_length_6289_cov_3.879371 [6.197488]
+	NODE_9552_length_6275_cov_3.964952 [6.335618]
+	NODE_10203_length_6011_cov_13.452485 [25.183331]
+	NODE_11066_length_5690_cov_3.905590 [6.861336]
+	NODE_11067_length_5689_cov_3.907881 [6.367903]
+	NODE_11580_length_5527_cov_4.605446 [8.759906]
+	NODE_12246_length_5314_cov_8.305952 [12.787354]
+	NODE_13856_length_4882_cov_5.325461 [9.106309]
+	NODE_14286_length_4784_cov_16.567562 [26.270485]
+	NODE_16794_length_4319_cov_3.439962 [8.069692]
+	NODE_18097_length_4116_cov_4.756956 [8.853741]
+	NODE_18729_length_4024_cov_3.550768 [7.706511]
+	NODE_18770_length_4019_cov_2.927851 [4.552127]
+	NODE_19398_length_3938_cov_14.776461 [28.606145]
+	NODE_19783_length_3889_cov_2.879760 [4.891232]
+	NODE_22309_length_3608_cov_3.867436 [6.055987]
+	NODE_22413_length_3598_cov_2.962179 [5.222346]
+	NODE_22779_length_3564_cov_3.651753 [6.418070]
+	NODE_22956_length_3547_cov_3.927835 [6.530307]
+	NODE_23923_length_3458_cov_4.153688 [6.790630]
+	NODE_24435_length_3413_cov_4.583979 [7.498096]
+	NODE_24739_length_3388_cov_2.434443 [4.224321]
+	NODE_26570_length_3244_cov_3.713076 [7.349260]
+	NODE_27248_length_3191_cov_3.449936 [6.046380]
+	NODE_27262_length_3189_cov_4.162093 [7.606773]
+	NODE_27586_length_3165_cov_4.113505 [6.301106]
+	NODE_28504_length_3103_cov_4.129265 [6.911054]
+	NODE_29226_length_3053_cov_3.848566 [6.174582]
+	NODE_29376_length_3044_cov_3.100033 [5.638633]
+	NODE_32699_length_2853_cov_4.546104 [7.511041]
+	NODE_33531_length_2811_cov_3.845791 [6.165777]
+	NODE_34061_length_2786_cov_2.539729 [4.145011]
+	NODE_34686_length_2755_cov_3.126296 [5.413430]
+	NODE_37004_length_2647_cov_7.163194 [11.553835]
+	NODE_37852_length_2613_cov_2.879593 [4.606200]
+	NODE_39808_length_2531_cov_2.749596 [4.668510]
+	NODE_41774_length_2457_cov_2.630724 [4.898250]
+	NODE_46158_length_2308_cov_3.034177 [5.798094]
+	NODE_48499_length_2239_cov_4.596612 [7.506029]
+	NODE_48518_length_2239_cov_2.860348 [4.580616]
+	NODE_49983_length_2198_cov_2.855343 [4.831665]
+	NODE_52584_length_2132_cov_1.935965 [3.600375]
+	NODE_57305_length_2022_cov_5.165735 [9.869436]
+	NODE_66935_length_1841_cov_39.535274 [55.832156]
+	NODE_68024_length_1824_cov_2.958168 [5.137061]
+	NODE_70133_length_1790_cov_2.969452 [4.774860]
+	NODE_73455_length_1741_cov_3.525504 [5.599655]
+	NODE_74634_length_1725_cov_1.722156 [2.812174]
+	NODE_83725_length_1609_cov_3.718147 [5.911125]
+	NODE_84221_length_1604_cov_2.269852 [3.917082]
+	NODE_86773_length_1576_cov_3.317554 [6.416244]
+	NODE_87915_length_1564_cov_2.218688 [3.452046]
+	NODE_97137_length_1475_cov_2.650704 [3.962034]
+	NODE_98780_length_1461_cov_2.112376 [4.102669]
+	NODE_101385_length_1438_cov_2.438178 [3.753825]
+	NODE_106726_length_1396_cov_1.531693 [2.593123]
+	NODE_109358_length_1376_cov_1.781983 [2.841570]
+	NODE_117545_length_1319_cov_3.325158 [5.410159]
+	NODE_126796_length_1262_cov_6.142502 [7.536450]
+	NODE_128539_length_1253_cov_1.995826 [3.288109]
+	NODE_129345_length_1248_cov_3.319363 [4.123397]
+	NODE_138269_length_1200_cov_3.047162 [5.375000]
+	NODE_140098_length_1191_cov_2.756162 [4.361881]
+	NODE_141630_length_1184_cov_1.991143 [3.190034]
+	NODE_143844_length_1173_cov_5.082290 [5.975277]
+	NODE_148380_length_1153_cov_1.805100 [3.186470]
+	NODE_155933_length_1120_cov_4.892958 [4.684821]
+	NODE_165031_length_1085_cov_3.103883 [5.078341]
+	NODE_171186_length_1063_cov_0.805556 [1.551270]
+	NODE_172078_length_1059_cov_2.573705 [4.473088]
+	NODE_174892_length_1050_cov_1.638191 [2.688571]
+	NODE_183039_length_1023_cov_2.311983 [3.956989]
+	NODE_188678_length_1006_cov_1.850683 [2.804175]
+Get 122 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 27411 (14.36%)
+Elapsed time:  0 days 03:13:26
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_3_length_226836_cov_8.642660 [14.025560]
+	NODE_92_length_89215_cov_8.187932 [13.194799]
+	NODE_13856_length_4882_cov_5.325461 [9.106309]
+Get 3 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 1 bins without any sequences.
+Number of unclassified sequences: 265 (66.25%)
+Elapsed time:  0 days 00:00:47
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0005.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0005.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0005.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_23382_length_3507_cov_3.556489 [6.721985]
+	NODE_40846_length_2492_cov_2.186705 [3.469502]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:47
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0008.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0008.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0008.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_65_length_102331_cov_7.457869 [12.173965]
+	NODE_3581_length_12279_cov_7.327225 [12.212395]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0010.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0010.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0010.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_72891_length_1749_cov_2.793979 [7.238422]
+	NODE_148455_length_1152_cov_4.659982 [6.114583]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:46
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0011.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0011.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0011.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_909_length_28790_cov_37.568018 [60.532268]
+	NODE_4713_length_10209_cov_49.035454 [79.558723]
+	NODE_22713_length_3569_cov_47.491463 [63.748109]
+Get 3 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 11 (3.26%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0017.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0017.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0017.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_81851_length_1630_cov_3.228571 [5.069939]
+	NODE_161898_length_1097_cov_2.861804 [5.332726]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:46
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0019.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0019.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0019.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_490_length_40127_cov_8.612872 [14.183567]
+	NODE_5343_length_9367_cov_6.824742 [10.869008]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0020.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0020.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0020.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_9678_length_6223_cov_12.497730 [24.606460]
+	NODE_184264_length_1019_cov_13.735477 [28.623160]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0022.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0022.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0022.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_99256_length_1457_cov_1.966476 [3.155800]
+	NODE_106677_length_1396_cov_2.161820 [3.765043]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0023.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0023.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0023.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_1535_length_21368_cov_4.107634 [6.779015]
+	NODE_2261_length_16709_cov_6.811757 [11.421569]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0028.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0028.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0028.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_28741_length_3086_cov_3.772682 [6.309138]
+	NODE_36988_length_2648_cov_3.959892 [7.370468]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_7_length_197506_cov_15.236033 [24.500122]
+	NODE_15711_length_4500_cov_14.662992 [24.300889]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:43
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0031.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0031.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0031.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_1945_length_18381_cov_7.398996 [12.286981]
+	NODE_6096_length_8528_cov_4.863213 [7.950281]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_90311_length_1540_cov_3.091582 [5.107143]
+	NODE_187859_length_1008_cov_3.393494 [5.434524]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_6846_length_7892_cov_4.269491 [6.410035]
+	NODE_33256_length_2825_cov_3.669314 [6.424071]
+	NODE_110656_length_1366_cov_3.806255 [6.122987]
+	NODE_130387_length_1242_cov_3.190396 [5.090177]
+Get 4 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 161 (9.30%)
+Elapsed time:  0 days 00:00:47
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0052.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0052.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0052.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_1679_length_20207_cov_8.250298 [14.234869]
+	NODE_6868_length_7874_cov_6.065226 [10.490983]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_1702_length_20028_cov_9.391328 [15.650989]
+	NODE_1845_length_19044_cov_11.976197 [19.955261]
+	NODE_1913_length_18567_cov_9.572277 [16.073356]
+Get 3 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 140 (19.61%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0061.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0061.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0061.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_9439_length_6332_cov_3.331846 [5.527164]
+	NODE_20491_length_3809_cov_2.767714 [4.603833]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0063.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0063.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0063.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_24220_length_3432_cov_23.784424 [35.672786]
+	NODE_79860_length_1654_cov_31.293308 [39.551391]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0073.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0073.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0073.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_29160_length_3058_cov_4.802864 [7.689012]
+	NODE_66263_length_1853_cov_2.179088 [3.796006]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0078.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0078.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0078.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_133701_length_1224_cov_2.296835 [4.084967]
+	NODE_137378_length_1205_cov_1.893913 [3.233195]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0101.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0101.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0101.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_590_length_36270_cov_5.018666 [8.110394]
+	NODE_11550_length_5537_cov_3.175666 [5.709229]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:47
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0107.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0107.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0107.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_18624_length_4040_cov_2.236637 [3.761881]
+	NODE_133918_length_1223_cov_2.052226 [3.597711]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:47
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_40985_length_2487_cov_1.726974 [2.974266]
+	NODE_84384_length_1602_cov_2.747253 [4.588015]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:46
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0005.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0005.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0005.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_56949_length_2030_cov_2.760000 [4.245320]
+	NODE_62793_length_1912_cov_4.304254 [7.024582]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0010.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0010.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0010.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_3707_length_12014_cov_4.932938 [9.153238]
+	NODE_71828_length_1764_cov_8.166179 [10.589569]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0019.out.0002.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0019.out.0002.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0019.out.0002.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_490_length_40127_cov_8.612872 [14.183567]
+	NODE_5343_length_9367_cov_6.824742 [10.869008]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0020.out.0002.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0020.out.0002.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0020.out.0002.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_82892_length_1618_cov_18.017914 [31.451792]
+	NODE_156951_length_1116_cov_17.627710 [28.239247]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0028.out.0002.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0028.out.0002.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0028.out.0002.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_17386_length_4226_cov_2.608727 [4.438003]
+	NODE_42379_length_2435_cov_3.378151 [5.538809]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_60_length_104212_cov_11.171808 [17.917495]
+	NODE_2000_length_18056_cov_11.972557 [19.725521]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.out.0002.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.out.0002.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0030.out.0002.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_7_length_197506_cov_15.236033 [24.500122]
+	NODE_15711_length_4500_cov_14.662992 [24.300889]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0031.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0031.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0031.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_1945_length_18381_cov_7.398996 [12.286981]
+	NODE_2579_length_15382_cov_4.714687 [7.896632]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:43
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_81698_length_1632_cov_2.525682 [6.052696]
+	NODE_90312_length_1540_cov_3.050505 [6.411688]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:43
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_3223_length_13229_cov_3.972522 [6.814801]
+	NODE_19008_length_3989_cov_3.677173 [5.896215]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0003.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0003.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0003.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_9480_length_6314_cov_3.021729 [4.938708]
+	NODE_42572_length_2428_cov_3.812474 [6.321252]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_1702_length_20028_cov_9.391328 [15.650989]
+	NODE_1845_length_19044_cov_11.976197 [19.955261]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0063.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0063.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0063.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_424_length_42996_cov_24.116183 [38.915178]
+	NODE_12688_length_5183_cov_18.993175 [29.179819]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0073.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0073.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0073.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_21064_length_3745_cov_3.770461 [6.409613]
+	NODE_146260_length_1162_cov_2.671183 [3.761618]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_39821_length_2530_cov_4.859394 [7.156126]
+	NODE_167166_length_1077_cov_2.334638 [4.175487]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:45
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.out.0001.out.0002.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.out.0001.out.0002.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0033.out.0001.out.0002.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_81698_length_1632_cov_2.525682 [6.052696]
+	NODE_90312_length_1540_cov_3.050505 [6.411688]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0003.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0003.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0051.out.0003.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_9480_length_6314_cov_3.021729 [4.938708]
+	NODE_61906_length_1929_cov_2.826041 [5.053914]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_1702_length_20028_cov_9.391328 [15.650989]
+	NODE_1845_length_19044_cov_11.976197 [19.955261]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.out.0002.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.out.0002.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.out.0002.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_166903_length_1078_cov_2.355816 [3.752319]
+	NODE_169618_length_1068_cov_2.717670 [4.073034]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:43
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.out.0001.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.out.0001.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0058.out.0002.out.0001.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_1702_length_20028_cov_9.391328 [15.650989]
+	NODE_1845_length_19044_cov_11.976197 [19.955261]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:43
+Done data collection. Running MaxBin...
+Command: /home1/cykojima/.conda/envs/maxbin2/opt/MaxBin-2.2.7/src/MaxBin -fasta /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.out.0002.out.0001.fasta  -abund /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.contig.tmp.reads.abund1 -seed /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.out.0002.out.0001.out.seed -out /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.0111.out.0001.out.0002.out.0001.out -min_contig_length 1000 -thread 32
+Minimum contig length set to 1000.
+Reading seed list...
+Looking for seeds in sequences.
+	NODE_166903_length_1078_cov_2.355816 [3.752319]
+	NODE_169618_length_1068_cov_2.717670 [4.073034]
+Get 2 seeds.
+
+Start EM process.
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+Iteration 11
+Iteration 12
+Iteration 13
+Iteration 14
+Iteration 15
+Iteration 16
+Iteration 17
+Iteration 18
+Iteration 19
+Iteration 20
+Iteration 21
+Iteration 22
+Iteration 23
+Iteration 24
+Iteration 25
+Iteration 26
+Iteration 27
+Iteration 28
+Iteration 29
+Iteration 30
+Iteration 31
+Iteration 32
+Iteration 33
+Iteration 34
+Iteration 35
+Iteration 36
+Iteration 37
+Iteration 38
+Iteration 39
+Iteration 40
+Iteration 41
+Iteration 42
+Iteration 43
+Iteration 44
+Iteration 45
+Iteration 46
+Iteration 47
+Iteration 48
+Iteration 49
+Iteration 50
+
+EM finishes successfully.
+
+Classifying sequences based on the EM result.
+Minimum probability for binning: 0.50
+Ignoring 0 bins without any sequences.
+Number of unclassified sequences: 0 (0.00%)
+Elapsed time:  0 days 00:00:44
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+maxbin.002.marker.fasta
+maxbin.003.marker.fasta
+maxbin.004.marker.fasta
+maxbin.005.marker.fasta
+maxbin.006.marker.fasta
+maxbin.007.marker.fasta
+maxbin.009.marker.fasta
+maxbin.010.marker.fasta
+maxbin.011.marker.fasta
+maxbin.012.marker.fasta
+maxbin.013.marker.fasta
+maxbin.014.marker.fasta
+maxbin.015.marker.fasta
+maxbin.016.marker.fasta
+maxbin.017.marker.fasta
+maxbin.018.marker.fasta
+maxbin.019.marker.fasta
+maxbin.020.marker.fasta
+maxbin.021.marker.fasta
+maxbin.022.marker.fasta
+maxbin.023.marker.fasta
+maxbin.024.marker.fasta
+maxbin.025.marker.fasta
+maxbin.026.marker.fasta
+maxbin.027.marker.fasta
+maxbin.028.marker.fasta
+maxbin.029.marker.fasta
+maxbin.030.marker.fasta
+maxbin.031.marker.fasta
+maxbin.032.marker.fasta
+maxbin.033.marker.fasta
+maxbin.034.marker.fasta
+maxbin.035.marker.fasta
+maxbin.036.marker.fasta
+maxbin.037.marker.fasta
+maxbin.038.marker.fasta
+maxbin.039.marker.fasta
+maxbin.040.marker.fasta
+maxbin.041.marker.fasta
+maxbin.042.marker.fasta
+maxbin.043.marker.fasta
+maxbin.044.marker.fasta
+maxbin.045.marker.fasta
+maxbin.046.marker.fasta
+maxbin.047.marker.fasta
+maxbin.048.marker.fasta
+maxbin.049.marker.fasta
+maxbin.050.marker.fasta
+maxbin.051.marker.fasta
+maxbin.052.marker.fasta
+maxbin.053.marker.fasta
+maxbin.054.marker.fasta
+maxbin.055.marker.fasta
+maxbin.056.marker.fasta
+maxbin.057.marker.fasta
+maxbin.058.marker.fasta
+maxbin.059.marker.fasta
+maxbin.060.marker.fasta
+maxbin.061.marker.fasta
+maxbin.062.marker.fasta
+maxbin.063.marker.fasta
+maxbin.064.marker.fasta
+maxbin.065.marker.fasta
+maxbin.067.marker.fasta
+maxbin.068.marker.fasta
+maxbin.069.marker.fasta
+maxbin.070.marker.fasta
+maxbin.071.marker.fasta
+maxbin.072.marker.fasta
+maxbin.073.marker.fasta
+maxbin.074.marker.fasta
+maxbin.075.marker.fasta
+maxbin.076.marker.fasta
+maxbin.077.marker.fasta
+maxbin.078.marker.fasta
+maxbin.079.marker.fasta
+maxbin.080.marker.fasta
+maxbin.081.marker.fasta
+maxbin.082.marker.fasta
+maxbin.083.marker.fasta
+maxbin.084.marker.fasta
+maxbin.085.marker.fasta
+maxbin.086.marker.fasta
+maxbin.087.marker.fasta
+maxbin.089.marker.fasta
+maxbin.090.marker.fasta
+maxbin.091.marker.fasta
+maxbin.092.marker.fasta
+maxbin.093.marker.fasta
+maxbin.094.marker.fasta
+maxbin.095.marker.fasta
+maxbin.096.marker.fasta
+maxbin.097.marker.fasta
+maxbin.098.marker.fasta
+maxbin.099.marker.fasta
+maxbin.100.marker.fasta
+maxbin.101.marker.fasta
+maxbin.102.marker.fasta
+maxbin.103.marker.fasta
+maxbin.104.marker.fasta
+maxbin.105.marker.fasta
+maxbin.106.marker.fasta
+maxbin.107.marker.fasta
+maxbin.108.marker.fasta
+maxbin.109.marker.fasta
+maxbin.110.marker.fasta
+maxbin.111.marker.fasta
+maxbin.112.marker.fasta
+maxbin.113.marker.fasta
+maxbin.114.marker.fasta
+maxbin.115.marker.fasta
+maxbin.116.marker.fasta
+maxbin.117.marker.fasta
+maxbin.118.marker.fasta
+maxbin.119.marker.fasta
+maxbin.120.marker.fasta
+maxbin.121.marker.fasta
+maxbin.122.marker.fasta
+maxbin.123.marker.fasta
+maxbin.124.marker.fasta
+maxbin.125.marker.fasta
+maxbin.126.marker.fasta
+maxbin.127.marker.fasta
+maxbin.128.marker.fasta
+maxbin.129.marker.fasta
+maxbin.130.marker.fasta
+maxbin.131.marker.fasta
+maxbin.132.marker.fasta
+maxbin.133.marker.fasta
+maxbin.134.marker.fasta
+maxbin.135.marker.fasta
+maxbin.136.marker.fasta
+maxbin.137.marker.fasta
+maxbin.138.marker.fasta
+maxbin.139.marker.fasta
+maxbin.140.marker.fasta
+maxbin.141.marker.fasta
+maxbin.142.marker.fasta
+maxbin.143.marker.fasta
+maxbin.144.marker.fasta
+maxbin.145.marker.fasta
+maxbin.146.marker.fasta
+maxbin.147.marker.fasta
+maxbin.148.marker.fasta
+maxbin.149.marker.fasta
+maxbin.150.marker.fasta
+maxbin.151.marker.fasta
+maxbin.152.marker.fasta
+maxbin.153.marker.fasta
+maxbin.154.marker.fasta
+maxbin.155.marker.fasta
+maxbin.156.marker.fasta
+maxbin.157.marker.fasta
+maxbin.158.marker.fasta
+maxbin.159.marker.fasta
+maxbin.160.marker.fasta
+maxbin.161.marker.fasta
+maxbin.162.marker.fasta
+maxbin.163.marker.fasta
+maxbin.164.marker.fasta
+maxbin.165.marker.fasta
+maxbin.166.marker.fasta
+maxbin.167.marker.fasta
+maxbin.168.marker.fasta
+maxbin.169.marker.fasta
+maxbin.170.marker.fasta
+Deleting intermediate files.
+
+
+========== Job finished ==========
+Yielded 170 bins for contig (scaffold) file /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/spades_assembly/contigs.fasta
+
+Here are the output files for this run.
+Please refer to the README file for further details.
+
+Summary file: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.summary
+Marker counts: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.marker
+Marker genes for each bin: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.marker_of_each_gene.tar.gz
+Bin files: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.001.fasta - /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.170.fasta
+Unbinned sequences: /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.noclass
+
+Store abundance information of reads file [/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq] in [/project/thrash_89/db/EAGER_metaG_for_ck/CJ_V2_S8_investigation/binning/maxbin2/maxbin.abund1].
+
+
+========== Elapsed Time ==========
+3 hours 48 minutes and 57 seconds.
+
