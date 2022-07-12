@@ -44,10 +44,10 @@ rule bowtie2_map_reads:
         dir=directory(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}')
     threads: 32
     shell:
-        """bowtie2-build "{input.contigs}" {output.index} --threads {threads}
+        """bowtie2-build {input.contigs} {output.index} --threads {threads}
 
         # align reads
-        bowtie2 -x {output.index} --interleaved {input.trimmed} -S base_dir/{sample}_assembly_dir/read_mapping/{sample}.sam --threads {threads}
+        bowtie2 -x {output.index} --interleaved {input.trimmed_fq} -S base_dir/{sample}_assembly_dir/read_mapping/{sample}.sam --threads {threads}
 
         # convert sam file into sorted and indexed bam file
         samtools view -bS base_dir/{sample}_assembly_dir/read_mapping/{sample}.sam --threads {threads} > base_dir/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam
