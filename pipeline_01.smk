@@ -38,9 +38,9 @@ rule bowtie2_map_reads:
         contigs='{output_dir}/spades_assembly/contigs.fasta'
     output:
         bam='{output_dir}/read_mapping/{sample}.bam',
-        bam_index='{output_dir}/read_mapping/{sample}.bam.bai'
+        bam_index='{output_dir}/read_mapping/{sample}.bam.bai',
         index='{output_dir}/read_mapping/',
-        dir=directory('{output_dir}/read_mapping/{sample}'),
+        dir=directory('{output_dir}/read_mapping/{sample}')
     threads: 32
     shell:
         """bowtie2-build "{input.contigs}" {output.index} --threads {threads}
