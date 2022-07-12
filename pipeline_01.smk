@@ -76,7 +76,7 @@ rule bin_metabat2:
         contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
         depth_file='{input.read_mapping_dir}/{sample}_depth.txt'
     output:
-        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/metabat2/metabat2")
+        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/metabat2")
     params:
         minCVSum=0,
         minCV=0.1,
@@ -96,6 +96,7 @@ rule bin_conoct:
         clustering_gt1000= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv",
         clustering_merged= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
         bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins")
+        concoct_dir=directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs")
 
     params:
         chunk=1000
