@@ -131,7 +131,7 @@ rule generate_consensus_bins_dastools:
         base_dir + "/{sample}_assembly_dir/binning/dastools/maxbin_contigs2bin.tsv",
         base_dir + "/{sample}_assembly_dir/binning/dastools/concoct_contigs2bin.tsv",
         dastools_dir=directory(base_dir + "/{sample}_assembly_dir/binning/dastools"),
-        dastool_bins=directory(base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
+        dastools_bins=directory(base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
         
 
     threads: 32
