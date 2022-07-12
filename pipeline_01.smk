@@ -37,10 +37,10 @@ rule bowtie2_map_reads:
         trimmed_fq='{output_dir}/sickle_trimmed/{sample}_all_trimmed.fastq',
         contigs='{output_dir}/spades_assembly/contigs.fasta'
     output:
+        bam='{output_dir}/read_mapping/{sample}.bam',
+        bam_index='{output_dir}/read_mapping/{sample}.bam.bai'
         index='{output_dir}/read_mapping/',
-        dir=direcotry('{output_dir}/read_mapping/{sample}'),
-        'bam={output_dir}/read_mapping/{sample}.bam',
-        'bam_index={output_dir}/read_mapping/{sample}.bam.bai'
+        dir=directory('{output_dir}/read_mapping/{sample}'),
     threads: 32
     shell:
         """bowtie2-build "{input.contigs}" {output.index} --threads {threads}
