@@ -85,7 +85,7 @@ rule bin_metabat2:
     shell:
         "metabat2 -i {input.contigs}  -a {input.depth_file} -o {output.bins_dir} -t {threads} --minCVSum {params.minCVSum} --saveCls -d -v --minCV {params.minCV} -m {params.m}"
 
-rule bin_conoct:
+rule bin_concoct:
     input:
         contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
         bam=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
@@ -136,9 +136,9 @@ rule generate_consensus_bins_dastools:
         concoct_fa_dir= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs",
         maxbin_fa_dir= base_dir + "/{sample}_assembly_dir/binning/maxbin2"
     output:
-        base_dir + "/{sample}_assembly_dir/binning/metabat2/metabat2/my_contigs2bin.tsv",
-        base_dir + "/{sample}_assembly_dir/binning/maxbin2/my_contigs2bin.tsv",
-        base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct.contigs2bin.tsv",
+        base_dir + "/{sample}_assembly_dir/binning/dastools/metabat_contigs2bin.tsv",
+        base_dir + "/{sample}_assembly_dir/binning/dastools/maxbin_contigs2bin.tsv",
+        base_dir + "/{sample}_assembly_dir/binning/dastools/concoct_contigs2bin.tsv",
         dastools_dir=directory(base_dir + "/{sample}_assembly_dir/binning/dastools"),
         dastool_bins=directory(base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
         
@@ -147,19 +147,19 @@ rule generate_consensus_bins_dastools:
     shell:
         """
         # metabat2
-        Fasta_to_Contig2Bin.sh -e fa -i {input.metabat_fa_dir}/ > {input.metabat_fa_dir}/my_contigs2bin.tsv
+        Fasta_to_Contig2Bin.sh -e fa -i {input.metabat_fa_dir}/ > {input.dastools_dir}/metabat_contigs2bin.tsv
 
         # maxbin
-        Fasta_to_Contig2Bin.sh -e fasta -i {input.maxbin_fa_dir}/ > {input.maxbin_fa_dir}/my_contigs2bin.tsv
+        Fasta_to_Contig2Bin.sh -e fasta -i {input.maxbin_fa_dir}/ > {input.dastools_dir/maxbin_contigs2bin.tsv
 
         # concoct (delete first line "contig_id	concoct.cluster_id", use correct command
-        perl -pe "s/,/\tconcoct./g;" {input.concoct_fa_dir}/concoct_subcontigs_clustering_merged.csv > {input.concoct_fa_dir}/concoct.contigs2bin.tsv
+        perl -pe "s/,/\tconcoct./g;" {input.concoct_fa_dir}/concoct_subcontigs_clustering_merged.csv > {input.dastools_dir}/concoct_contigs2bin.tsv
         sed -i '1,1d' {input.concoct_fa_dir}/concoct.contigs2bin.tsv
 
         # Run DAS_Tool (EST TIME < 2 hours per sample)
-        DAS_Tool -i {input.maxbin_fa_dir}/my_contigs2bin.tsv,\
-        {input.concoct_fa_dir}/concoct.contigs2bin.tsv,\
-        {input.metabat_fa_dir}/my_contigs2bin.tsv \
+        DAS_Tool -i {input.dastools_dir/maxbin_contigs2bin.tsv,\
+        {input.dastools_dir}/concoct_contigs2bin.tsv,\
+        {input.dastools_dir}/metabat_contigs2bin.tsv \
         -l maxbin,concoct,metabat \
         -c {input.contigs} \
         -o {output.dastools_bins}/{sample} --write_bins --write_bin_evals \
