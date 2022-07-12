@@ -1,6 +1,8 @@
 import snakemake
 import numpy
 
+SAMPLES=['CJ_V1_S8']
+
 #TODO rule all
 #TODO conda yaml for each rule
 rule all:
