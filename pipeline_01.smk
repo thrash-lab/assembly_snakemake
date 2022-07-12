@@ -95,7 +95,7 @@ rule bin_conoct:
         cov_table= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/coverage_table.csv",
         clustering_gt1000= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv",
         clustering_merged= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
-        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins")
+        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins"),
         concoct_dir=directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs")
 
     params:
