@@ -82,16 +82,16 @@ rule bin_metabat2:
 
 rule bin_concoct:
     input:
-        contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        bam=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
+        contigs = base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
     output:
-        contigs_bed= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed",
-        contig_chunks= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa",
-        cov_table= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/coverage_table.csv",
-        clustering_gt1000= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv",
-        clustering_merged= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
-        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins"),
-        concoct_dir=directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs")
+        contigs_bed = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed",
+        contig_chunks = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa",
+        cov_table = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/coverage_table.csv",
+        clustering_gt1000 = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv",
+        clustering_merged = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
+        bins_dir = directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins"),
+        concoct_dir = directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs")
 
     params:
         chunk=1000
@@ -106,7 +106,7 @@ rule bin_concoct:
         # about 12 hours (overestimate) with 16 threads
         concoct --composition_file {output.contig_chunks} --coverage_file {output.cov_table} -b base_dir/{wildcards.sample}_assembly_dir/binning/concoct_subcontigs --threads {threads}
 
-        merge_cutup_clustering.py {output.cluster_gt1000} > {output.clustering_merged}
+        merge_cutup_clustering.py {output.clustering_gt1000} > {output.clustering_merged}
         mkdir {output.bins_dir}
         extract_fasta_bins.py {input.contigs} {output.clustering_merged} --output_path {output.bins_dir}/concoct"""
 
