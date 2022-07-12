@@ -35,24 +35,26 @@ rule metaspades_assembly:
 
 rule bowtie2_map_reads:
     input:
-        trimmed_fq=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq',
-        contigs=base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
+        trimmed_fq = base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq',
+        contigs = base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
     output:
-        bam=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam',
-        bam_index=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
-        index=base_dir + '/{sample}_assembly_dir/read_mapping/',
-        dir=directory(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}')
+        bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam',
+        bam_index = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
+        index = base_dir + '/{sample}_assembly_dir/read_mapping/',
+        dir = directory(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}'),
+        sam = temp(base_dir + '{sample}_assembly_dir/read_mapping/{sample}.sam'),
+        raw_bam = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam')
     threads: 32
     shell:
         """bowtie2-build {input.contigs} {output.index} --threads {threads}
 
         # align reads
-        bowtie2 -x {output.index} --interleaved {input.trimmed_fq} -S base_dir/{sample}_assembly_dir/read_mapping/{sample}.sam --threads {threads}
+        bowtie2 -x {output.index} --interleaved {input.trimmed_fq} -S {output.sam} --threads {threads}
 
         # convert sam file into sorted and indexed bam file
-        samtools view -bS base_dir/{sample}_assembly_dir/read_mapping/{sample}.sam --threads {threads} > base_dir/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam
-        samtools sort base_dir/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam --threads {threads} > {output.bam}
-        samtools index -@ 32 base_dir/{sample}_assembly_dir/read_mapping/{sample}.bam
+        samtools view -bS {output.sam} --threads {threads} > {output.raw_bam}
+        samtools sort {output.raw_bam} --threads {threads} > {output.bam}
+        samtools index -@ 32 {output.bam}
 
         # remove intermediate files
         rm base_dir/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam base_dir/{sample}_assembly_dir/read_mapping/{sample}.sam"""
