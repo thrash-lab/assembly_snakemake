@@ -133,7 +133,7 @@ rule generate_consensus_bins_dastools:
         "{output_dir}/binning/metabat2/metabat2/my_contigs2bin.tsv",
         "{output_dir}/binning/maxbin2/my_contigs2bin.tsv",
         "{output_dir}/binning/concoct_subcontigs/concoct.contigs2bin.tsv",
-        dastools_dir=directory("{output_dir}/binning/dastools")
+        dastools_dir=directory("{output_dir}/binning/dastools"),
         dastool_bins=directory("{output_dir}/binning/dastools/{sample}_DASTool_bins")
         
 
