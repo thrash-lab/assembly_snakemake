@@ -5,7 +5,7 @@ import numpy
 #TODO conda yaml for each rule
 rule all:
     input: 
-        dir=directory("{outupt_dir}/checkm/dastools/")
+        dir=directory("{outupt_dir}/checkm/dastools/"),
         checkm_table="{output_dir}/checkm/dastools/output_table.txt"
 
 rule sickle_trim:
