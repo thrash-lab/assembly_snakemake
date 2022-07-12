@@ -10,7 +10,7 @@ base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
 #TODO conda yaml for each rule
 rule all:
     input: 
-        dir="{output_dir}/checkm/dastools/",
+        dir="base_dir/{sample}_assembly_dir/checkm/dastools/",
         checkm_table="base_dir/{sample}_assembly_dir/checkm/dastools/output_table.txt"
 
 rule sickle_trim:
