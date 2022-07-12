@@ -7,12 +7,12 @@ SAMPLES=['CJ_V1_S8']
 #TODO conda yaml for each rule
 rule all:
     input: 
-        dir="{outupt_dir}/checkm/dastools/",
+        dir="{output_dir}/checkm/dastools/",
         checkm_table="{sample}_assembly_dir/checkm/dastools/output_table.txt"
 
 rule sickle_trim:
     input:
-        fastq='{fastq_dir}/{sample}_all.fastq'
+        fastq='{sample}_all.fastq'
     output:
         singles='{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
         trimmed='{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
