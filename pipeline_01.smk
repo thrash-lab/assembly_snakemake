@@ -5,7 +5,7 @@ import numpy
 #TODO conda yaml for each rule
 rule all:
     input: 
-        dir=directory("{outupt_dir}/checkm/dastools/"),
+        dir="{outupt_dir}/checkm/dastools/",
         checkm_table="{output_dir}/checkm/dastools/output_table.txt"
 
 rule sickle_trim:
@@ -126,9 +126,9 @@ rule bin_maxbin2:
 rule generate_consensus_bins_dastools:
     input:
         contigs="{output_dir}/spades_assembly/contigs.fasta",
-        metabat_fa_dir=directory("{output_dir}/binning/metabat2"),
-        concoct_fa_dir=directory("{output_dir}/binning/concoct_subcontigs"),
-        maxbin_fa_dir=directory("{output_dir}/binning/maxbin2")
+        metabat_fa_dir="{output_dir}/binning/metabat2",
+        concoct_fa_dir="{output_dir}/binning/concoct_subcontigs",
+        maxbin_fa_dir="{output_dir}/binning/maxbin2"
     output:
         "{output_dir}/binning/metabat2/metabat2/my_contigs2bin.tsv",
         "{output_dir}/binning/maxbin2/my_contigs2bin.tsv",
@@ -162,7 +162,7 @@ rule generate_consensus_bins_dastools:
 
 rule evaluate_bins_checkm:
     input:
-        bins=directory("{output_dir}/binning/dastools/{sample}_DASTool_bins")
+        bins="{output_dir}/binning/dastools/{sample}_DASTool_bins"
     output:
         dir=directory("{outupt_dir}/checkm/dastools/"),
         checkm_table="{output_dir}/checkm/dastools/output_table.txt"
