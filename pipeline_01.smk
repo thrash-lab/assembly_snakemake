@@ -6,7 +6,7 @@ import numpy
 rule all:
     input: 
         dir=directory("{outupt_dir}/checkm/dastools/")
-        checkm_table={output_dir}/checkm/dastools/output_table.txt
+        checkm_table="{output_dir}/checkm/dastools/output_table.txt"
 
 rule sickle_trim:
     input:
@@ -164,8 +164,8 @@ rule evaluate_bins_checkm:
     input:
         bins=directory("{output_dir}/binning/dastools/{sample}_DASTool_bins")
     output:
-        dir=directory("{outupt_dir}/checkm/dastools/")
-        checkm_table={output_dir}/checkm/dastools/output_table.txt
+        dir=directory("{outupt_dir}/checkm/dastools/"),
+        checkm_table="{output_dir}/checkm/dastools/output_table.txt"
     threads: 16
     shell:
         "checkm lineage_wf -x fa -t {threads} {input.bins} {output.dir} -f {output.checkm_table}"
