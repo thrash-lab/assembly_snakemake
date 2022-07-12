@@ -10,8 +10,8 @@ base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
 #TODO conda yaml for each rule
 rule all:
     input: 
-        #dir="base_dir/{sample}_assembly_dir/checkm/dastools/",
-        checkm_table="base_dir/{sample}_assembly_dir/checkm/dastools/output_table.txt"
+        #dir= base_dir + "/{sample}_assembly_dir/checkm/dastools/",
+        checkm_table= base_dir + "/{sample}_assembly_dir/checkm/dastools/output_table.txt"
 
 rule sickle_trim:
     input:
@@ -73,10 +73,10 @@ rule generate_depth_files:
 
 rule bin_metabat2:
     input:
-        contigs="base_dir/{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
         depth_file='{input.read_mapping_dir}/{sample}_depth.txt'
     output:
-        bins_dir=directory("base_dir/{sample}_assembly_dir/binning/metabat2/metabat2")
+        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/metabat2/metabat2")
     params:
         minCVSum=0,
         minCV=0.1,
@@ -87,15 +87,15 @@ rule bin_metabat2:
 
 rule bin_conoct:
     input:
-        contigs="base_dir/{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
         bam='base_dir/{sample}_assembly_dir/read_mapping/{sample}.bam'
     output:
-        contigs_bed="base_dir/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed",
-        contig_chunks="base_dir/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa",
-        cov_table="base_dir/{sample}_assembly_dir/binning/concoct_subcontigs/coverage_table.csv",
-        clustering_gt1000="base_dir/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv",
-        clustering_merged="base_dir/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
-        bins_dir=directory("base_dir/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins")
+        contigs_bed= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed",
+        contig_chunks= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa",
+        cov_table= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/coverage_table.csv",
+        clustering_gt1000= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv",
+        clustering_merged= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
+        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins")
 
     params:
         chunk=1000
@@ -120,26 +120,26 @@ rule bin_conoct:
 
 rule bin_maxbin2:
     input:
-        contigs="base_dir/{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
         trimmed_fq='base_dir/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
-        bins_dir=directory("base_dir/{sample}_assembly_dir/binning/maxbin2")
+        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/maxbin2")
     threads: 32
     shell:
         "run_MaxBin.pl -contig {input.contigs} -reads {input.trimmed_fq} -thread {threads} -out base_dir/{sample}_assembly_dir/binning/maxbin2/maxbin"
 
 rule generate_consensus_bins_dastools:
     input:
-        contigs="base_dir/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        metabat_fa_dir="base_dir/{sample}_assembly_dir/binning/metabat2",
-        concoct_fa_dir="base_dir/{sample}_assembly_dir/binning/concoct_subcontigs",
-        maxbin_fa_dir="base_dir/{sample}_assembly_dir/binning/maxbin2"
+        contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        metabat_fa_dir= base_dir + "/{sample}_assembly_dir/binning/metabat2",
+        concoct_fa_dir= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs",
+        maxbin_fa_dir= base_dir + "/{sample}_assembly_dir/binning/maxbin2"
     output:
-        "base_dir/{sample}_assembly_dir/binning/metabat2/metabat2/my_contigs2bin.tsv",
-        "base_dir/{sample}_assembly_dir/binning/maxbin2/my_contigs2bin.tsv",
-        "base_dir/{sample}_assembly_dir/binning/concoct_subcontigs/concoct.contigs2bin.tsv",
-        dastools_dir=directory("base_dir/{sample}_assembly_dir/binning/dastools"),
-        dastool_bins=directory("base_dir/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
+        base_dir + "/{sample}_assembly_dir/binning/metabat2/metabat2/my_contigs2bin.tsv",
+        base_dir + "/{sample}_assembly_dir/binning/maxbin2/my_contigs2bin.tsv",
+        base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct.contigs2bin.tsv",
+        dastools_dir=directory(base_dir + "/{sample}_assembly_dir/binning/dastools"),
+        dastool_bins=directory(base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
         
 
     threads: 32
@@ -167,10 +167,10 @@ rule generate_consensus_bins_dastools:
 
 rule evaluate_bins_checkm:
     input:
-        bins="base_dir/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins"
+        bins= base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins"
     output:
-        dir=directory("base_dir/{sample}_assembly_dir/checkm/dastools/"),
-        checkm_table="base_dir/{sample}_assembly_dir/checkm/dastools/output_table.txt"
+        dir=directory(base_dir + "/{sample}_assembly_dir/checkm/dastools/"),
+        checkm_table= base_dir + "/{sample}_assembly_dir/checkm/dastools/output_table.txt"
     threads: 16
     shell:
         "checkm lineage_wf -x fa -t {threads} {input.bins} {output.dir} -f {output.checkm_table}"
