@@ -117,13 +117,13 @@ rule bin_concoct:
 
 rule bin_maxbin2:
     input:
-        contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        trimmed_fq=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+        contigs = base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        trimmed_fq = base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
         bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/maxbin2")
     threads: 32
     shell:
-        "run_MaxBin.pl -contig {input.contigs} -reads {input.trimmed_fq} -thread {threads} -out base_dir/{sample}_assembly_dir/binning/maxbin2/maxbin"
+        "run_MaxBin.pl -contig {input.contigs} -reads {input.trimmed_fq} -thread {threads} -out {output.bins_dir}/maxbin"
 
 rule generate_consensus_bins_dastools:
     input:
