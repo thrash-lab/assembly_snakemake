@@ -138,19 +138,19 @@ rule generate_consensus_bins_dastools:
     shell:
         """
         # metabat2
-        Fasta_to_Contig2Bin.sh -e fa -i {input.metabat_fa_dir}/ > {input.dastools_dir}/metabat_contigs2bin.tsv
+        Fasta_to_Contig2Bin.sh -e fa -i {input.metabat_fa_dir}/ > {output.dastools_dir}/metabat_contigs2bin.tsv
 
         # maxbin
-        Fasta_to_Contig2Bin.sh -e fasta -i {input.maxbin_fa_dir}/ > {input.dastools_dir/maxbin_contigs2bin.tsv
+        Fasta_to_Contig2Bin.sh -e fasta -i {input.maxbin_fa_dir}/ > {output.dastools_dir/maxbin_contigs2bin.tsv
 
         # concoct (delete first line "contig_id	concoct.cluster_id", use correct command
-        perl -pe "s/,/\tconcoct./g;" {input.concoct_fa_dir}/concoct_subcontigs_clustering_merged.csv > {input.dastools_dir}/concoct_contigs2bin.tsv
-        sed -i '1,1d' {input.concoct_fa_dir}/concoct.contigs2bin.tsv
+        perl -pe "s/,/\tconcoct./g;" {input.concoct_fa_dir}/concoct_subcontigs_clustering_merged.csv > {output.dastools_dir}/concoct_contigs2bin.tsv
+        sed -i '1,1d' {output.dastools_dir}/concoct_contigs2bin.tsv
 
         # Run DAS_Tool (EST TIME < 2 hours per sample)
-        DAS_Tool -i {input.dastools_dir/maxbin_contigs2bin.tsv,\
-        {input.dastools_dir}/concoct_contigs2bin.tsv,\
-        {input.dastools_dir}/metabat_contigs2bin.tsv \
+        DAS_Tool -i {output.dastools_dir}/maxbin_contigs2bin.tsv,\
+        {output.dastools_dir}/concoct_contigs2bin.tsv,\
+        {output.dastools_dir}/metabat_contigs2bin.tsv \
         -l maxbin,concoct,metabat \
         -c {input.contigs} \
         -o {output.dastools_bins}/{sample} --write_bins --write_bin_evals \
