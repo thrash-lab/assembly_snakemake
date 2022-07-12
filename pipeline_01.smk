@@ -3,7 +3,7 @@ import numpy
 import os
 
 SAMPLES=['CJ_V1_S8']
-fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/'
+fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
 
 #TODO rule all
@@ -15,10 +15,10 @@ rule all:
 
 rule sickle_trim:
     input:
-        fastq=os.path.join(fastq_dir, '/{sample}_all.fastq')
+        fastq= fastq_dir + '/{sample}_all.fastq')
     output:
-        singles='base_dir/{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
-        trimmed='base_dir/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+        singles=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
+        trimmed=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:
         """module purge
         eval "$(conda shell.bash hook)"
@@ -27,10 +27,10 @@ rule sickle_trim:
 
 rule metaspades_assembly:
     input:
-        trimmed_fq='base_dir/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed_fq=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
-        dir=directory('base_dir/{sample}_assembly_dir/spades_assembly/'),
-        contigs='base_dir/{sample}_assembly_dir/spades_assembly/contigs.fasta'
+        dir=directory(base_dir + '/{sample}_assembly_dir/spades_assembly/'),
+        contigs=base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
     threads: 64
     shell:
         """#load metaspades
@@ -39,13 +39,13 @@ rule metaspades_assembly:
 
 rule bowtie2_map_reads:
     input:
-        trimmed_fq='base_dir/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq',
-        contigs='base_dir/{sample}_assembly_dir/spades_assembly/contigs.fasta'
+        trimmed_fq=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq',
+        contigs=base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
     output:
-        bam='base_dir/{sample}_assembly_dir/read_mapping/{sample}.bam',
-        bam_index='base_dir/{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
-        index='base_dir/{sample}_assembly_dir/read_mapping/',
-        dir=directory('base_dir/{sample}_assembly_dir/read_mapping/{sample}')
+        bam=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam',
+        bam_index=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
+        index=base_dir + '/{sample}_assembly_dir/read_mapping/',
+        dir=directory(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}')
     threads: 32
     shell:
         """bowtie2-build "{input.contigs}" {output.index} --threads {threads}
@@ -64,7 +64,7 @@ rule bowtie2_map_reads:
 
 rule generate_depth_files:
     input:
-        bam='base_dir/{sample}_assembly_dir/read_mapping/{sample}.bam'
+        bam=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
     output:
         depth_file='{input.read_mapping_dir}/{sample}_depth.txt',
         paired_file='{input.read_mapping_dir}/{sample}_paired.txt'
@@ -88,7 +88,7 @@ rule bin_metabat2:
 rule bin_conoct:
     input:
         contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        bam='base_dir/{sample}_assembly_dir/read_mapping/{sample}.bam'
+        bam=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
     output:
         contigs_bed= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed",
         contig_chunks= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa",
@@ -121,7 +121,7 @@ rule bin_conoct:
 rule bin_maxbin2:
     input:
         contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        trimmed_fq='base_dir/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed_fq=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
         bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/maxbin2")
     threads: 32
