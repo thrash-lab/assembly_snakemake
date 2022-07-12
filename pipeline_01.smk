@@ -97,18 +97,14 @@ rule bin_concoct:
         chunk=1000
     threads: 16
     shell:
-        """## NOTE: Make sure Bam.bai file is present!!! will not run to completion otherwise
-        sample=CJ_V2_S8
-        sample_dir=/project/thrash_89/db/EAGER_metaG_for_ck/${sample}_investigation/binning/concoct_subcontigs
-        dir=/project/thrash_89/db/EAGER_metaG_for_ck/${sample}_investigation/spades_assembly
-
+        """
         # first command (est time: 2 min)
         cut_up_fasta.py {input.contigs} -c {params.chunk} -o 0 --merge_last -b {output.contigs_bed} > {output.contig_chunks}
         # EST TIME: 4 hours
         concoct_coverage_table.py {output.contigs_bed} {input.bam} > {output.cov_table}
 
         # about 12 hours (overestimate) with 16 threads
-        concoct --composition_file {output.contig_chunks} --coverage_file {output.cov_table} -b base_dir/{sample}_assembly_dir/binning/concoct_subcontigs --threads {threads}
+        concoct --composition_file {output.contig_chunks} --coverage_file {output.cov_table} -b base_dir/{wildcards.sample}_assembly_dir/binning/concoct_subcontigs --threads {threads}
 
         merge_cutup_clustering.py {output.cluster_gt1000} > {output.clustering_merged}
         mkdir {output.bins_dir}
