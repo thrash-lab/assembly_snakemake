@@ -164,7 +164,7 @@ rule evaluate_bins_checkm:
     input:
         bins="{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins"
     output:
-        dir=directory("{outupt_dir}/checkm/dastools/"),
+        dir=directory("{sample}_assembly_dir/checkm/dastools/"),
         checkm_table="{sample}_assembly_dir/checkm/dastools/output_table.txt"
     threads: 16
     shell:
