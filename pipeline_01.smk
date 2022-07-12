@@ -54,10 +54,7 @@ rule bowtie2_map_reads:
         # convert sam file into sorted and indexed bam file
         samtools view -bS {output.sam} --threads {threads} > {output.raw_bam}
         samtools sort {output.raw_bam} --threads {threads} > {output.bam}
-        samtools index -@ 32 {output.bam}
-
-        # remove intermediate files
-        rm base_dir/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam base_dir/{sample}_assembly_dir/read_mapping/{sample}.sam"""
+        samtools index -@ 32 {output.bam}"""
 
 
 rule generate_depth_files:
