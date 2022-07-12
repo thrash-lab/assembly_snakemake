@@ -20,10 +20,7 @@ rule sickle_trim:
         singles=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
         trimmed=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:
-        """module purge
-        eval "$(conda shell.bash hook)"
-        conda activate /home1/cykojima/.conda/envs/sickle
-        sickle pe -c {input.fastq} -t sanger -m {output.trimmed} -s {output.singles}"""
+        "sickle pe -c {input.fastq} -t sanger -m {output.trimmed} -s {output.singles}"
 
 rule metaspades_assembly:
     input:
@@ -33,8 +30,7 @@ rule metaspades_assembly:
         contigs=base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
     threads: 64
     shell:
-        """#load metaspades
-        metaspades.py --12 {input} -o {output} --memory 998 -t {threads}"""
+        "metaspades.py --12 {input} -o {output} --memory 998 -t {threads}"
 
 
 rule bowtie2_map_reads:
