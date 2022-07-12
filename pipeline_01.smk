@@ -15,7 +15,7 @@ rule all:
 
 rule sickle_trim:
     input:
-        fastq= fastq_dir + '/{sample}_all.fastq')
+        fastq = fastq_dir + '/{sample}_all.fastq'
     output:
         singles=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
         trimmed=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
