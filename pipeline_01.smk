@@ -153,7 +153,7 @@ rule generate_consensus_bins_dastools:
         {output.dastools_dir}/metabat_contigs2bin.tsv \
         -l maxbin,concoct,metabat \
         -c {input.contigs} \
-        -o {output.dastools_bins}/{sample} --write_bins --write_bin_evals \
+        -o {output.dastools_bins}/{wildcards.sample} --write_bins --write_bin_evals \
         -t {threads}
         """
 
