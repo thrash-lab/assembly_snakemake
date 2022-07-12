@@ -141,7 +141,7 @@ rule generate_consensus_bins_dastools:
         Fasta_to_Contig2Bin.sh -e fa -i {input.metabat_fa_dir}/ > {output.dastools_dir}/metabat_contigs2bin.tsv
 
         # maxbin
-        Fasta_to_Contig2Bin.sh -e fasta -i {input.maxbin_fa_dir}/ > {output.dastools_dir/maxbin_contigs2bin.tsv
+        Fasta_to_Contig2Bin.sh -e fasta -i {input.maxbin_fa_dir}/ > {output.dastools_dir}/maxbin_contigs2bin.tsv
 
         # concoct (delete first line "contig_id	concoct.cluster_id", use correct command
         perl -pe "s/,/\tconcoct./g;" {input.concoct_fa_dir}/concoct_subcontigs_clustering_merged.csv > {output.dastools_dir}/concoct_contigs2bin.tsv
