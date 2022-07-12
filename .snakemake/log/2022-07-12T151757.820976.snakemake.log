@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Job stats:
+job                                 count    min threads    max threads
+--------------------------------  -------  -------------  -------------
+bin_concoct                             1              1              1
+bin_maxbin2                             1              1              1
+bin_metabat2                            1              1              1
+bowtie2_map_reads                       1              1              1
+evaluate_bins_checkm                    1              1              1
+generate_consensus_bins_dastools        1              1              1
+generate_depth_files                    1              1              1
+metaspades_assembly                     1              1              1
+sickle_trim                             1              1              1
+total                                   9              1              1
+
+
+[Tue Jul 12 15:17:58 2022]
+rule sickle_trim:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V2_S8_all.fastq
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_singles.fastq, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    jobid: 3
+    reason: Missing output files: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+module purge
+        eval "$(conda shell.bash hook)"
+        conda activate /home1/cykojima/.conda/envs/sickle
+        sickle pe -c /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V2_S8_all.fastq -t sanger -m /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq -s /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_singles.fastq
+
+[Tue Jul 12 15:17:58 2022]
+rule metaspades_assembly:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta
+    jobid: 2
+    reason: Missing output files: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta; Input files updated by another job: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+#load metaspades
+        metaspades.py --12 /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta --memory 998 -t 1
+
+[Tue Jul 12 15:17:58 2022]
+rule bin_maxbin2:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/maxbin2
+    jobid: 8
+    reason: Missing output files: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/maxbin2; Input files updated by another job: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+RuleException in line 122 of /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/pipeline_01.smk:
+NameError: The name 'sample' is unknown in this context. Did you mean 'wildcards.sample'?

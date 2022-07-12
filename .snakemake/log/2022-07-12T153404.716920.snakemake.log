@@ -1,0 +1,103 @@
+Building DAG of jobs...
+Job stats:
+job                                 count    min threads    max threads
+--------------------------------  -------  -------------  -------------
+bin_concoct                             1              1              1
+bin_maxbin2                             1              1              1
+bin_metabat2                            1              1              1
+bowtie2_map_reads                       1              1              1
+evaluate_bins_checkm                    1              1              1
+generate_consensus_bins_dastools        1              1              1
+generate_depth_files                    1              1              1
+metaspades_assembly                     1              1              1
+sickle_trim                             1              1              1
+total                                   9              1              1
+
+
+[Tue Jul 12 15:34:05 2022]
+rule sickle_trim:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V2_S8_all.fastq
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_singles.fastq, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    jobid: 3
+    reason: Missing output files: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+sickle pe -c /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V2_S8_all.fastq -t sanger -m /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq -s /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_singles.fastq
+
+[Tue Jul 12 15:34:05 2022]
+rule metaspades_assembly:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta
+    jobid: 2
+    reason: Missing output files: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta; Input files updated by another job: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+metaspades.py --12 /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta --memory 998 -t 1
+
+[Tue Jul 12 15:34:05 2022]
+rule bin_maxbin2:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/maxbin2
+    jobid: 8
+    reason: Missing output files: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/maxbin2; Input files updated by another job: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+run_MaxBin.pl -contig /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta -reads /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq -thread 1 -out /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/maxbin2/maxbin
+
+[Tue Jul 12 15:34:05 2022]
+rule bowtie2_map_reads:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam.bai, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assembliesCJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.sam, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8_RAW.bam
+    jobid: 6
+    reason: Missing output files: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam; Input files updated by another job: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+bowtie2-build /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping --threads 1
+
+        # align reads
+        bowtie2 -x /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping --interleaved /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq -S /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assembliesCJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.sam --threads 1
+
+        # convert sam file into sorted and indexed bam file
+        samtools view -bS /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assembliesCJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.sam --threads 1 > /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8_RAW.bam
+        samtools sort /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8_RAW.bam --threads 1 > /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam
+        samtools index -@ 32 /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam
+Would remove temporary output /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assembliesCJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.sam
+Would remove temporary output /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8_RAW.bam
+
+[Tue Jul 12 15:34:05 2022]
+rule generate_depth_files:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam
+    output: {input.read_mapping_dir}/CJ_V2_S8_depth.txt, {input.read_mapping_dir}/CJ_V2_S8_paired.txt
+    jobid: 5
+    reason: Missing output files: {input.read_mapping_dir}/CJ_V2_S8_depth.txt; Input files updated by another job: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+jgi_summarize_bam_contig_depths --outputDepth {input.read_mapping_dir}/CJ_V2_S8_depth.txt --pairedContigs {input.read_mapping_dir}/CJ_V2_S8_paired.txt /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam
+
+[Tue Jul 12 15:34:05 2022]
+rule bin_concoct:
+    input: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs/coverage_table.csv, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs/fasta_bins, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs
+    jobid: 7
+    reason: Missing output files: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs; Input files updated by another job: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/spades_assembly/contigs.fasta, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/read_mapping/CJ_V2_S8.bam
+    wildcards: sample=CJ_V2_S8
+    resources: tmpdir=/tmp
+
+WorkflowError:
+Error when formatting '
+        # first command (est time: 2 min)
+        cut_up_fasta.py {input.contigs} -c {params.chunk} -o 0 --merge_last -b {output.contigs_bed} > {output.contig_chunks}
+        # EST TIME: 4 hours
+        concoct_coverage_table.py {output.contigs_bed} {input.bam} > {output.cov_table}
+
+        # about 12 hours (overestimate) with 16 threads
+        concoct --composition_file {output.contig_chunks} --coverage_file {output.cov_table} -b base_dir/{wildcards.sample}_assembly_dir/binning/concoct_subcontigs --threads {threads}
+
+        merge_cutup_clustering.py {output.cluster_gt1000} > {output.clustering_merged}
+        mkdir {output.bins_dir}
+        extract_fasta_bins.py {input.contigs} {output.clustering_merged} --output_path {output.bins_dir}/concoct' for rule bin_concoct. 'OutputFiles' object has no attribute 'cluster_gt1000'

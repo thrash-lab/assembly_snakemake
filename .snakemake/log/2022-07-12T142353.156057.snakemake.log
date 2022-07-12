@@ -1,0 +1,3 @@
+Building DAG of jobs...
+MissingRuleException:
+No rule to produce /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V1_S8_investigation/checkm/dastools (if you use input functions make sure that they don't raise unexpected exceptions).

@@ -1,0 +1,3 @@
+SyntaxError:
+Not all output, log and benchmark files of rule evaluate_bins_checkm contain the same wildcards. This is crucial though, in order to avoid that two or more jobs write to the same file.
+  File "/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/pipeline_01.smk", line 171, in <module>

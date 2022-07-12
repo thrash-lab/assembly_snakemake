@@ -1,0 +1,2 @@
+SyntaxError in line 17 of /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/pipeline_01.smk:
+EOF in multi-line statement (pipeline_01.smk, line 17)

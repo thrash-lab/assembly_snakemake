@@ -1,0 +1,5 @@
+Building DAG of jobs...
+ChildIOException:
+File/directory is a child to another output:
+('/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs', bin_conoct)
+('/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs/concoct.contigs2bin.tsv', generate_consensus_bins_dastools)

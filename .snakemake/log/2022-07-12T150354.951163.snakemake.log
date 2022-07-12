@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in line 16 of /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/pipeline_01.smk:
+Missing input files for rule sickle_trim:
+    output: base_dir/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_singles.fastq, base_dir/CJ_V2_S8_assembly_dir/sickle_trimmed/CJ_V2_S8_all_trimmed.fastq
+    wildcards: sample=CJ_V2_S8
+    affected files:
+        /CJ_V2_S8_all.fastq

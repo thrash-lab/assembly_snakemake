@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in line 131 of /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/pipeline_01.smk:
+Missing input files for rule generate_consensus_bins_dastools:
+    output: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/metabat2/metabat2/my_contigs2bin.tsv, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/maxbin2/my_contigs2bin.tsv, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs/concoct.contigs2bin.tsv, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/dastools, /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/dastools/CJ_V2_S8_DASTool_bins
+    wildcards: sample=CJ_V2_S8
+    affected files:
+        /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/metabat2
+        /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/binning/concoct_subcontigs

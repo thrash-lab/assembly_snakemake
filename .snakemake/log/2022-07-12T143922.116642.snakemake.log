@@ -1,0 +1,7 @@
+Building DAG of jobs...
+File path /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V1_S8_assembly_dir/binning/dastools//project/thrash_89/db/EAGER_metaG_for_ck/CJ_V1_S8_DASTool_bins contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V1_S8_assembly_dir/binning/dastools//project/thrash_89/db/EAGER_metaG_for_ck/CJ_V1_S8_DASTool_bins contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /project/thrash_89/db/EAGER_metaG_for_ck/CJ_V1_S8_assembly_dir/sickle_trimmed//project/thrash_89/db/EAGER_metaG_for_ck/CJ_V1_S8_all_trimmed.fastq contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+WildcardError in line 13 of /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/pipeline_01.smk:
+Wildcards in input files cannot be determined from output files:
+'fastq_dir'
