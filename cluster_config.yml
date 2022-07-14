@@ -1,0 +1,72 @@
+sickle_trim:
+  ntasks: 1
+  account: cykojima
+  time: 00:20:00
+  cpus-per-task: 16
+  mem: 125GB
+  partition: epyc-64
+
+metaspades_assembly:
+  ntasks: 1
+  account: cykojima
+  nodes: 1
+  time: 16:00:00
+  cpus-per-task: 64
+  mem: 998GB
+  partition: largemem
+
+bowtie2_map_reads: 
+  ntasks: 1
+  account: cykojima
+  time: 1:00:00
+  cpus-per-task: 32
+  mem: 125GB
+  partition: epyc-64
+
+generate_depth_files:
+  ntasks: 1
+  account: cykojima
+  time: 1:00:00
+  cpus-per-task: 16
+  mem: 125GB
+  partition: epyc-64
+
+bin_metabat2:
+  ntasks: 1
+  account: cykojima
+  time: 1:00:00
+  cpus-per-task: 16
+  mem: 125GB
+  partition: epyc-64
+
+bin_concoct:
+  ntasks: 1
+  account: cykojima
+  time: 24:00:00
+  cpus-per-task: 16
+  mem: 125GB
+  partition: epyc-64
+
+bin_maxbin2:
+  ntasks: 1
+  account: cykojima
+  time: 6:30:00
+  cpus-per-task: 32
+  mem: 125GB
+  partition: epyc-64
+
+generate_consensus_bins_dastools:
+  ntasks: 1
+  account: cykojima
+  time: 2:30:00
+  cpus-per-task: 32
+  mem: 125GB
+  partition: epyc-64
+
+evaluate_bins_checkm:
+  ntasks: 1
+  account: cykojima
+  time: 0:25:00
+  cpus-per-task: 16
+  mem: 50GB
+  partition: epyc-64

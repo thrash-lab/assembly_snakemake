@@ -1,0 +1,7 @@
+name: maxbin2
+channels:
+  - bioconda
+  - defaults
+  - conda-forge
+dependencies:
+  - maxbin2=2.2.7

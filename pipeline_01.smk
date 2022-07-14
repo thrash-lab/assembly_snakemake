@@ -2,6 +2,14 @@ import snakemake
 import numpy
 import os
 
+#TODO
+# slurm
+# configuration file
+#http://bluegenes.github.io/Using-Snakemake_Profiles/
+#https://github.com/Snakemake-Profiles/slurm
+#https://snakemake.readthedocs.io/en/stable/snakefiles/best_practices.html?highlight=set-resources#best-practices
+# https://bluegenes.github.io/snakemake-via-slurm/
+
 SAMPLES=['CJ_V1_S8']
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
@@ -19,6 +27,7 @@ rule sickle_trim:
     output:
         singles=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
         trimmed=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+    conda: "envs/sickle.yml"
     shell:
         "sickle pe -c {input.fastq} -t sanger -m {output.trimmed} -s {output.singles}"
 
@@ -28,6 +37,7 @@ rule metaspades_assembly:
     output:
         dir=directory(base_dir + '/{sample}_assembly_dir/spades_assembly/'),
         contigs=base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
+    conda: "envs/spades.yml"
     threads: 64
     shell:
         "metaspades.py --12 {input} -o {output} --memory 998 -t {threads}"
@@ -41,9 +51,15 @@ rule bowtie2_map_reads:
         bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam',
         bam_index = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
         index = base_dir + '/{sample}_assembly_dir/read_mapping/',
-        dir = directory(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}'),
         sam = temp(base_dir + '{sample}_assembly_dir/read_mapping/{sample}.sam'),
-        raw_bam = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam')
+        raw_bam = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam'),
+        index_f1 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.1.bt2'),
+        index_f2 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.2.bt2'),
+        index_f3 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.3.bt2'),
+        index_f4 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.4.bt2'),
+        index_r1 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.rev.1.bt2'),
+        index_r2 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.rev.2.bt2')
+    conda: "envs/read_mapping.yml"
     threads: 32
     shell:
         """bowtie2-build {input.contigs} {output.index} --threads {threads}
@@ -63,6 +79,7 @@ rule generate_depth_files:
     output:
         depth_file='{input.read_mapping_dir}/{sample}_depth.txt',
         paired_file='{input.read_mapping_dir}/{sample}_paired.txt'
+    conda: "envs/metabat2.yml"
     shell:
         "jgi_summarize_bam_contig_depths --outputDepth {output.depth_file} --pairedContigs {output.paired_file} {input.bam}"
 
@@ -72,6 +89,7 @@ rule bin_metabat2:
         depth_file='{input.read_mapping_dir}/{sample}_depth.txt'
     output:
         bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/metabat2")
+    conda: "envs/metabat2.yml"
     params:
         minCVSum=0,
         minCV=0.1,
@@ -92,7 +110,7 @@ rule bin_concoct:
         clustering_merged = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
         bins_dir = directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins"),
         concoct_dir = directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs")
-
+    conda: "envs/concoct.yml"
     params:
         chunk=1000
     threads: 16
@@ -116,6 +134,7 @@ rule bin_maxbin2:
         trimmed_fq = base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
         bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/maxbin2")
+    conda: "envs/maxbin2.yml"
     threads: 32
     shell:
         "run_MaxBin.pl -contig {input.contigs} -reads {input.trimmed_fq} -thread {threads} -out {output.bins_dir}/maxbin"
@@ -132,8 +151,7 @@ rule generate_consensus_bins_dastools:
         base_dir + "/{sample}_assembly_dir/binning/dastools/concoct_contigs2bin.tsv",
         dastools_dir=directory(base_dir + "/{sample}_assembly_dir/binning/dastools"),
         dastools_bins=directory(base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
-        
-
+    conda: "envs/dastool.yml"
     threads: 32
     shell:
         """
@@ -163,6 +181,7 @@ rule evaluate_bins_checkm:
     output:
         dir=directory(base_dir + "/{sample}_assembly_dir/checkm/dastools/"),
         checkm_table= base_dir + "/{sample}_assembly_dir/checkm/dastools/output_table.txt"
+    conda: "envs/checkm.yml"
     threads: 16
     shell:
         "checkm lineage_wf -x fa -t {threads} {input.bins} {output.dir} -f {output.checkm_table}"
