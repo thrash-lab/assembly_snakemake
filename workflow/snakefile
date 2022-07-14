@@ -29,9 +29,9 @@ rule sickle_trim:
     conda: "envs/sickle.yml"
     threads: 16
     resources:
-        time: "00:20:00",
-        mem: "125GB",
-        partition: "epyc-64"
+        time = "00:20:00",
+        mem = "125GB",
+        partition = "epyc-64"
     shell:
         "sickle pe -c {input.fastq} -t sanger -m {output.trimmed} -s {output.singles}"
 
@@ -44,9 +44,9 @@ rule metaspades_assembly:
     conda: "envs/spades.yml"
     threads: 64
     resources:
-        time: "16:00:00",
-        mem: "998GB",
-        partition: "largemem"
+        time = "16:00:00",
+        mem = "998GB",
+        partition = "largemem"
     shell:
         "metaspades.py --12 {input} -o {output} --memory 998 -t {threads}"
 
@@ -70,9 +70,9 @@ rule bowtie2_map_reads:
     conda: "envs/read_mapping.yml"
     threads: 32
     resources:
-        time: "1:00:00",
-        mem: "125GB",
-        partition: "epyc-64"
+        time = "1:00:00",
+        mem = "125GB",
+        partition = "epyc-64"
     shell:
         """bowtie2-build {input.contigs} {output.index} --threads {threads}
 
@@ -94,9 +94,9 @@ rule generate_depth_files:
     conda: "envs/metabat2.yml"
     threads: 16
     resources:
-        time: "1:00:00",
-        mem: "125GB",
-        partition: "epyc-64"
+        time = "1:00:00",
+        mem = "125GB",
+        partition = "epyc-64"
     shell:
         "jgi_summarize_bam_contig_depths --outputDepth {output.depth_file} --pairedContigs {output.paired_file} {input.bam}"
 
@@ -113,9 +113,9 @@ rule bin_metabat2:
         m=2000
     threads: 16
     resources:
-        time: "1:00:00",
-        mem: "125GB",
-        partition: "epyc-64"
+        time = "1:00:00",
+        mem = "125GB",
+        partition = "epyc-64"
     shell:
         "metabat2 -i {input.contigs}  -a {input.depth_file} -o {output.bins_dir} -t {threads} --minCVSum {params.minCVSum} --saveCls -d -v --minCV {params.minCV} -m {params.m}"
 
@@ -136,14 +136,14 @@ rule bin_concoct:
         chunk=1000
     threads: 16
     resources:
-        time: "24:00:00",
-        mem: "125GB",
-        partition: "epyc-64"
+        time = "24:00:00",
+        mem = "125GB",
+        partition = "epyc-64"
     shell:
         """
-        # first command (est time: 2 min)
+        # first command (est time = 2 min)
         cut_up_fasta.py {input.contigs} -c {params.chunk} -o 0 --merge_last -b {output.contigs_bed} > {output.contig_chunks}
-        # EST TIME: 4 hours
+        # EST time = 4 hours
         concoct_coverage_table.py {output.contigs_bed} {input.bam} > {output.cov_table}
 
         # about 12 hours (overestimate) with 16 threads
@@ -162,9 +162,9 @@ rule bin_maxbin2:
     conda: "envs/maxbin2.yml"
     threads: 32
     resources:
-        time: "6:30:00",
-        mem: "125GB",
-        partition: "epyc-64"
+        time = "6:30:00",
+        mem = "125GB",
+        partition = "epyc-64"
     shell:
         "run_MaxBin.pl -contig {input.contigs} -reads {input.trimmed_fq} -thread {threads} -out {output.bins_dir}/maxbin"
 
@@ -183,9 +183,9 @@ rule generate_consensus_bins_dastools:
     conda: "envs/dastool.yml"
     threads: 32
     resources:
-        time: "2:30:00",
-        mem: "125GB",
-        partition: "epyc-64"
+        time = "2:30:00",
+        mem = "125GB",
+        partition = "epyc-64"
     shell:
         """
         # metabat2
@@ -217,9 +217,9 @@ rule evaluate_bins_checkm:
     conda: "envs/checkm.yml"
     threads: 16
     resources:
-        time: "0:25:00",
-        mem: "50GB",
-        partition: "epyc-64"
+        time = "0:25:00",
+        mem = "50GB",
+        partition = "epyc-64"
     shell:
         "checkm lineage_wf -x fa -t {threads} {input.bins} {output.dir} -f {output.checkm_table}"
 
