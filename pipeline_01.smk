@@ -10,7 +10,6 @@ import os
 #https://snakemake.readthedocs.io/en/stable/snakefiles/best_practices.html?highlight=set-resources#best-practices
 # https://bluegenes.github.io/snakemake-via-slurm/
 
-SAMPLES=['CJ_V1_S8']
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
 
@@ -28,17 +27,26 @@ rule sickle_trim:
         singles=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
         trimmed=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     conda: "envs/sickle.yml"
+    threads: 16
+    resources:
+        time: "00:20:00",
+        mem: "125GB",
+        partition: "epyc-64"
     shell:
         "sickle pe -c {input.fastq} -t sanger -m {output.trimmed} -s {output.singles}"
 
 rule metaspades_assembly:
     input:
-        trimmed_fq=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed_fq = base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
-        dir=directory(base_dir + '/{sample}_assembly_dir/spades_assembly/'),
-        contigs=base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
+        dir = directory(base_dir + '/{sample}_assembly_dir/spades_assembly/'),
+        contigs = base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
     conda: "envs/spades.yml"
     threads: 64
+    resources:
+        time: "16:00:00",
+        mem: "998GB",
+        partition: "largemem"
     shell:
         "metaspades.py --12 {input} -o {output} --memory 998 -t {threads}"
 
@@ -61,6 +69,10 @@ rule bowtie2_map_reads:
         index_r2 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.rev.2.bt2')
     conda: "envs/read_mapping.yml"
     threads: 32
+    resources:
+        time: "1:00:00",
+        mem: "125GB",
+        partition: "epyc-64"
     shell:
         """bowtie2-build {input.contigs} {output.index} --threads {threads}
 
@@ -80,6 +92,11 @@ rule generate_depth_files:
         depth_file='{input.read_mapping_dir}/{sample}_depth.txt',
         paired_file='{input.read_mapping_dir}/{sample}_paired.txt'
     conda: "envs/metabat2.yml"
+    threads: 16
+    resources:
+        time: "1:00:00",
+        mem: "125GB",
+        partition: "epyc-64"
     shell:
         "jgi_summarize_bam_contig_depths --outputDepth {output.depth_file} --pairedContigs {output.paired_file} {input.bam}"
 
@@ -95,6 +112,10 @@ rule bin_metabat2:
         minCV=0.1,
         m=2000
     threads: 16
+    resources:
+        time: "1:00:00",
+        mem: "125GB",
+        partition: "epyc-64"
     shell:
         "metabat2 -i {input.contigs}  -a {input.depth_file} -o {output.bins_dir} -t {threads} --minCVSum {params.minCVSum} --saveCls -d -v --minCV {params.minCV} -m {params.m}"
 
@@ -114,6 +135,10 @@ rule bin_concoct:
     params:
         chunk=1000
     threads: 16
+    resources:
+        time: "24:00:00",
+        mem: "125GB",
+        partition: "epyc-64"
     shell:
         """
         # first command (est time: 2 min)
@@ -136,6 +161,10 @@ rule bin_maxbin2:
         bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/maxbin2")
     conda: "envs/maxbin2.yml"
     threads: 32
+    resources:
+        time: "6:30:00",
+        mem: "125GB",
+        partition: "epyc-64"
     shell:
         "run_MaxBin.pl -contig {input.contigs} -reads {input.trimmed_fq} -thread {threads} -out {output.bins_dir}/maxbin"
 
@@ -153,6 +182,10 @@ rule generate_consensus_bins_dastools:
         dastools_bins=directory(base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
     conda: "envs/dastool.yml"
     threads: 32
+    resources:
+        time: "2:30:00",
+        mem: "125GB",
+        partition: "epyc-64"
     shell:
         """
         # metabat2
@@ -183,6 +216,10 @@ rule evaluate_bins_checkm:
         checkm_table= base_dir + "/{sample}_assembly_dir/checkm/dastools/output_table.txt"
     conda: "envs/checkm.yml"
     threads: 16
+    resources:
+        time: "0:25:00",
+        mem: "50GB",
+        partition: "epyc-64"
     shell:
         "checkm lineage_wf -x fa -t {threads} {input.bins} {output.dir} -f {output.checkm_table}"
 

@@ -1,0 +1,7 @@
+__default__:
+    account: cykojima # your hpc account
+    partition: main 
+    time: 120 # default time (minutes)
+    nodes: 1
+    ntasks: 1
+    mem: 5GB # default memory
