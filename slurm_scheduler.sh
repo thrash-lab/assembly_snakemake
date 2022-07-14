@@ -20,4 +20,4 @@ set -o errexit
 set -x
 
 ### run your commands here!
-snakemake /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/CJ_V2_S8_assembly_dir/checkm/dastools/output_table.txt --profile .config/slurm/
+snakemake /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ARD_V3_S2_assembly_dir/checkm/dastools/output_table.txt --profile .config/slurm/
