@@ -58,7 +58,6 @@ rule bowtie2_map_reads:
     output:
         bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam',
         bam_index = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
-        index = base_dir + '/{sample}_assembly_dir/read_mapping/',
         sam = temp(base_dir + '{sample}_assembly_dir/read_mapping/{sample}.sam'),
         raw_bam = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam'),
         index_f1 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.1.bt2'),
@@ -67,6 +66,7 @@ rule bowtie2_map_reads:
         index_f4 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.4.bt2'),
         index_r1 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.rev.1.bt2'),
         index_r2 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.rev.2.bt2')
+    params: index = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}'
     conda: "../envs/read_mapping.yml"
     threads: 32
     resources:
@@ -74,7 +74,7 @@ rule bowtie2_map_reads:
         mem = 125000, #125GB
         partition = "epyc-64"
     shell:
-        """bowtie2-build {input.contigs} {output.index} --threads {threads}
+        """bowtie2-build {input.contigs} {params.index} --threads {threads}
 
         # align reads
         bowtie2 -x {output.index} --interleaved {input.trimmed_fq} -S {output.sam} --threads {threads}
