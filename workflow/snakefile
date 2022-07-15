@@ -77,12 +77,12 @@ rule bowtie2_map_reads:
         """bowtie2-build {input.contigs} {params.index} --threads {threads}
 
         # align reads
-        bowtie2 -x {output.index} --interleaved {input.trimmed_fq} -S {output.sam} --threads {threads}
+        bowtie2 -x {params.index} --interleaved {input.trimmed_fq} -S {output.sam} --threads {threads}
 
         # convert sam file into sorted and indexed bam file
         samtools view -bS {output.sam} --threads {threads} > {output.raw_bam}
         samtools sort {output.raw_bam} --threads {threads} > {output.bam}
-        samtools index -@ 32 {output.bam}"""
+        samtools index -@ {threads} {output.bam}"""
 
 
 rule generate_depth_files:
