@@ -98,7 +98,7 @@ rule generate_depth_files:
 rule bin_metabat2:
     input:
         contigs = base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        depth_file = depth_file = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_depth.txt'
+        depth_file = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_depth.txt'
     output:
         bins_dir = directory(base_dir + "/{sample}_assembly_dir/binning/metabat2")
     conda: "../envs/metabat2.yml"
