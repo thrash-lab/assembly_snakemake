@@ -3,12 +3,7 @@ import numpy
 import os
 
 #TODO
-# slurm
-# configuration file
-#http://bluegenes.github.io/Using-Snakemake_Profiles/
-#https://github.com/Snakemake-Profiles/slurm
-#https://snakemake.readthedocs.io/en/stable/snakefiles/best_practices.html?highlight=set-resources#best-practices
-# https://bluegenes.github.io/snakemake-via-slurm/
+# make directories using shell: "mkdir <dir>" for dir defined in output
 
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
@@ -87,10 +82,10 @@ rule bowtie2_map_reads:
 
 rule generate_depth_files:
     input:
-        bam=base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
+        bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
     output:
-        depth_file='{input.read_mapping_dir}/{sample}_depth.txt',
-        paired_file='{input.read_mapping_dir}/{sample}_paired.txt'
+        depth_file = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_depth.txt',
+        paired_file = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_paired.txt'
     conda: "../envs/metabat2.yml"
     threads: 16
     resources:
@@ -102,10 +97,10 @@ rule generate_depth_files:
 
 rule bin_metabat2:
     input:
-        contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        depth_file='{input.read_mapping_dir}/{sample}_depth.txt'
+        contigs = base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        depth_file = depth_file = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_depth.txt'
     output:
-        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/metabat2")
+        bins_dir = directory(base_dir + "/{sample}_assembly_dir/binning/metabat2")
     conda: "../envs/metabat2.yml"
     params:
         minCVSum=0,
@@ -117,7 +112,9 @@ rule bin_metabat2:
         mem = 125000, #125GB,
         partition = "epyc-64"
     shell:
-        "metabat2 -i {input.contigs}  -a {input.depth_file} -o {output.bins_dir} -t {threads} --minCVSum {params.minCVSum} --saveCls -d -v --minCV {params.minCV} -m {params.m}"
+        """
+        mkdir {output.bins_dir} -p
+        metabat2 -i {input.contigs}  -a {input.depth_file} -o {output.bins_dir} -t {threads} --minCVSum {params.minCVSum} --saveCls -d -v --minCV {params.minCV} -m {params.m}"""
 
 rule bin_concoct:
     input:
@@ -141,6 +138,7 @@ rule bin_concoct:
         partition = "epyc-64"
     shell:
         """
+        mkdir {output.bins_dir} -p 
         # first command (est time = 2 min)
         cut_up_fasta.py {input.contigs} -c {params.chunk} -o 0 --merge_last -b {output.contigs_bed} > {output.contig_chunks}
         # EST time = 4 hours
@@ -150,7 +148,6 @@ rule bin_concoct:
         concoct --composition_file {output.contig_chunks} --coverage_file {output.cov_table} -b base_dir/{wildcards.sample}_assembly_dir/binning/concoct_subcontigs --threads {threads}
 
         merge_cutup_clustering.py {output.clustering_gt1000} > {output.clustering_merged}
-        mkdir {output.bins_dir}
         extract_fasta_bins.py {input.contigs} {output.clustering_merged} --output_path {output.bins_dir}/concoct"""
 
 rule bin_maxbin2:
@@ -158,7 +155,11 @@ rule bin_maxbin2:
         contigs = base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
         trimmed_fq = base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
-        bins_dir=directory(base_dir + "/{sample}_assembly_dir/binning/maxbin2")
+        bins_dir = directory(base_dir + "/{sample}_assembly_dir/binning/maxbin2")
+    log: 
+        base_dir + "/{sample}_assembly_dir/binning/maxbin2/maxbin.log"
+    params:
+        basename = base_dir + "/{sample}_assembly_dir/binning/maxbin2maxbin"
     conda: "../envs/maxbin2.yml"
     threads: 32
     resources:
@@ -166,7 +167,9 @@ rule bin_maxbin2:
         mem = 125000, #125GB,
         partition = "epyc-64"
     shell:
-        "run_MaxBin.pl -contig {input.contigs} -reads {input.trimmed_fq} -thread {threads} -out {output.bins_dir}/maxbin"
+        """
+        mkdir {output.bins_dir} -p
+        run_MaxBin.pl -contig {input.contigs} -reads {input.trimmed_fq} -thread {threads} -out {params.basename}"""
 
 rule generate_consensus_bins_dastools:
     input:
@@ -188,6 +191,8 @@ rule generate_consensus_bins_dastools:
         partition = "epyc-64"
     shell:
         """
+        mkdir {output.dastools_bins} -p
+
         # metabat2
         Fasta_to_Contig2Bin.sh -e fa -i {input.metabat_fa_dir}/ > {output.dastools_dir}/metabat_contigs2bin.tsv
 
@@ -221,7 +226,9 @@ rule evaluate_bins_checkm:
         mem = 50000, #50GB
         partition = "epyc-64"
     shell:
-        "checkm lineage_wf -x fa -t {threads} {input.bins} {output.checkm_dir} -f {output.checkm_table}"
+        """
+        mkdir {output.checkm_dir} -p
+        checkm lineage_wf -x fa -t {threads} {input.bins} {output.checkm_dir} -f {output.checkm_table}"""
 
 
     
