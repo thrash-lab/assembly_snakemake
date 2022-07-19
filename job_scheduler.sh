@@ -8,6 +8,7 @@
 
 # activate snakemake
 module purge
+module load anaconda3
 eval "$(conda shell.bash hook)"
 conda activate /home1/cykojima/.conda/envs/snakemake
 

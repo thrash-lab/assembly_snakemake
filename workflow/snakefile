@@ -3,13 +3,20 @@ import numpy
 import os
 
 #TODO
-# make directories using shell: "mkdir <dir>" for dir defined in output
+# edit concoct samtools
+# edit concoct loading commands i.e. 
+# remake conda channel priority, remake yaml with channel specific req
+# concoct_7
+# test out channel specific yaml
+# module purge
+# module load anaconda3
+# eval "$(conda shell.bash hook)"
+# conda activate /home1/cykojima/.conda/envs/concoct_2
 
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
 
-#TODO rule all
-#TODO conda yaml for each rule
+
 rule all:
     input: 
         #dir= base_dir + "/{sample}_assembly_dir/checkm/dastools/",
@@ -53,7 +60,7 @@ rule bowtie2_map_reads:
     output:
         bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam',
         bam_index = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
-        sam = temp(base_dir + '{sample}_assembly_dir/read_mapping/{sample}.sam'),
+        sam = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.sam'),
         raw_bam = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam'),
         index_f1 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.1.bt2'),
         index_f2 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.2.bt2'),
@@ -114,7 +121,7 @@ rule bin_metabat2:
     shell:
         """
         mkdir {output.bins_dir} -p
-        metabat2 -i {input.contigs}  -a {input.depth_file} -o {output.bins_dir} -t {threads} --minCVSum {params.minCVSum} --saveCls -d -v --minCV {params.minCV} -m {params.m}"""
+        metabat2 -i {input.contigs}  -a {input.depth_file} -o {output.bins_dir}/metabat -t {threads} --minCVSum {params.minCVSum} --saveCls -d -v --minCV {params.minCV} -m {params.m}"""
 
 rule bin_concoct:
     input:
@@ -159,7 +166,7 @@ rule bin_maxbin2:
     log: 
         base_dir + "/{sample}_assembly_dir/binning/maxbin2/maxbin.log"
     params:
-        basename = base_dir + "/{sample}_assembly_dir/binning/maxbin2maxbin"
+        basename = base_dir + "/{sample}_assembly_dir/binning/maxbin2/maxbin"
     conda: "../envs/maxbin2.yml"
     threads: 32
     resources:
