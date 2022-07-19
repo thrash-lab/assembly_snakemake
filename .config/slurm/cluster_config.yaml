@@ -4,3 +4,4 @@ __default__:
     nodes: 1
     ntasks: 1
     mem: 5GB # default memory
+    output: "logs/{rule}.{wildcards}.out"

@@ -1,6 +1,5 @@
 sickle_trim:
   ntasks: 1
-  account: cykojima
   time: 00:20:00
   cpus-per-task: 16
   mem: 125GB
@@ -8,7 +7,6 @@ sickle_trim:
 
 metaspades_assembly:
   ntasks: 1
-  account: cykojima
   nodes: 1
   time: 16:00:00
   cpus-per-task: 64
@@ -17,7 +15,6 @@ metaspades_assembly:
 
 bowtie2_map_reads: 
   ntasks: 1
-  account: cykojima
   time: 1:00:00
   cpus-per-task: 32
   mem: 125GB
@@ -25,7 +22,6 @@ bowtie2_map_reads:
 
 generate_depth_files:
   ntasks: 1
-  account: cykojima
   time: 1:00:00
   cpus-per-task: 16
   mem: 125GB
@@ -33,7 +29,6 @@ generate_depth_files:
 
 bin_metabat2:
   ntasks: 1
-  account: cykojima
   time: 1:00:00
   cpus-per-task: 16
   mem: 125GB
@@ -41,7 +36,6 @@ bin_metabat2:
 
 bin_concoct:
   ntasks: 1
-  account: cykojima
   time: 24:00:00
   cpus-per-task: 16
   mem: 125GB
@@ -49,7 +43,6 @@ bin_concoct:
 
 bin_maxbin2:
   ntasks: 1
-  account: cykojima
   time: 6:30:00
   cpus-per-task: 32
   mem: 125GB
@@ -57,7 +50,6 @@ bin_maxbin2:
 
 generate_consensus_bins_dastools:
   ntasks: 1
-  account: cykojima
   time: 2:30:00
   cpus-per-task: 32
   mem: 125GB
@@ -65,7 +57,6 @@ generate_consensus_bins_dastools:
 
 evaluate_bins_checkm:
   ntasks: 1
-  account: cykojima
   time: 0:25:00
   cpus-per-task: 16
   mem: 50GB
