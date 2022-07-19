@@ -10,7 +10,7 @@ import os
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
 
-configfile = "config.yaml"
+configfile: "config.yaml"
 
 rule all:
     input: 
