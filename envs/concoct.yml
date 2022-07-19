@@ -1,9 +1,9 @@
 name: concoct
 channels:
+  - defaults
   - conda-forge
   - bioconda
-  - defaults
 dependencies:
   - bioconda::concoct=1.1.0
-  - mkl=2020.2
-  - bioconda::samtools=1.15.1
+  - defaults::blas=1.0=mkl
+  - bioconda::samtools=1.6
