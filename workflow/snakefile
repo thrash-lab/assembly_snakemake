@@ -152,7 +152,7 @@ rule bin_concoct:
         concoct_coverage_table.py {output.contigs_bed} {input.bam} > {output.cov_table}
 
         # about 12 hours (overestimate) with 16 threads
-        concoct --composition_file {output.contig_chunks} --coverage_file {output.cov_table} -b base_dir/{wildcards.sample}_assembly_dir/binning/concoct_subcontigs --threads {threads}
+        concoct --composition_file {output.contig_chunks} --coverage_file {output.cov_table} -b {output.concoct_dir}/concoct_subcontigs --threads {threads}
 
         merge_cutup_clustering.py {output.clustering_gt1000} > {output.clustering_merged}
         extract_fasta_bins.py {input.contigs} {output.clustering_merged} --output_path {output.bins_dir}/concoct"""
