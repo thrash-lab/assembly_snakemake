@@ -10,7 +10,7 @@ import os
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
 
-configfile: "config.yaml"
+configfile:"config.yaml"
 
 rule all:
     input: 
@@ -203,17 +203,16 @@ rule generate_consensus_bins_dastools:
 
         # concoct (delete first line "contig_id	concoct.cluster_id", use correct command
         perl -pe "s/,/\tconcoct./g;" {input.concoct_fa_dir}/concoct_subcontigs_clustering_merged.csv > {output.dastools_dir}/concoct_contigs2bin.tsv
-        sed -i '1,1d' {output.dastools_dir}/concoct_contigs2bin.tsv
+        sed -i '1,1d' {output.dastools_dir}/concoct_contigs2bin.tsv"""
 
-        # Run DAS_Tool (EST TIME < 2 hours per sample)
-        DAS_Tool -i {output.dastools_dir}/maxbin_contigs2bin.tsv,\
-        {output.dastools_dir}/concoct_contigs2bin.tsv,\
-        {output.dastools_dir}/metabat_contigs2bin.tsv \
-        -l maxbin,concoct,metabat \
-        -c {input.contigs} \
-        -o {output.dastools_bins}/{wildcards.sample} --write_bins --write_bin_evals \
-        -t {threads}
-        """
+        "# Run DAS_Tool (EST TIME < 2 hours per sample)"
+        "DAS_Tool -i {output.dastools_dir}/maxbin_contigs2bin.tsv,"
+        "{output.dastools_dir}/concoct_contigs2bin.tsv,"
+        "{output.dastools_dir}/metabat_contigs2bin.tsv " 
+        "-l maxbin,concoct,metabat " 
+        "-c {input.contigs} " 
+        "-o {output.dastools_bins}/{wildcards.sample} --write_bins --write_bin_evals "
+        "-t {threads}"
 
 rule evaluate_bins_checkm:
     input:
