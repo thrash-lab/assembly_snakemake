@@ -225,7 +225,7 @@ rule evaluate_bins_checkm:
     threads: 16
     resources:
         time = "0:25:00",
-        mem = 50000, #50GB
+        mem = 120000, #120GB
         partition = "epyc-64"
     shell:
         """
