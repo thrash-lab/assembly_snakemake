@@ -207,12 +207,12 @@ rule generate_consensus_bins_dastools:
 
         # Run DAS_Tool (EST TIME < 2 hours per sample)
         DAS_Tool -i {output.dastools_dir}/maxbin_contigs2bin.tsv,\
-        {output.dastools_dir}/concoct_contigs2bin.tsv,\
-        {output.dastools_dir}/metabat_contigs2bin.tsv \
-        -l maxbin,concoct,metabat \
-        -c {input.contigs} \
-        -o {output.dastools_bins}/{wildcards.sample} --write_bins --write_bin_evals \
-        -t {threads}
+{output.dastools_dir}/concoct_contigs2bin.tsv,\
+{output.dastools_dir}/metabat_contigs2bin.tsv \
+-l maxbin,concoct,metabat \
+-c {input.contigs} \
+-o {output.dastools_bins}/{wildcards.sample} --write_bins --write_bin_evals \
+-t {threads}
         """
 
 rule evaluate_bins_checkm:
