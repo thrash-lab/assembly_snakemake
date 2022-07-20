@@ -68,7 +68,7 @@ rule bowtie2_map_reads:
     threads: 32
     resources:
         time = "1:00:00",
-        mem = 125000, #125GB
+        mem_mb = 125000, #125GB
         partition = "epyc-64"
     shell:
         """bowtie2-build {input.contigs} {params.index} --threads {threads}
@@ -92,7 +92,7 @@ rule generate_depth_files:
     threads: 16
     resources:
         time = "1:00:00",
-        mem = 125000, #125GB,
+        mem_mb = 125000, #125GB,
         partition = "epyc-64"
     shell:
         "jgi_summarize_bam_contig_depths --outputDepth {output.depth_file} --pairedContigs {output.paired_file} {input.bam}"
@@ -111,7 +111,7 @@ rule bin_metabat2:
     threads: 16
     resources:
         time = "1:00:00",
-        mem = 125000, #125GB,
+        mem_mb = 125000, #125GB,
         partition = "epyc-64"
     shell:
         """
@@ -136,7 +136,7 @@ rule bin_concoct:
     threads: 16
     resources:
         time = "24:00:00",
-        mem = 125000, #125GB,
+        mem_mb = 125000, #125GB,
         partition = "epyc-64"
     shell:
         """
@@ -166,7 +166,7 @@ rule bin_maxbin2:
     threads: 32
     resources:
         time = "6:30:00",
-        mem = 125000, #125GB,
+        mem_mb = 125000, #125GB,
         partition = "epyc-64"
     shell:
         """
@@ -189,7 +189,7 @@ rule generate_consensus_bins_dastools:
     threads: 32
     resources:
         time = "2:30:00",
-        mem = 125000, #125GB,
+        mem_mb = 125000, #125GB,
         partition = "epyc-64"
     shell:
         """
@@ -225,7 +225,7 @@ rule evaluate_bins_checkm:
     threads: 16
     resources:
         time = "0:25:00",
-        mem = 120000, #120GB
+        mem_mb = 120000, #120GB
         partition = "epyc-64"
     shell:
         """
