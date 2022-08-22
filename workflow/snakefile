@@ -14,7 +14,6 @@ rule all:
     input: 
         #dir= base_dir + "/{sample}_assembly_dir/checkm/dastools/",
         checkm_table= base_dir + "/{sample}_assembly_dir/checkm/dastools/output_table.txt"
-        checkm_table= base_dir + "/{sample}_assembly_dir/checkm/dastools/output_table.txt"
 
 rule sickle_trim:
     input:
