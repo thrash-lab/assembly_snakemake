@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in line 14 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Missing input files for rule all:
+    affected files:
+        /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies

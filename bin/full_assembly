@@ -44,7 +44,7 @@ def main():
 
     ref_args = preprocess_arguments(args)
     samples, filenames = ref_args['samples'], ref_args['filenames']
-    snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../workflow/snakefile")
+    snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snakefile")
     profile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.config/slurm/")
     config_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
     create_config_file(config_filename, args, samples, filenames)
@@ -111,12 +111,14 @@ def create_config_file(filename, args, samples, filenames):
     # string to write to config file
     yml_lines = """
     input:
-      samples: {0}
-      filenames: {1}
+      samples: 
+        - {0}
+      filenames: 
+        - {1}
     output:
       output_dir: {2}
     slurm_resources: {3}
-    """.format(",".join(samples), ",".join(filenames), args.o, args.slurm_config)
+    """.format("\n        - ".join(samples), "\n        - ".join(filenames), args.o, args.slurm_config)
 
     with open(filename, 'w') as f:
         f.writelines(yml_lines)
