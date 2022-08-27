@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule all in line 17 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Missing input files for rule all:
+    affected files:
+        B1
+        A1
+        C1

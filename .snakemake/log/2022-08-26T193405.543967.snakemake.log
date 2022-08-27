@@ -1,0 +1,28 @@
+Building DAG of jobs...
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/binning/concoct_subcontigs/coverage_table.csv contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//A1_assembly_dir/binning/concoct_subcontigs/coverage_table.csv contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//C1_assembly_dir/binning/concoct_subcontigs/coverage_table.csv contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+candidate job all
+    wildcards: 
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/spades_assembly/contigs.fasta contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/binning/concoct_subcontigs/coverage_table.csv contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/binning/concoct_subcontigs/fasta_bins contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/binning/concoct_subcontigs contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+candidate job bin_concoct
+    wildcards: sample=B1
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/sickle_trimmed//B1_all_trimmed.fastq contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/spades_assembly contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir//B1_assembly_dir/spades_assembly/contigs.fasta contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+candidate job metaspades_assembly
+    wildcards: sample=/B1
+InputFunctionException in line 32 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Error:
+  KeyError: '/B1'
+Wildcards:
+  sample=/B1
+Traceback:
+  File "/Users/connerkojima/thrash/assembly_EAGER/bin/snakefile", line 35, in <lambda>

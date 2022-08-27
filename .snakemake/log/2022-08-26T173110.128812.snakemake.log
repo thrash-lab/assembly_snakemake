@@ -1,0 +1,49 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job test
+    wildcards: sample=B1
+selected job test
+    wildcards: sample=B1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job test
+    wildcards: sample=A1
+selected job test
+    wildcards: sample=A1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly_dir/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job test
+    wildcards: sample=C1
+selected job test
+    wildcards: sample=C1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly_dir/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job all
+    wildcards: 
+file None:
+    Producer found, hence exceptions are ignored.
+
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+all          1              1              1
+test         3              1              1
+total        4              1              1
+
+
+[Fri Aug 26 17:31:10 2022]
+rule test:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/A1_all.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly_dir/checkm/dastools/output_table.txt
+    jobid: 2
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly_dir/checkm/dastools/output_table.txt
+    wildcards: sample=A1
+    resources: mem_mb=1000, disk_mb=1000, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T
+
+RuleException in rule test in line 17 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+AttributeError: 'OutputFiles' object has no attribute 'singles', when formatting the following:
+touch {output.singles}

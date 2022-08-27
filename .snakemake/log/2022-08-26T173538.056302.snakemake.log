@@ -1,0 +1,9 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+MissingInputException in rule all in line 13 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Missing input files for rule all:
+    affected files:
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly_dir/sickle_trimmed/A1_all_singles.fastq
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/sickle_trimmed/B1_all_singles.fastq
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly_dir/sickle_trimmed/C1_all_singles.fastq

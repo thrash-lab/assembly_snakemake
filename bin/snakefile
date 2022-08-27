@@ -3,29 +3,39 @@ import numpy
 import os
 
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
-base_dir='/project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies'
+base_dir=config['output']['output_dir']
 
-print(config['input']['samples'])
-print(expand("{base_dir}", base_dir=config['input']['filenames']))
+def retrieve_input_fastq(wildcards):
+    priont(config['input'][wildcards.basename])
+    return config['input'][wildcards.basename]
 
-# def retrieve_input_fastq(wildcard_sample)
-#      pass
-
-wildcard_constraints:
-    sample = '|'.join(config['input']['samples'])
 
 rule all:
     input: 
-        checkm_table = expand("{base_dir}", base_dir=config['input']['filenames'])
+        checkm_table = expand(base_dir + "{sample}_assembly_dir/checkm/dastools/output_table.txt", sample=config['input'])
+        #cov_table = expand(base_dir + "{sample}_assembly_dir/binning/concoct_subcontigs/coverage_table.csv", sample=config['input'])
+        #bam_index = expand(base_dir +'{sample}_assembly_dir/read_mapping/{sample}.bam.bai', sample=config['input'])
+        #contigs = expand(base_dir + '{sample}_assembly_dir/spades_assembly/contigs.fasta', sample=config['input'])
+        #singles = expand(base_dir + "{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq", sample=config['input'])
+
+# rule test:
+#     input:
+#         # must use sample keyword somehow
+#         fastq = "/Users/connerkojima/thrash/assembly_EAGER/test_data/samples/{sample}_all.fastq"
+#     output: 
+#         #checkm_table = base_dir + "{sample}_assembly_dir/checkm/dastools/output_table.txt"
+#         #singles = base_dir + "{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq"
+#         contigs = base_dir + '{sample}_assembly_dir/spades_assembly/contigs.fasta'
+#     shell:
+#         "touch {output}"
 
 rule sickle_trim:
     input:
-        # TODO function
-        # fastq = retrieve_input_fastq()
-        fastq = fastq_dir + '/{sample}_all.fastq'
+        # must use sample keyword somehow
+        fastq = lambda wildcards: config['input'][wildcards.sample]
     output:
-        singles=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
-        trimmed=base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+        singles=base_dir + '{sample}_assembly_dir/sickle_trimmed/{sample}_all_singles.fastq',
+        trimmed=base_dir + '{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     conda: "../envs/sickle.yml"
     threads: 16
     resources:
@@ -37,10 +47,10 @@ rule sickle_trim:
 
 rule metaspades_assembly:
     input:
-        trimmed_fq = base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed_fq = base_dir + '{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
-        spades_dir = directory(base_dir + '/{sample}_assembly_dir/spades_assembly/'),
-        contigs = base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
+        spades_dir = directory(base_dir + '{sample}_assembly_dir/spades_assembly/'),
+        contigs = base_dir + '{sample}_assembly_dir/spades_assembly/contigs.fasta'
     conda: "../envs/spades.yml"
     threads: 64
     resources:
@@ -53,20 +63,20 @@ rule metaspades_assembly:
 
 rule bowtie2_map_reads:
     input:
-        trimmed_fq = base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq',
-        contigs = base_dir + '/{sample}_assembly_dir/spades_assembly/contigs.fasta'
+        trimmed_fq = base_dir +'{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq',
+        contigs = base_dir +'{sample}_assembly_dir/spades_assembly/contigs.fasta'
     output:
-        bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam',
-        bam_index = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
-        sam = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.sam'),
-        raw_bam = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_RAW.bam'),
-        index_f1 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.1.bt2'),
-        index_f2 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.2.bt2'),
-        index_f3 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.3.bt2'),
-        index_f4 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.4.bt2'),
-        index_r1 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.rev.1.bt2'),
-        index_r2 = temp(base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.rev.2.bt2')
-    params: index = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}'
+        bam = base_dir +'{sample}_assembly_dir/read_mapping/{sample}.bam',
+        bam_index = base_dir +'{sample}_assembly_dir/read_mapping/{sample}.bam.bai',
+        sam = temp(base_dir +'{sample}_assembly_dir/read_mapping/{sample}.sam'),
+        raw_bam = temp(base_dir +'{sample}_assembly_dir/read_mapping/{sample}_RAW.bam'),
+        index_f1 = temp(base_dir +'{sample}_assembly_dir/read_mapping/{sample}.1.bt2'),
+        index_f2 = temp(base_dir +'{sample}_assembly_dir/read_mapping/{sample}.2.bt2'),
+        index_f3 = temp(base_dir +'{sample}_assembly_dir/read_mapping/{sample}.3.bt2'),
+        index_f4 = temp(base_dir +'{sample}_assembly_dir/read_mapping/{sample}.4.bt2'),
+        index_r1 = temp(base_dir +'{sample}_assembly_dir/read_mapping/{sample}.rev.1.bt2'),
+        index_r2 = temp(base_dir +'{sample}_assembly_dir/read_mapping/{sample}.rev.2.bt2')
+    params: index = base_dir +'{sample}_assembly_dir/read_mapping/{sample}'
     conda: "../envs/read_mapping.yml"
     threads: 32
     resources:
@@ -87,10 +97,10 @@ rule bowtie2_map_reads:
 
 rule generate_depth_files:
     input:
-        bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
+        bam = base_dir +'{sample}_assembly_dir/read_mapping/{sample}.bam'
     output:
-        depth_file = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_depth.txt',
-        paired_file = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_paired.txt'
+        depth_file = base_dir +'{sample}_assembly_dir/read_mapping/{sample}_depth.txt',
+        paired_file = base_dir +'{sample}_assembly_dir/read_mapping/{sample}_paired.txt'
     conda: "../envs/metabat2.yml"
     threads: 16
     resources:
@@ -102,10 +112,10 @@ rule generate_depth_files:
 
 rule bin_metabat2:
     input:
-        contigs = base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        depth_file = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}_depth.txt'
+        contigs = base_dir +"{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        depth_file = base_dir +'{sample}_assembly_dir/read_mapping/{sample}_depth.txt'
     output:
-        bins_dir = directory(base_dir + "/{sample}_assembly_dir/binning/metabat2")
+        bins_dir = directory(base_dir +"{sample}_assembly_dir/binning/metabat2")
     conda: "../envs/metabat2.yml"
     params:
         minCVSum=0,
@@ -123,16 +133,16 @@ rule bin_metabat2:
 
 rule bin_concoct:
     input:
-        contigs = base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        bam = base_dir + '/{sample}_assembly_dir/read_mapping/{sample}.bam'
+        contigs = base_dir +"{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        bam = base_dir +'{sample}_assembly_dir/read_mapping/{sample}.bam'
     output:
-        contigs_bed = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed",
-        contig_chunks = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa",
-        cov_table = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/coverage_table.csv",
-        clustering_gt1000 = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv",
-        clustering_merged = base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
-        bins_dir = directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins"),
-        concoct_dir = directory(base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs")
+        contigs_bed = base_dir +"{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.bed",
+        contig_chunks = base_dir +"{sample}_assembly_dir/binning/concoct_subcontigs/contigs_10K.fa",
+        cov_table = base_dir +"{sample}_assembly_dir/binning/concoct_subcontigs/coverage_table.csv",
+        clustering_gt1000 = base_dir +"{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv",
+        clustering_merged = base_dir +"{sample}_assembly_dir/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv",
+        bins_dir = directory(base_dir +"{sample}_assembly_dir/binning/concoct_subcontigs/fasta_bins"),
+        concoct_dir = directory(base_dir +"{sample}_assembly_dir/binning/concoct_subcontigs")
     conda: "../envs/concoct.yml"
     params:
         chunk=1000
@@ -157,14 +167,14 @@ rule bin_concoct:
 
 rule bin_maxbin2:
     input:
-        contigs = base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        trimmed_fq = base_dir + '/{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
+        contigs = base_dir +"{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        trimmed_fq = base_dir +'{sample}_assembly_dir/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
-        bins_dir = directory(base_dir + "/{sample}_assembly_dir/binning/maxbin2")
+        bins_dir = directory(base_dir +"{sample}_assembly_dir/binning/maxbin2")
     log: 
-        base_dir + "/{sample}_assembly_dir/binning/maxbin2/maxbin.log"
+        base_dir +"{sample}_assembly_dir/binning/maxbin2/maxbin.log"
     params:
-        basename = base_dir + "/{sample}_assembly_dir/binning/maxbin2/maxbin"
+        basename = base_dir +"{sample}_assembly_dir/binning/maxbin2/maxbin"
     conda: "../envs/maxbin2.yml"
     threads: 32
     resources:
@@ -178,16 +188,16 @@ rule bin_maxbin2:
 
 rule generate_consensus_bins_dastools:
     input:
-        contigs= base_dir + "/{sample}_assembly_dir/spades_assembly/contigs.fasta",
-        metabat_fa_dir= base_dir + "/{sample}_assembly_dir/binning/metabat2",
-        concoct_fa_dir= base_dir + "/{sample}_assembly_dir/binning/concoct_subcontigs",
-        maxbin_fa_dir= base_dir + "/{sample}_assembly_dir/binning/maxbin2"
+        contigs= base_dir +"{sample}_assembly_dir/spades_assembly/contigs.fasta",
+        metabat_fa_dir= base_dir +"{sample}_assembly_dir/binning/metabat2",
+        concoct_fa_dir= base_dir +"{sample}_assembly_dir/binning/concoct_subcontigs",
+        maxbin_fa_dir= base_dir +"{sample}_assembly_dir/binning/maxbin2"
     output:
-        base_dir + "/{sample}_assembly_dir/binning/dastools/metabat_contigs2bin.tsv",
-        base_dir + "/{sample}_assembly_dir/binning/dastools/maxbin_contigs2bin.tsv",
-        base_dir + "/{sample}_assembly_dir/binning/dastools/concoct_contigs2bin.tsv",
-        dastools_dir=directory(base_dir + "/{sample}_assembly_dir/binning/dastools"),
-        dastools_bins=directory(base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
+        base_dir +"{sample}_assembly_dir/binning/dastools/metabat_contigs2bin.tsv",
+        base_dir +"{sample}_assembly_dir/binning/dastools/maxbin_contigs2bin.tsv",
+        base_dir +"{sample}_assembly_dir/binning/dastools/concoct_contigs2bin.tsv",
+        dastools_dir=directory(base_dir +"{sample}_assembly_dir/binning/dastools"),
+        dastools_bins=directory(base_dir +"{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins")
     conda: "../envs/dastool.yml"
     threads: 32
     resources:
@@ -220,10 +230,10 @@ rule generate_consensus_bins_dastools:
 
 rule evaluate_bins_checkm:
     input:
-        bins = base_dir + "/{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins"
+        bins = base_dir +"{sample}_assembly_dir/binning/dastools/{sample}_DASTool_bins"
     output:
-        checkm_dir = directory(base_dir + "/{sample}_assembly_dir/checkm/dastools/"),
-        checkm_table = base_dir + "/{sample}_assembly_dir/checkm/dastools/output_table.txt"
+        checkm_dir = directory(base_dir +"{sample}_assembly_dir/checkm/dastools/"),
+        checkm_table = base_dir +"{sample}_assembly_dir/checkm/dastools/output_table.txt"
     conda: "../envs/checkm.yml"
     threads: 16
     resources:

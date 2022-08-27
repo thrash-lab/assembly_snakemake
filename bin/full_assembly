@@ -54,7 +54,7 @@ def main():
     # subprocess and call snakemake with temp config file
     print(profile_path)
     subprocess.run("echo hello", shell=True)
-    subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3}".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
+    subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3} --debug-dag".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
     # TODO: configure snakemake to use config file
     # TODO: delete config file 
 
@@ -108,17 +108,19 @@ def preprocess_arguments(args):
         
 
 def create_config_file(filename, args, samples, filenames):
+
+    pairs = []
+    for i in range(len(samples)):
+        pairs.append("{0}: {1}".format(samples[i], filenames[i]))
+
     # string to write to config file
     yml_lines = """
     input:
-      samples: 
-        - {0}
-      filenames: 
-        - {1}
+      {0}
     output:
-      output_dir: {2}
-    slurm_resources: {3}
-    """.format("\n        - ".join(samples), "\n        - ".join(filenames), args.o, args.slurm_config)
+      output_dir: {1}
+    slurm_resources: {2}
+    """.format("\n      ".join(pairs), args.o, args.slurm_config)
 
     with open(filename, 'w') as f:
         f.writelines(yml_lines)

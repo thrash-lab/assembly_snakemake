@@ -1,13 +1,8 @@
 
     input:
-      samples: 
-        - B1
-        - A1
-        - C1
-      filenames: 
-        - /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/B1_all.fastq
-        - /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/A1_all.fastq
-        - /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/C1_all.fastq
+      B1: /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/B1_all.fastq
+      A1: /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/A1_all.fastq
+      C1: /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/C1_all.fastq
     output:
       output_dir: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/
     slurm_resources: /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml

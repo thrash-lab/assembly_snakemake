@@ -1,0 +1,25 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job test
+    wildcards: sample=B1
+candidate job metaspades_assembly
+    wildcards: sample=B1
+candidate job sickle_trim
+    wildcards: sample=B1
+selected job sickle_trim
+    wildcards: sample=B1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+AmbiguousRuleException:
+Rules test and metaspades_assembly are ambiguous for the file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/spades_assembly/contigs.fasta.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	test: sample=B1
+	metaspades_assembly: sample=B1
+Expected input files:
+	test: /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/B1_all.fastq
+	metaspades_assembly: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/sickle_trimmed/B1_all_trimmed.fastqExpected output files:
+	test: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/spades_assembly/contigs.fasta
+	metaspades_assembly: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/spades_assembly /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/spades_assembly/contigs.fasta

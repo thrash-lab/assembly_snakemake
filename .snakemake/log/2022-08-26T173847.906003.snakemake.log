@@ -1,0 +1,29 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job sickle_trim
+    wildcards: sample=B1
+selected job sickle_trim
+    wildcards: sample=B1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly_dir/sickle_trimmed/B1_all_singles.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job sickle_trim
+    wildcards: sample=A1
+selected job sickle_trim
+    wildcards: sample=A1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly_dir/sickle_trimmed/A1_all_singles.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job sickle_trim
+    wildcards: sample=C1
+selected job sickle_trim
+    wildcards: sample=C1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly_dir/sickle_trimmed/C1_all_singles.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job all
+    wildcards: 
+file None:
+    Producer found, hence exceptions are ignored.
+
