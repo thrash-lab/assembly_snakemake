@@ -7,18 +7,19 @@ import os
 
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir=config['output']['output_dir']
-print(expand(base_dir + "{sample}_assembly/{subset}_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages']))
 
 rule all:
     input: 
-        #full = expand(base_dir + "{sample}_assembly/full_par/checkm/dastools/output_table.txt", sample=config['input']),
-        #subassemblies = expand(base_dir + "{sample}_assembly/{subset}_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages']),
-        subiterative = expand(base_dir + "{sample}_assembly/{subset}_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'])
-        #singles= expand(base_dir + '{sample}_assembly/full_par/sickle_trimmed/{sample}_all_singles.fastq', sample=config['input'])
+        full = expand(base_dir + "{sample}_assembly/100percent_par/checkm/dastools/output_table.txt", sample=config['input']),
+        subassemblies = expand(base_dir + "{sample}_assembly/{subset}_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages']),
+        subiterative = expand(base_dir + "{sample}_assembly/{subset}percent_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'][1:]),
+        subiterative_init = expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'][0]),
+        bam = expand(base_dir +'{sample}_assembly/{subset}percent_ser/subiterative_mapping/{sample}.bam', sample=config['input'], subset=config['subassembly_percentages'][2])
+        #singles= expand(base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_singles.fastq', sample=config['input'])
         #paired_file = expand(base_dir +'{sample}_assembly/{subset}_{modifier}/read_mapping/{sample}_paired.txt', sample=config['input'])
         #contigs = expand(base_dir + '{sample}_assembly/full_par/spades_assembly/contigs.fasta', sample=config['input'])
-        #expand(base_dir +"{sample}_assembly/full_par/binning/dastools/metabat_contigs2bin.tsv", sample=config['input'])
-        # checkm_table = expand(base_dir + "{sample}_assemblly/full_par/checkm/dastools/output_table.txt", sample=config['input'])
+        #expand(base_dir +"{sample}_assembly/100percent_par/binning/dastools/metabat_contigs2bin.tsv", sample=config['input'])
+        # checkm_table = expand(base_dir + "{sample}_assemblly/100percent_par/checkm/dastools/output_table.txt", sample=config['input'])
 
 
 # this sickle trim rule acts as a starting point (only works on full subset)
@@ -26,8 +27,8 @@ rule sickle_trim_full:
     input:
         fastq = lambda wildcards: config['input'][wildcards.sample]
     output:
-        singles=base_dir + '{sample}_assembly/full_par/sickle_trimmed/{sample}_all_singles.fastq',
-        trimmed=base_dir + '{sample}_assembly/full_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        singles=base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_singles.fastq',
+        trimmed=base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     conda: "../envs/sickle.yml"
     threads: 16
     resources:
@@ -241,7 +242,7 @@ rule evaluate_bins_checkm:
 # add subset percentage list
 rule subset_reads_par:
     input:
-        trimmed = base_dir + '{sample}_assembly/full_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed = base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     output: 
         trimmed = base_dir + '{sample}_assembly/{subset}_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:
@@ -253,20 +254,21 @@ rule subset_reads_par:
 rule map_subassembly_reads:
     input:
         # TODO make dastool bin output lowest subset percentage that doesn't exist
-        dastools_bin = base_dir + "{sample}_assembly/5_par/binning/dastools/{sample}_DASTool_bins",
-        trimmed = base_dir + '{sample}_assembly/full_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        dastools_bin = base_dir + "{sample}_assembly/{subset}_{modifier}/binning/dastools/{sample}_DASTool_bins",
+        trimmed_fq = base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     output:
-        bam = base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.bam',
-        bam_index = base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.bam.bai',
-        sam = temp(base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.sam'),
-        raw_bam = temp(base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}_RAW.bam'),
-        index_f1 = temp(base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.1.bt2'),
-        index_f2 = temp(base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.2.bt2'),
-        index_f3 = temp(base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.3.bt2'),
-        index_f4 = temp(base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.4.bt2'),
-        index_r1 = temp(base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.rev.1.bt2'),
-        index_r2 = temp(base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}.rev.2.bt2')
-    params: index = base_dir +'{sample}_assembly/{subset}_par/subiterative_mapping/{sample}'
+        cat_dastools_bins = base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/cat_consensus_bins.fa',
+        bam = base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.bam',
+        bam_index = base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.bam.bai',
+        sam = temp(base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.sam'),
+        raw_bam = temp(base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}_RAW.bam'),
+        index_f1 = temp(base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.1.bt2'),
+        index_f2 = temp(base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.2.bt2'),
+        index_f3 = temp(base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.3.bt2'),
+        index_f4 = temp(base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.4.bt2'),
+        index_r1 = temp(base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.rev.1.bt2'),
+        index_r2 = temp(base_dir +'{sample}_assembly/{subset}_{modifier}/subiterative_mapping/{sample}.rev.2.bt2')
+    params: index = base_dir +'{sample}_assembly/{subset}_{modifier}//subiterative_mapping/{sample}'
     conda: "../envs/read_mapping.yml"
     threads: 32
     resources:
@@ -275,8 +277,8 @@ rule map_subassembly_reads:
         partition = "epyc-64"
     shell:
         """
-        cat {input.dastools_bin}/*
-        bowtie2-build {input.contigs} {params.index} --threads {threads}
+        cat {input.dastools_bin}/*.fa > {output.cat_dastools_bins}
+        bowtie2-build {output.cat_dastools_bins} {params.index} --threads {threads}
 
         # align reads
         bowtie2 -x {params.index} --interleaved {input.trimmed_fq} -S {output.sam} --threads {threads}
@@ -298,30 +300,32 @@ rule convert_bam_to_fastq:
 
         """
 
-
+ 
 def iterate_subset(wcs):
-    n = wcs.percentage
+    n = wcs.percentage[:-7]
     # if output percentage is first subassembly percentage (which shouldn't exist)
     if n == config['subassembly_percentages'][0]:
         raise ValueError("bad snakemake")
     
     # if it is one of the other subassembly percentages
     for i in range(len(config['subassembly_percentages'])):
-        if n == config['subassembly_percentages'][i]:
+        #print('please match:', config['subassembly_percentages'][i], n)
+        if int(n) == config['subassembly_percentages'][i] or int(n) == 100:
             if i == 1:
-                return '%s%s_assembly/%d_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, 0, 'par', wcs.sample)
-            elif i == 2:
                 orig_percentage = config['subassembly_percentages'][i-1]
-                return '%s%s_assembly/%d_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, 0, 'par', wcs.sample)
+                return '%s%s_assembly/%d%s_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, orig_percentage, 'percent', 'par', wcs.sample)
             else:
                 orig_percentage = config['subassembly_percentages'][i-1]
-                return '%s%s_assembly/%d_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, orig_percentage, 'ser', wcs.sample)
-    return '%s%s_assembly/%d_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, 0, 'par', wcs.sample)
+                return '%s%s_assembly/%d%s_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, orig_percentage, 'percent', 'ser', wcs.sample)
+    return '%s%s_assembly/%d%s_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, 100, 'percent', 'par', wcs.sample)
     
 
 rule subset_reads_ser:
-    input: iterate_subset
+    input: 
+        # e.g. 5_par
+        iterate_subset
     output: 
+        # e.g. 10_ser
         trimmed = base_dir + '{sample}_assembly/{percentage}_ser/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:
         """
@@ -329,4 +333,4 @@ rule subset_reads_ser:
         """
 
 
-print(config['subassembly_percentages'][:-2])
+#print(config['subassembly_percentages'][:-2])

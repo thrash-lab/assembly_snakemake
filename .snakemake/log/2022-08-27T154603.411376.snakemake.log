@@ -1,0 +1,9 @@
+Building DAG of jobs...
+InputFunctionException in line 322 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Error:
+  ValueError: invalid literal for int() with base 10: ''
+Wildcards:
+  sample=B1
+  percentage=full
+Traceback:
+  File "/Users/connerkojima/thrash/assembly_EAGER/bin/snakefile", line 312, in iterate_subset

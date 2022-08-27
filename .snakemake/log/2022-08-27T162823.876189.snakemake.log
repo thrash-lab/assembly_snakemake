@@ -1,0 +1,273 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=5percent, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5percent, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=5percent
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=50percent, modifier=ser
+candidate job map_subassembly_reads
+    wildcards: sample=B1, subset=50percent, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=50percent, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=50percent, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=50percent
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job map_subassembly_reads
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=25percent
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job map_subassembly_reads
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=5percent
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=100percent
+candidate job sickle_trim_full
+    wildcards: sample=B1
+selected job sickle_trim_full
+    wildcards: sample=B1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/100percent_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_par
+    wildcards: sample=B1, subset=5percent
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=5percent
+selected job subset_reads_par
+    wildcards: sample=B1, subset=5percent
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/read_mapping/B1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=5percent, modifier=par
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=B1, subset=5percent, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=5percent
+selected job subset_reads_par
+    wildcards: sample=B1, subset=5percent
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/binning/dastools/B1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=100percent
+candidate job sickle_trim_full
+    wildcards: sample=B1
+selected job sickle_trim_full
+    wildcards: sample=B1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/100percent_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job map_subassembly_reads
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/subiterative_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job convert_bam_to_fastq
+    wildcards: sample=B1, subset=5percent, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5percent_par/subiterative_mapping/B1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=25percent
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=25percent
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=25percent
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/read_mapping/B1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=25percent, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=B1, subset=25percent, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=25percent
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=25percent
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=25percent, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25percent_ser/binning/dastools/B1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=100percent
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=50percent, modifier=ser
+CyclicGraphException in line 290 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Cyclic dependency on rule convert_bam_to_fastq.

@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in line 291 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Missing input files for rule convert_bam_to_fastq:
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50percent_ser/subiterative_mapping/B1.fastq
+    wildcards: sample=B1, subset=50percent, modifier=ser
+    affected files:
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50percent_ser/subiterative_mapping/B1.bam

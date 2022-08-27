@@ -7,9 +7,9 @@
       output_dir: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/
     slurm_resources: /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml
     subassembly_percentages:
+      - 1
       - 5
       - 10
-      - 15
-      - 25
+      - 20
       - 50
     

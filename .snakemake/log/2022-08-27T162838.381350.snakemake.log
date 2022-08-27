@@ -1,0 +1,19 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=5percent, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5percent, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5percent, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=5percent
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=5percent, modifier=ser
+candidate job map_subassembly_reads
+    wildcards: sample=B1, subset=5percent, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5percent, modifier=ser
+CyclicGraphException in line 180 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Cyclic dependency on rule generate_consensus_bins_dastools.

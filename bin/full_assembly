@@ -53,10 +53,10 @@ def main():
     dry_run_addon = ""
     if args.n:
         dry_run_addon = "-n"
-    # subprocess and call snakemake with temp config file
+    # subprocess and call snakemake with temp config file   --dag | dot -Tpdf > dag_all_07.pdf
     print(profile_path)
     subprocess.run("echo hello", shell=True)
-    subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3} --debug-dag".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
+    subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3} --dag | dot -Tpdf > dag_all_09.pdf".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
     # TODO: configure snakemake to use config file
     # TODO: delete config file 
 

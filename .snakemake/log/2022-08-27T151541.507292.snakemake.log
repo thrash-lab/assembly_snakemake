@@ -1,0 +1,17 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=10percent, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=10percent, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=10percent, modifier=ser
+InputFunctionException in line 328 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Error:
+  TypeError: not enough arguments for format string
+Wildcards:
+  sample=B1
+  percentage=10percent
+Traceback:
+  File "/Users/connerkojima/thrash/assembly_EAGER/bin/snakefile", line 316, in iterate_subset

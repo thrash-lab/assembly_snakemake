@@ -1,0 +1,2 @@
+SyntaxError in line 270 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Expecting rule keyword, comment or docstrings inside a rule definition. (snakefile, line 270)
