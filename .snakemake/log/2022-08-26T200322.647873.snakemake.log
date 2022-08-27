@@ -1,0 +1,9 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+MissingInputException in line 11 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Missing input files for rule all:
+    affected files:
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assemblly_dir/full_par/checkm/dastools/output_table.txt
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assemblly_dir/full_par/checkm/dastools/output_table.txt
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assemblly_dir/full_par/checkm/dastools/output_table.txt

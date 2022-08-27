@@ -1,0 +1,3 @@
+WildcardError in line 16 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+No values given for wildcard 'subset'.
+  File "/Users/connerkojima/thrash/assembly_EAGER/bin/snakefile", line 16, in <module>

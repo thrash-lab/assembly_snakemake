@@ -1,0 +1,2 @@
+SyntaxError in line 320 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Command must be given as string after the shell keyword. (snakefile, line 320)

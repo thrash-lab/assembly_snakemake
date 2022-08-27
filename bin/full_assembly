@@ -31,14 +31,13 @@ TODO: make config file hold resource req for each rule (testing)
             full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n
             
 
-TODO: sub assemblies
-    TODO: subsetting rule:
+TODO: sub assemblies (done)
+    TODO: subsetting rule: (done)
     TODO: mapping rule:
 TODO: job groups see: https://stackoverflow.com/questions/69942132/snakemake-workflowerror-failed-to-group-jobs-together
     motivation: sub jobs won't delete their output if error in entire job group prevails--smarter slurm resource management
-
-
 """
+
 def main():
     args = add_arguments()
 
@@ -47,7 +46,10 @@ def main():
     snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snakefile")
     profile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.config/slurm/")
     config_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
-    create_config_file(config_filename, args, samples, filenames)
+    if args.sub:
+        create_config_file(config_filename, args, samples, filenames, ref_args['sub'])
+    else:
+        create_config_file(config_filename, args, samples, filenames)
     dry_run_addon = ""
     if args.n:
         dry_run_addon = "-n"
@@ -67,14 +69,31 @@ def add_arguments():
     p.add_argument('-o', help="path to output dir. If output dir does not exist, it will be created", required=True)
     p.add_argument('--resource-req', help='path to yaml file that stores the resource requirements if using slurm', required = False, dest='slurm_config')
     p.add_argument('-n', help='dry run through snakemake workflow', default=False, action='store_true')
+    p.add_argument('-sub', help='percentage of reads to keep for subassemblies. Enter as comma delimited list of percentages \n'
+                   'e.g. 5,10,25,50', type=str, required=False)
 
     #TODO: add additional options to specify subassemblies and iterative subtractive assembly
 
     return p.parse_args()
 
 def preprocess_arguments(args):
-    """TODO: make sure -i flag points to dir or csv file. make sure that suffix flag is indicated if -i points to a dir"""
+
     ref_args = {}
+
+    if args.sub:
+        # make sure that list of subassembly percentages if provided are appropriate
+        # check if input is valid
+        sub_per = args.sub.split(',')
+        sub_per = [int(a) for a in sub_per]
+
+        # check if "a" is in proper range.
+        if len(set(sub_per) - set(range(1, 99))) > 0: # can use also min(a)>=1 and max(a)<=50
+            raise Exception("subassembly percentages are not in range [1,99]")
+        
+        ref_args['sub'] = sub_per
+
+    # make sure -i flag points to dir or csv file. make sure that suffix flag is indicated if -i points to a dir
+
     if args.slurm_config:
         with open(args.slurm_config, 'r') as f:
             lines = f.readlines()
@@ -104,14 +123,21 @@ def preprocess_arguments(args):
                     samples.append(row.split(",")[0])
                     filenames.append(row.split(",")[1])
             ref_args['samples'], ref_args['filenames'] = filenames
+        
     return ref_args
         
 
-def create_config_file(filename, args, samples, filenames):
+def create_config_file(filename, args, samples, filenames, subper=False):
 
     pairs = []
     for i in range(len(samples)):
         pairs.append("{0}: {1}".format(samples[i], filenames[i]))
+
+    subper_str = ""
+    if subper:
+        subper_str = "subassembly_percentages:"
+        for per in subper:
+            subper_str = subper_str + "\n      - " + str(per)
 
     # string to write to config file
     yml_lines = """
@@ -120,7 +146,8 @@ def create_config_file(filename, args, samples, filenames):
     output:
       output_dir: {1}
     slurm_resources: {2}
-    """.format("\n      ".join(pairs), args.o, args.slurm_config)
+    {3}
+    """.format("\n      ".join(pairs), args.o, args.slurm_config, subper_str)
 
     with open(filename, 'w') as f:
         f.writelines(yml_lines)

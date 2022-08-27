@@ -1,0 +1,19 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=5
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=wcs.modifier
+MissingInputException in line 288 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Missing input files for rule convert_bam_to_fastq:
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_wcs.modifier/subiterative_mapping/B1.fastq
+    wildcards: sample=B1, subset=0, modifier=wcs.modifier
+    affected files:
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_wcs.modifier/subiterative_mapping/B1.bam

@@ -1,0 +1,2699 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=5
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+candidate job map_subassembly_reads
+    wildcards: sample=B1, subset=0
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=5
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=full
+candidate job sickle_trim_full
+    wildcards: sample=B1
+selected job sickle_trim_full
+    wildcards: sample=B1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_par
+    wildcards: sample=B1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=B1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=B1, subset=5, modifier=par
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=5, modifier=par
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=5
+selected job subset_reads_par
+    wildcards: sample=B1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=B1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=5, modifier=par
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=B1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=5
+selected job subset_reads_par
+    wildcards: sample=B1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/B1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_par
+    wildcards: sample=B1, subset=full
+candidate job sickle_trim_full
+    wildcards: sample=B1
+selected job sickle_trim_full
+    wildcards: sample=B1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job map_subassembly_reads
+    wildcards: sample=B1, subset=0
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=5
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/read_mapping/B1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=5, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=B1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=5
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/binning/dastools/B1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=B1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=10, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=10
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=B1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=B1, subset=10, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=10, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=10
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/read_mapping/B1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=B1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=10, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=B1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=10
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/binning/dastools/B1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=B1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/10_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=15, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=15
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=B1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=B1, subset=15, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=15, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=15
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/read_mapping/B1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=B1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=15, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=B1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=15
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/binning/dastools/B1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=B1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/15_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=25, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=25
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=B1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=B1, subset=25, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=25, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=25
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/read_mapping/B1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=B1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=25, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=B1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=25
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/binning/dastools/B1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=B1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/25_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=B1, subset=50, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=50
+candidate job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=B1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=B1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=B1, subset=50, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=50, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=50
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/read_mapping/B1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=B1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=B1, subset=50, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/read_mapping/B1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=B1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=B1, percentage=50
+selected job subset_reads_ser
+    wildcards: sample=B1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/sickle_trimmed/B1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/binning/dastools/B1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=B1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/50_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=A1, subset=5, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=5
+candidate job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+candidate job map_subassembly_reads
+    wildcards: sample=A1, subset=0
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+candidate job subset_reads_par
+    wildcards: sample=A1, subset=5
+candidate job subset_reads_par
+    wildcards: sample=A1, subset=full
+candidate job sickle_trim_full
+    wildcards: sample=A1
+selected job sickle_trim_full
+    wildcards: sample=A1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_par
+    wildcards: sample=A1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=A1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=A1, subset=5, modifier=par
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=5, modifier=par
+candidate job subset_reads_par
+    wildcards: sample=A1, subset=5
+selected job subset_reads_par
+    wildcards: sample=A1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=A1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=5, modifier=par
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=A1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_par
+    wildcards: sample=A1, subset=5
+selected job subset_reads_par
+    wildcards: sample=A1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/A1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_par
+    wildcards: sample=A1, subset=full
+candidate job sickle_trim_full
+    wildcards: sample=A1
+selected job sickle_trim_full
+    wildcards: sample=A1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job map_subassembly_reads
+    wildcards: sample=A1, subset=0
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/0_par/subiterative_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/0_par/subiterative_mapping/A1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=A1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=A1, subset=5, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=5, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=5
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/read_mapping/A1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=A1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=5, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=A1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=5
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/binning/dastools/A1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=A1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=A1, subset=10, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=10
+candidate job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/0_par/subiterative_mapping/A1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=A1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=A1, subset=10, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=10, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=10
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/read_mapping/A1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=A1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=10, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=A1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=10
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/binning/dastools/A1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=A1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/10_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=A1, subset=15, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=15
+candidate job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/0_par/subiterative_mapping/A1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=A1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=A1, subset=15, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=15, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=15
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/read_mapping/A1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=A1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=15, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=A1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=15
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/binning/dastools/A1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=A1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/15_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=A1, subset=25, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=25
+candidate job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/0_par/subiterative_mapping/A1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=A1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=A1, subset=25, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=25, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=25
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/read_mapping/A1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=A1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=25, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=A1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=25
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/binning/dastools/A1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=A1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/25_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=A1, subset=50, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=50
+candidate job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=A1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/0_par/subiterative_mapping/A1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=A1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=A1, subset=50, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=50, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=50
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/read_mapping/A1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=A1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=A1, subset=50, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/read_mapping/A1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=A1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=A1, percentage=50
+selected job subset_reads_ser
+    wildcards: sample=A1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/sickle_trimmed/A1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/binning/dastools/A1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=A1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/50_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=C1, subset=5, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=5
+candidate job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+candidate job map_subassembly_reads
+    wildcards: sample=C1, subset=0
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+candidate job subset_reads_par
+    wildcards: sample=C1, subset=5
+candidate job subset_reads_par
+    wildcards: sample=C1, subset=full
+candidate job sickle_trim_full
+    wildcards: sample=C1
+selected job sickle_trim_full
+    wildcards: sample=C1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_par
+    wildcards: sample=C1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=C1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=C1, subset=5, modifier=par
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=5, modifier=par
+candidate job subset_reads_par
+    wildcards: sample=C1, subset=5
+selected job subset_reads_par
+    wildcards: sample=C1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=C1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=5, modifier=par
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=C1, subset=5, modifier=par
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_par
+    wildcards: sample=C1, subset=5
+selected job subset_reads_par
+    wildcards: sample=C1, subset=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=5, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/C1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_par
+    wildcards: sample=C1, subset=full
+candidate job sickle_trim_full
+    wildcards: sample=C1
+selected job sickle_trim_full
+    wildcards: sample=C1
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job map_subassembly_reads
+    wildcards: sample=C1, subset=0
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/0_par/subiterative_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/0_par/subiterative_mapping/C1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=C1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=C1, subset=5, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=5, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=5
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/read_mapping/C1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=C1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=5, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=C1, subset=5, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=5
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=5
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/binning/dastools/C1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=C1, subset=5, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=C1, subset=10, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=10
+candidate job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/0_par/subiterative_mapping/C1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=C1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=C1, subset=10, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=10, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=10
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/read_mapping/C1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=C1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=10, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=C1, subset=10, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=10
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=10
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/binning/dastools/C1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=C1, subset=10, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/10_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=C1, subset=15, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=15
+candidate job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/0_par/subiterative_mapping/C1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=C1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=C1, subset=15, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=15, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=15
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/read_mapping/C1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=C1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=15, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=C1, subset=15, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=15
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=15
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/binning/dastools/C1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=C1, subset=15, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/15_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=C1, subset=25, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=25
+candidate job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/0_par/subiterative_mapping/C1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=C1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=C1, subset=25, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=25, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=25
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/read_mapping/C1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=C1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=25, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=C1, subset=25, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=25
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=25
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/binning/dastools/C1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=C1, subset=25, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/25_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+candidate job evaluate_bins_checkm
+    wildcards: sample=C1, subset=50, modifier=ser
+candidate job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=50
+candidate job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+selected job convert_bam_to_fastq
+    wildcards: sample=C1, subset=0, modifier=par
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/0_par/subiterative_mapping/C1.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_metabat2
+    wildcards: sample=C1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job generate_depth_files
+    wildcards: sample=C1, subset=50, modifier=ser
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=50, modifier=ser
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=50
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_depth_files
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/read_mapping/C1_depth.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_metabat2
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/binning/metabat2:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_concoct
+    wildcards: sample=C1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job bowtie2_map_reads
+    wildcards: sample=C1, subset=50, modifier=ser
+selected job bowtie2_map_reads
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/read_mapping/C1.bam:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_concoct
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/binning/concoct_subcontigs:
+    Producer found, hence exceptions are ignored.
+
+candidate job bin_maxbin2
+    wildcards: sample=C1, subset=50, modifier=ser
+candidate job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+selected job metaspades_assembly
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/spades_assembly/contigs.fasta:
+    Producer found, hence exceptions are ignored.
+
+candidate job subset_reads_ser
+    wildcards: sample=C1, percentage=50
+selected job subset_reads_ser
+    wildcards: sample=C1, percentage=50
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/sickle_trimmed/C1_all_trimmed.fastq:
+    Producer found, hence exceptions are ignored.
+
+selected job bin_maxbin2
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/binning/maxbin2:
+    Producer found, hence exceptions are ignored.
+
+selected job generate_consensus_bins_dastools
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/binning/dastools/C1_DASTool_bins:
+    Producer found, hence exceptions are ignored.
+
+selected job evaluate_bins_checkm
+    wildcards: sample=C1, subset=50, modifier=ser
+file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/50_ser/checkm/dastools/output_table.txt:
+    Producer found, hence exceptions are ignored.
+
+selected job all
+    wildcards: 
+file None:
+    Producer found, hence exceptions are ignored.
+
+Conda environment envs/checkm.yml will be created.
+Conda environment envs/read_mapping.yml will be created.
+Conda environment envs/sickle.yml will be created.
+Conda environment envs/dastool.yml will be created.
+Conda environment envs/maxbin2.yml will be created.
+Conda environment envs/metabat2.yml will be created.
+Conda environment envs/spades.yml will be created.
+Conda environment envs/concoct.yml will be created.
+Job stats:
+job                                 count    min threads    max threads
+--------------------------------  -------  -------------  -------------
+all                                     1              1              1
+bin_concoct                            18             16             16
+bin_maxbin2                            18             32             32
+bin_metabat2                           18             16             16
+bowtie2_map_reads                      18             32             32
+convert_bam_to_fastq                    3              1              1
+evaluate_bins_checkm                   15             16             16
+generate_consensus_bins_dastools       18             32             32
+generate_depth_files                   18             16             16
+map_subassembly_reads                   3             32             32
+metaspades_assembly                    18             64             64
+sickle_trim_full                        3             16             16
+subset_reads_par                        3              1              1
+subset_reads_ser                       15              1              1
+total                                 169              1             64
+
+
+[Sat Aug 27 12:59:13 2022]
+rule sickle_trim_full:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/A1_all.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_singles.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_trimmed.fastq
+    jobid: 66
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_trimmed.fastq
+    wildcards: sample=A1
+    threads: 16
+    resources: mem_mb=125000, disk_mb=1000, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=00:20:00, partition=epyc-64
+
+sickle pe -c /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/A1_all.fastq -t sanger -m /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_trimmed.fastq -s /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_singles.fastq
+
+[Sat Aug 27 12:59:13 2022]
+rule sickle_trim_full:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/B1_all.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_singles.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq
+    jobid: 10
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq
+    wildcards: sample=B1
+    threads: 16
+    resources: mem_mb=125000, disk_mb=1000, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=00:20:00, partition=epyc-64
+
+sickle pe -c /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/B1_all.fastq -t sanger -m /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq -s /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_singles.fastq
+
+[Sat Aug 27 12:59:13 2022]
+rule sickle_trim_full:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/C1_all.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_singles.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_trimmed.fastq
+    jobid: 122
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_trimmed.fastq
+    wildcards: sample=C1
+    threads: 16
+    resources: mem_mb=125000, disk_mb=1000, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=00:20:00, partition=epyc-64
+
+sickle pe -c /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/C1_all.fastq -t sanger -m /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_trimmed.fastq -s /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_singles.fastq
+
+[Sat Aug 27 12:59:13 2022]
+rule subset_reads_par:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq
+    jobid: 65
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_trimmed.fastq
+    wildcards: sample=A1, subset=5
+    resources: mem_mb=<TBD>, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T
+
+
+        touch /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq
+        
+
+[Sat Aug 27 12:59:13 2022]
+rule subset_reads_par:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq
+    jobid: 9
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq
+    wildcards: sample=B1, subset=5
+    resources: mem_mb=<TBD>, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T
+
+
+        touch /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq
+        
+
+[Sat Aug 27 12:59:13 2022]
+rule subset_reads_par:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq
+    jobid: 121
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/full_par/sickle_trimmed/C1_all_trimmed.fastq
+    wildcards: sample=C1, subset=5
+    resources: mem_mb=<TBD>, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T
+
+
+        touch /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq
+        
+
+[Sat Aug 27 12:59:13 2022]
+rule metaspades_assembly:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta
+    jobid: 8
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq
+    wildcards: sample=B1, subset=5, modifier=par
+    threads: 64
+    resources: mem_mb=998000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=16:00:00, partition=largemem
+
+metaspades.py --12 /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly --memory 998 -t 64
+
+[Sat Aug 27 12:59:13 2022]
+rule metaspades_assembly:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta
+    jobid: 120
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq
+    wildcards: sample=C1, subset=5, modifier=par
+    threads: 64
+    resources: mem_mb=998000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=16:00:00, partition=largemem
+
+metaspades.py --12 /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly --memory 998 -t 64
+
+[Sat Aug 27 12:59:13 2022]
+rule metaspades_assembly:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta
+    jobid: 64
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq
+    wildcards: sample=A1, subset=5, modifier=par
+    threads: 64
+    resources: mem_mb=998000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=16:00:00, partition=largemem
+
+metaspades.py --12 /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly --memory 998 -t 64
+
+[Sat Aug 27 12:59:13 2022]
+rule bowtie2_map_reads:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam.bai, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.sam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_RAW.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.1.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.2.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.3.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.4.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.rev.1.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.rev.2.bt2
+    jobid: 125
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq
+    wildcards: sample=C1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+bowtie2-build /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1 --threads 32
+
+        # align reads
+        bowtie2 -x /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1 --interleaved /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq -S /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.sam --threads 32
+
+        # convert sam file into sorted and indexed bam file
+        samtools view -bS /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.sam --threads 32 > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_RAW.bam
+        samtools sort /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_RAW.bam --threads 32 > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam
+        samtools index -@ 32 /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_maxbin2:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2
+    log: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2/maxbin.log
+    jobid: 127
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq
+    wildcards: sample=C1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=6:30:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2 -p
+        run_MaxBin.pl -contig /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta -reads /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/sickle_trimmed/C1_all_trimmed.fastq -thread 32 -out /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2/maxbin
+
+[Sat Aug 27 12:59:13 2022]
+rule bowtie2_map_reads:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam.bai, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.sam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_RAW.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.1.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.2.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.3.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.4.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.rev.1.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.rev.2.bt2
+    jobid: 69
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta
+    wildcards: sample=A1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+bowtie2-build /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1 --threads 32
+
+        # align reads
+        bowtie2 -x /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1 --interleaved /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq -S /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.sam --threads 32
+
+        # convert sam file into sorted and indexed bam file
+        samtools view -bS /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.sam --threads 32 > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_RAW.bam
+        samtools sort /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_RAW.bam --threads 32 > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam
+        samtools index -@ 32 /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_maxbin2:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2
+    log: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2/maxbin.log
+    jobid: 71
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta
+    wildcards: sample=A1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=6:30:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2 -p
+        run_MaxBin.pl -contig /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta -reads /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/sickle_trimmed/A1_all_trimmed.fastq -thread 32 -out /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2/maxbin
+
+[Sat Aug 27 12:59:13 2022]
+rule bowtie2_map_reads:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam.bai, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.sam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_RAW.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.1.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.2.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.3.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.4.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.rev.1.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.rev.2.bt2
+    jobid: 13
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq
+    wildcards: sample=B1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+bowtie2-build /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1 --threads 32
+
+        # align reads
+        bowtie2 -x /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1 --interleaved /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq -S /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.sam --threads 32
+
+        # convert sam file into sorted and indexed bam file
+        samtools view -bS /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.sam --threads 32 > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_RAW.bam
+        samtools sort /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_RAW.bam --threads 32 > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam
+        samtools index -@ 32 /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_maxbin2:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2
+    log: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2/maxbin.log
+    jobid: 15
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq
+    wildcards: sample=B1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=6:30:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2 -p
+        run_MaxBin.pl -contig /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta -reads /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/sickle_trimmed/B1_all_trimmed.fastq -thread 32 -out /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2/maxbin
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.sam
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_RAW.bam
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.1.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.2.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.3.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.4.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.rev.1.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.rev.2.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.sam
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_RAW.bam
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.1.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.2.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.3.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.4.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.rev.1.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.rev.2.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.sam
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_RAW.bam
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.1.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.2.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.3.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.4.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.rev.1.bt2
+Would remove temporary output /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.rev.2.bt2
+
+[Sat Aug 27 12:59:13 2022]
+rule generate_depth_files:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_depth.txt, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_paired.txt
+    jobid: 124
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_depth.txt; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam
+    wildcards: sample=C1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+jgi_summarize_bam_contig_depths --outputDepth /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_depth.txt --pairedContigs /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_paired.txt /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_concoct:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/fasta_bins, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs
+    jobid: 126
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta
+    wildcards: sample=C1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=24:00:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/fasta_bins -p 
+        # first command (est time = 2 min)
+        cut_up_fasta.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta -c 1000 -o 0 --merge_last -b /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa
+        # EST time = 4 hours
+        concoct_coverage_table.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1.bam > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv
+
+        # about 12 hours (overestimate) with 16 threads
+        concoct --composition_file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa --coverage_file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv -b /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs --threads 16
+
+        merge_cutup_clustering.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv
+        extract_fasta_bins.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv --output_path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/fasta_bins
+
+[Sat Aug 27 12:59:13 2022]
+rule generate_depth_files:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_depth.txt, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_paired.txt
+    jobid: 68
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_depth.txt; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam
+    wildcards: sample=A1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+jgi_summarize_bam_contig_depths --outputDepth /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_depth.txt --pairedContigs /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_paired.txt /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_concoct:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/fasta_bins, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs
+    jobid: 70
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta
+    wildcards: sample=A1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=24:00:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/fasta_bins -p 
+        # first command (est time = 2 min)
+        cut_up_fasta.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta -c 1000 -o 0 --merge_last -b /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa
+        # EST time = 4 hours
+        concoct_coverage_table.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1.bam > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv
+
+        # about 12 hours (overestimate) with 16 threads
+        concoct --composition_file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa --coverage_file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv -b /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs --threads 16
+
+        merge_cutup_clustering.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv
+        extract_fasta_bins.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv --output_path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/fasta_bins
+
+[Sat Aug 27 12:59:13 2022]
+rule generate_depth_files:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_depth.txt, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_paired.txt
+    jobid: 12
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_depth.txt; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam
+    wildcards: sample=B1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+jgi_summarize_bam_contig_depths --outputDepth /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_depth.txt --pairedContigs /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_paired.txt /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_concoct:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/fasta_bins, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs
+    jobid: 14
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam
+    wildcards: sample=B1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=24:00:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/fasta_bins -p 
+        # first command (est time = 2 min)
+        cut_up_fasta.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta -c 1000 -o 0 --merge_last -b /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa
+        # EST time = 4 hours
+        concoct_coverage_table.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.bed /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1.bam > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv
+
+        # about 12 hours (overestimate) with 16 threads
+        concoct --composition_file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/contigs_10K.fa --coverage_file /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/coverage_table.csv -b /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs --threads 16
+
+        merge_cutup_clustering.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_gt1000.csv > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv
+        extract_fasta_bins.py /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv --output_path /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/fasta_bins
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_metabat2:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_depth.txt
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/metabat2
+    jobid: 123
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/metabat2; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_depth.txt, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta
+    wildcards: sample=C1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/metabat2 -p
+        metabat2 -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta  -a /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/read_mapping/C1_depth.txt -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/metabat2/metabat -t 16 --minCVSum 0 --saveCls -d -v --minCV 0.1 -m 2000
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_metabat2:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_depth.txt
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/metabat2
+    jobid: 67
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/metabat2; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_depth.txt, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta
+    wildcards: sample=A1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/metabat2 -p
+        metabat2 -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta  -a /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/read_mapping/A1_depth.txt -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/metabat2/metabat -t 16 --minCVSum 0 --saveCls -d -v --minCV 0.1 -m 2000
+
+[Sat Aug 27 12:59:13 2022]
+rule bin_metabat2:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_depth.txt
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/metabat2
+    jobid: 11
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/metabat2; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_depth.txt, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta
+    wildcards: sample=B1, subset=5, modifier=par
+    threads: 16
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/metabat2 -p
+        metabat2 -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta  -a /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/read_mapping/B1_depth.txt -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/metabat2/metabat -t 16 --minCVSum 0 --saveCls -d -v --minCV 0.1 -m 2000
+
+[Sat Aug 27 12:59:13 2022]
+rule generate_consensus_bins_dastools:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/metabat2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/B1_DASTool_bins
+    jobid: 7
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/B1_DASTool_bins; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/metabat2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2
+    wildcards: sample=B1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=2:30:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/B1_DASTool_bins -p
+
+        # metabat2
+        Fasta_to_Contig2Bin.sh -e fa -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/metabat2/ > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv
+
+        # maxbin
+        Fasta_to_Contig2Bin.sh -e fasta -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/maxbin2/ > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv
+
+        # concoct (delete first line "contig_id	concoct.cluster_id", use correct command
+        perl -pe "s/,/\tconcoct./g;" /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv
+        sed -i '1,1d' /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv
+
+        # Run DAS_Tool (EST TIME < 2 hours per sample)
+        DAS_Tool -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv,/Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv,/Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv -l maxbin,concoct,metabat -c /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/spades_assembly/contigs.fasta -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/B1 --write_bins --write_bin_evals -t 32
+        
+
+[Sat Aug 27 12:59:13 2022]
+rule generate_consensus_bins_dastools:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/metabat2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/C1_DASTool_bins
+    jobid: 119
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/C1_DASTool_bins; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/metabat2
+    wildcards: sample=C1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=2:30:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/C1_DASTool_bins -p
+
+        # metabat2
+        Fasta_to_Contig2Bin.sh -e fa -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/metabat2/ > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv
+
+        # maxbin
+        Fasta_to_Contig2Bin.sh -e fasta -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/maxbin2/ > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv
+
+        # concoct (delete first line "contig_id	concoct.cluster_id", use correct command
+        perl -pe "s/,/\tconcoct./g;" /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv
+        sed -i '1,1d' /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv
+
+        # Run DAS_Tool (EST TIME < 2 hours per sample)
+        DAS_Tool -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv,/Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv,/Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv -l maxbin,concoct,metabat -c /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/spades_assembly/contigs.fasta -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/C1_assembly/5_par/binning/dastools/C1 --write_bins --write_bin_evals -t 32
+        
+
+[Sat Aug 27 12:59:13 2022]
+rule generate_consensus_bins_dastools:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/metabat2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/A1_DASTool_bins
+    jobid: 63
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/A1_DASTool_bins; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/metabat2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs
+    wildcards: sample=A1, subset=5, modifier=par
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=2:30:00, partition=epyc-64
+
+
+        mkdir /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/A1_DASTool_bins -p
+
+        # metabat2
+        Fasta_to_Contig2Bin.sh -e fa -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/metabat2/ > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv
+
+        # maxbin
+        Fasta_to_Contig2Bin.sh -e fasta -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/maxbin2/ > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv
+
+        # concoct (delete first line "contig_id	concoct.cluster_id", use correct command
+        perl -pe "s/,/\tconcoct./g;" /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/concoct_subcontigs/concoct_subcontigs_clustering_merged.csv > /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv
+        sed -i '1,1d' /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv
+
+        # Run DAS_Tool (EST TIME < 2 hours per sample)
+        DAS_Tool -i /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/maxbin_contigs2bin.tsv,/Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/concoct_contigs2bin.tsv,/Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/metabat_contigs2bin.tsv -l maxbin,concoct,metabat -c /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/spades_assembly/contigs.fasta -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/5_par/binning/dastools/A1 --write_bins --write_bin_evals -t 32
+        
+
+[Sat Aug 27 12:59:13 2022]
+rule map_subassembly_reads:
+    input: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/B1_DASTool_bins, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.bam.bai, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.sam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1_RAW.bam, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.1.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.2.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.3.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.4.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.rev.1.bt2, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.rev.2.bt2
+    jobid: 6
+    reason: Missing output files: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/0_par/subiterative_mapping/B1.bam; Input files updated by another job: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/5_par/binning/dastools/B1_DASTool_bins
+    wildcards: sample=B1, subset=0
+    threads: 32
+    resources: mem_mb=125000, disk_mb=<TBD>, tmpdir=/var/folders/70/6y3c8qfd7237l9f10x5y556w0000gn/T, time=1:00:00, partition=epyc-64
+
+WorkflowError:
+Error when formatting 'bowtie2-build {input.contigs} {params.index} --threads {threads}
+
+        # align reads
+        bowtie2 -x {params.index} --interleaved {input.trimmed_fq} -S {output.sam} --threads {threads}
+
+        # convert sam file into sorted and indexed bam file
+        samtools view -f 4 -bS {output.sam} --threads {threads} > {output.raw_bam}
+        samtools sort {output.raw_bam} --threads {threads} > {output.bam}
+        samtools index -@ {threads} {output.bam}' for rule map_subassembly_reads. 'InputFiles' object has no attribute 'contigs'

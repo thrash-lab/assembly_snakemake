@@ -1,0 +1,2 @@
+SyntaxError in line 253 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+'(' was never closed

@@ -1,0 +1,11 @@
+Building DAG of jobs...
+candidate job all
+    wildcards: 
+candidate job metaspades_assembly
+    wildcards: sample=B1, subset=full, modifier=par
+MissingInputException in line 37 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Missing input files for rule metaspades_assembly:
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/spades_assembly, /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/spades_assembly/contigs.fasta
+    wildcards: sample=B1, subset=full, modifier=par
+    affected files:
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/B1_assembly/full_par/sickle_trimmed/B1_all_trimmed.fastq

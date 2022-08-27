@@ -90,7 +90,7 @@ rule generate_depth_files:
     conda: "../envs/metabat2.yml"
     threads: 16
     resources:
-        time = "1:00:00",
+        time = "2:00:00",
         mem_mb = 125000, #125GB,
         partition = "epyc-64"
     shell:
