@@ -11,7 +11,7 @@ base_dir=config['output']['output_dir']
 rule all:
     input: 
         full = expand(base_dir + "{sample}_assembly/100percent_par/checkm/dastools/output_table.txt", sample=config['input']),
-        subassemblies = expand(base_dir + "{sample}_assembly/{subset}_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages']),
+        subassemblies = expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages']),
         subiterative = expand(base_dir + "{sample}_assembly/{subset}percent_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'][1:]),
         subiterative_init = expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'][0]),
         bam = expand(base_dir +'{sample}_assembly/{subset}percent_ser/subiterative_mapping/{sample}.bam', sample=config['input'], subset=config['subassembly_percentages'][2])
@@ -244,7 +244,7 @@ rule subset_reads_par:
     input:
         trimmed = base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     output: 
-        trimmed = base_dir + '{sample}_assembly/{subset}_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed = base_dir + '{sample}_assembly/{subset}percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:
         """
         touch {output}
@@ -277,6 +277,7 @@ rule map_subassembly_reads:
         partition = "epyc-64"
     shell:
         """
+        # check strigency of mapped tag
         cat {input.dastools_bin}/*.fa > {output.cat_dastools_bins}
         bowtie2-build {output.cat_dastools_bins} {params.index} --threads {threads}
 

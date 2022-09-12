@@ -33,9 +33,14 @@ TODO: make config file hold resource req for each rule (testing)
 
 TODO: sub assemblies (done)
     TODO: subsetting rule: (done)
-    TODO: mapping rule:
-TODO: job groups see: https://stackoverflow.com/questions/69942132/snakemake-workflowerror-failed-to-group-jobs-together
-    motivation: sub jobs won't delete their output if error in entire job group prevails--smarter slurm resource management
+    TODO: mapping rule: (done)
+TODO: subiterative subassemblies (flow) (Done)
+TODO: subsetting rules: (done)
+    TODO: creating framework to adjust time (and resources) for subiterative assembly (here)
+TODO: testing subassembly:
+TODO: testing subiterative subassembly:
+
+afterthought: job gropus
 """
 
 def main():
