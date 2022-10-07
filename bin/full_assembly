@@ -28,7 +28,8 @@ TODO: make config file hold resource req for each rule (testing)
 
         cmds
             conda activate snakemake
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n
+            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n -sub 1,5,10,25,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n -sub 1,5,10,25,50
             
 
 TODO: sub assemblies (done)
@@ -61,7 +62,7 @@ def main():
     # subprocess and call snakemake with temp config file   --dag | dot -Tpdf > dag_all_07.pdf
     print(profile_path)
     subprocess.run("echo hello", shell=True)
-    subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3} --dag | dot -Tpdf > dag_all_09.pdf".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
+    subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3} --dag | dot -Tpdf > dag_all_11.pdf".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
     # TODO: configure snakemake to use config file
     # TODO: delete config file 
 
@@ -125,9 +126,9 @@ def preprocess_arguments(args):
             with open(args.i, newline='') as csvfile:
                 input_reader = csv.reader(csvfile, delimiter=',')
                 for row in input_reader:
-                    samples.append(row.split(",")[0])
-                    filenames.append(row.split(",")[1])
-            ref_args['samples'], ref_args['filenames'] = filenames
+                    samples.append(row[0])
+                    filenames.append(row[1])
+            ref_args['samples'], ref_args['filenames'] = samples, filenames
         
     return ref_args
         

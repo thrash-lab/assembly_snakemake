@@ -247,7 +247,7 @@ rule subset_reads_par:
         trimmed = base_dir + '{sample}_assembly/{subset}percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:
         """
-        touch {output}
+        reformat.sh in={input} out={output} samplerate={wildcards.subset} sampleseed=42
         """
 
 # map assembly to reads
@@ -277,14 +277,17 @@ rule map_subassembly_reads:
         partition = "epyc-64"
     shell:
         """
-        # check strigency of mapped tag
+        # check strigency of mapped tag (TODO)
+
+        # concatenate consensus/dastools bins and create index
         cat {input.dastools_bin}/*.fa > {output.cat_dastools_bins}
         bowtie2-build {output.cat_dastools_bins} {params.index} --threads {threads}
 
-        # align reads
+        # align reads (see how many reads(full set) align to the consensus bins)
         bowtie2 -x {params.index} --interleaved {input.trimmed_fq} -S {output.sam} --threads {threads}
 
         # convert sam file into sorted and indexed bam file
+        # -f 4 discards mapped reads so that only unmapped reads are left
         samtools view -f 4 -bS {output.sam} --threads {threads} > {output.raw_bam}
         samtools sort {output.raw_bam} --threads {threads} > {output.bam}
         samtools index -@ {threads} {output.bam}"""
@@ -328,9 +331,12 @@ rule subset_reads_ser:
     output: 
         # e.g. 10_ser
         trimmed = base_dir + '{sample}_assembly/{percentage}_ser/sickle_trimmed/{sample}_all_trimmed.fastq'
+    params: 
+        percentage = lambda wc: wc.get("percentage")[:-7] 
+        # https://stackoverflow.com/questions/71326692/passing-wildcard-values-in-params-in-snakemake
     shell:
         """
-        touch {output}
+        reformat.sh in={input} out={output.trimmed} samplerate={params.percentage} sampleseed=42
         """
 
 
