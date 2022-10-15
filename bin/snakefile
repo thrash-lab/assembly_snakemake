@@ -1,20 +1,36 @@
 import snakemake
 import numpy
 import os
+import yaml
 
 # make rules generalizable in terms of paths
 # determine output structure ()
+# make option to do just 100 percent assembly of all samples
 
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir=config['output']['output_dir']
 
+def determine_inputs(wildcards):
+    inputs = {}
+    if config['subiterassembly_percentages'] != 'none':
+        inputs["subiter_assemblies"]=expand(base_dir + "{sample}_assembly/{subset}percent_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subiterassembly_percentages'][1:])
+        inputs["subiterative_init"]=expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subiterassembly_percentages'][0])
+    if config['subassembly_percentages'] != 'none':
+        inputs["subassemblies"]=expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'])
+    inputs['full']=expand(base_dir + "{sample}_assembly/100percent_par/checkm/dastools/output_table.txt", sample=config['input'])
+    
+    return inputs
+
 rule all:
     input: 
-        full = expand(base_dir + "{sample}_assembly/100percent_par/checkm/dastools/output_table.txt", sample=config['input']),
-        subassemblies = expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages']),
-        subiterative = expand(base_dir + "{sample}_assembly/{subset}percent_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'][1:]),
-        subiterative_init = expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'][0]),
-        bam = expand(base_dir +'{sample}_assembly/{subset}percent_ser/subiterative_mapping/{sample}.bam', sample=config['input'], subset=config['subassembly_percentages'][2])
+        # full = expand(base_dir + "{sample}_assembly/100percent_par/checkm/dastools/output_table.txt", sample=config['input']),
+        # unpack(determine_subassembly),
+        unpack(determine_inputs)
+        #subassemblies = expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages']),
+        #subiterative = expand(base_dir + "{sample}_assembly/{subset}percent_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'][1:]),
+        #subiterative_init = expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'][0])
+        
+        #bam = expand(base_dir +'{sample}_assembly/{subset}percent_ser/subiterative_mapping/{sample}.bam', sample=config['input'], subset=config['subassembly_percentages'][2])
         #singles= expand(base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_singles.fastq', sample=config['input'])
         #paired_file = expand(base_dir +'{sample}_assembly/{subset}_{modifier}/read_mapping/{sample}_paired.txt', sample=config['input'])
         #contigs = expand(base_dir + '{sample}_assembly/full_par/spades_assembly/contigs.fasta', sample=config['input'])
@@ -22,7 +38,7 @@ rule all:
         # checkm_table = expand(base_dir + "{sample}_assemblly/100percent_par/checkm/dastools/output_table.txt", sample=config['input'])
 
 
-# this sickle trim rule acts as a starting point (only works on full subset)
+# this sickle trim rule acts as a starting point (trims the 100% raw fastq fil)
 rule sickle_trim_full:
     input:
         fastq = lambda wildcards: config['input'][wildcards.sample]
@@ -308,18 +324,18 @@ rule convert_bam_to_fastq:
 def iterate_subset(wcs):
     n = wcs.percentage[:-7]
     # if output percentage is first subassembly percentage (which shouldn't exist)
-    if n == config['subassembly_percentages'][0]:
+    if n == config['subiterassembly_percentages'][0]:
         raise ValueError("bad snakemake")
     
     # if it is one of the other subassembly percentages
-    for i in range(len(config['subassembly_percentages'])):
+    for i in range(len(config['subiterassembly_percentages'])):
         #print('please match:', config['subassembly_percentages'][i], n)
-        if int(n) == config['subassembly_percentages'][i] or int(n) == 100:
+        if int(n) == config['subiterassembly_percentages'][i] or int(n) == 100:
             if i == 1:
-                orig_percentage = config['subassembly_percentages'][i-1]
+                orig_percentage = config['subiterassembly_percentages'][i-1]
                 return '%s%s_assembly/%d%s_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, orig_percentage, 'percent', 'par', wcs.sample)
             else:
-                orig_percentage = config['subassembly_percentages'][i-1]
+                orig_percentage = config['subiterassembly_percentages'][i-1]
                 return '%s%s_assembly/%d%s_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, orig_percentage, 'percent', 'ser', wcs.sample)
     return '%s%s_assembly/%d%s_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, 100, 'percent', 'par', wcs.sample)
     

@@ -7,6 +7,10 @@ import subprocess
 import csv
 import os
 
+#  TODO: creating framework to adjust time (and resources) for subiterative assembly (here)
+# http://bluegenes.github.io/Using-Snakemake_Profiles/
+
+
 """what do I have and where I am going. 
 
 I have a pipeline that works on a single sample. it takes a fastq file as input and creates all the specified subdirs and files
@@ -20,28 +24,53 @@ The other objective is to create a pipeline that does subassemblies and iterativ
 accomplished with two new rules. One rule will be subsetting reads. another rule will be mapping reads. perhaps another rule
 will be subsetting only unmapped reads.
 
-TODO: set up argparse (done)
-TODO: config file (done)
-TODO: make config file hold resource req for each rule (testing)
+: set up argparse (done)
+: config file (done)
+: make config file hold resource req for each rule (testing)
     check config file is writen correctly
         make sample data/files (done)
 
         cmds
             conda activate snakemake
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n -sub 1,5,10,25,50
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n -sub 1,5,10,25,50
-            
+            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 1,5,10,25,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 1,5,10,25,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 10,20 --subiter 15,50
 
-TODO: sub assemblies (done)
-    TODO: subsetting rule: (done)
-    TODO: mapping rule: (done)
-TODO: subiterative subassemblies (flow) (Done)
-TODO: subsetting rules: (done)
-    TODO: creating framework to adjust time (and resources) for subiterative assembly (here)
+: sub assemblies (done)
+    : subsetting rule: (done)
+    : mapping rule: (done)
+: subiterative subassemblies (flow) (Done)
+: subsetting rules: (done) (done)
+    : creating framework to adjust time (and resources) for subiterative assembly (here)
+
+TODO: make an 100% assembly only rule
+    Done: Make seperate subassembly and subtractive iterative assembly command line args
+    Done: make config file update according to subassembly and subtractive iterative assembly
+    TODO: have rules in snakefile all change acccording to config file
+TODO: below
+
+Focus in on one sample 
+Make config file hold resource values to use e.g. 
+
+Subset 
+1: params for each rule
+10: params for each rule
+15: params for each rule
+25: params for each rule
+50: params for each rule
+100: params for each rule
+
+Have snakemake access these values for the rule by looking at percent wildcard (would have to use some sort of function)
+
+Would need to adjust full_assembly file to account for additional optionally in command line
+
+Worst case scenario.
+Do top level control of snakemake. Run snakemake on each iteration file and rewrite resource params for each iteration
+
 TODO: testing subassembly:
 TODO: testing subiterative subassembly:
 
-afterthought: job gropus
+afterthought: job groups
 """
 
 def main():
@@ -52,10 +81,15 @@ def main():
     snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snakefile")
     profile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.config/slurm/")
     config_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
-    if args.sub:
-        create_config_file(config_filename, args, samples, filenames, ref_args['sub'])
+    if args.sub and args.subiter:
+        print('woohoo')
+        create_config_file(config_filename, args, samples, filenames, subper=ref_args['sub'], subiterper=ref_args['subiter'])
+    elif args.sub:
+        create_config_file(config_filename, args, samples, filenames, subper=ref_args['sub'], subiterper=False)
+    elif args.subiter:
+        create_config_file(config_filename, args, samples, filenames, subper=False, subiterper=ref_args['subiter'])
     else:
-        create_config_file(config_filename, args, samples, filenames)
+        create_config_file(config_filename, args, samples, filenames, subper=False, subiterper=False)
     dry_run_addon = ""
     if args.n:
         dry_run_addon = "-n"
@@ -75,7 +109,9 @@ def add_arguments():
     p.add_argument('-o', help="path to output dir. If output dir does not exist, it will be created", required=True)
     p.add_argument('--resource-req', help='path to yaml file that stores the resource requirements if using slurm', required = False, dest='slurm_config')
     p.add_argument('-n', help='dry run through snakemake workflow', default=False, action='store_true')
-    p.add_argument('-sub', help='percentage of reads to keep for subassemblies. Enter as comma delimited list of percentages \n'
+    p.add_argument('--sub', help='percentage of reads to keep for subassemblies. Enter as comma delimited list of percentages \n'
+                   'e.g. 5,10,25,50', type=str, required=False)
+    p.add_argument('--subiter', help='percentage of reads to keep for subtractive iterative assemblies. Enter as comma delimited list of percentages \n'
                    'e.g. 5,10,25,50', type=str, required=False)
 
     #TODO: add additional options to specify subassemblies and iterative subtractive assembly
@@ -97,6 +133,17 @@ def preprocess_arguments(args):
             raise Exception("subassembly percentages are not in range [1,99]")
         
         ref_args['sub'] = sub_per
+    if args.subiter:
+        # make sure that list of subassembly percentages if provided are appropriate
+        # check if input is valid
+        sub_per = args.subiter.split(',')
+        sub_per = [int(a) for a in sub_per]
+
+        # check if "a" is in proper range.
+        if len(set(sub_per) - set(range(1, 99))) > 0: # can use also min(a)>=1 and max(a)<=50
+            raise Exception("subassembly percentages are not in range [1,99]")
+        print(sub_per)
+        ref_args['subiter'] = sub_per
 
     # make sure -i flag points to dir or csv file. make sure that suffix flag is indicated if -i points to a dir
 
@@ -133,7 +180,7 @@ def preprocess_arguments(args):
     return ref_args
         
 
-def create_config_file(filename, args, samples, filenames, subper=False):
+def create_config_file(filename, args, samples, filenames, subper=False, subiterper=False):
 
     pairs = []
     for i in range(len(samples)):
@@ -144,6 +191,16 @@ def create_config_file(filename, args, samples, filenames, subper=False):
         subper_str = "subassembly_percentages:"
         for per in subper:
             subper_str = subper_str + "\n      - " + str(per)
+    else:
+        subper_str = "subassembly_percentages: none"
+    
+    subiterper_str = ""
+    if subiterper:
+        subiterper_str = "subiterassembly_percentages:"
+        for iterper in subiterper:
+            subiterper_str = subiterper_str + "\n      - " + str(iterper)
+    else:
+        subiterper_str = "subiterassembly_percentages: none"
 
     # string to write to config file
     yml_lines = """
@@ -153,7 +210,8 @@ def create_config_file(filename, args, samples, filenames, subper=False):
       output_dir: {1}
     slurm_resources: {2}
     {3}
-    """.format("\n      ".join(pairs), args.o, args.slurm_config, subper_str)
+    {4}
+    """.format("\n      ".join(pairs), args.o, args.slurm_config, subper_str, subiterper_str)
 
     with open(filename, 'w') as f:
         f.writelines(yml_lines)
