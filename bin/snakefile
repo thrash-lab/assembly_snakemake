@@ -329,7 +329,6 @@ def iterate_subset(wcs):
     
     # if it is one of the other subassembly percentages
     for i in range(len(config['subiterassembly_percentages'])):
-        #print('please match:', config['subassembly_percentages'][i], n)
         if int(n) == config['subiterassembly_percentages'][i] or int(n) == 100:
             if i == 1:
                 orig_percentage = config['subiterassembly_percentages'][i-1]
@@ -354,6 +353,3 @@ rule subset_reads_ser:
         """
         reformat.sh in={input} out={output.trimmed} samplerate={params.percentage} sampleseed=42
         """
-
-
-#print(config['subassembly_percentages'][:-2])
