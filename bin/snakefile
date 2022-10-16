@@ -43,8 +43,8 @@ rule sickle_trim_full:
     input:
         fastq = lambda wildcards: config['input'][wildcards.sample]
     output:
-        singles=base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_singles.fastq',
-        trimmed=base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        singles=base_dir + '{sample}_assembly/100percentf_par/sickle_trimmed/{sample}_all_singles.fastq',
+        trimmed=base_dir + '{sample}_assembly/100percentf_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     conda: "../envs/sickle.yml"
     threads: 16
     resources:
@@ -258,7 +258,7 @@ rule evaluate_bins_checkm:
 # add subset percentage list
 rule subset_reads_par:
     input:
-        trimmed = base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed = base_dir + '{sample}_assembly/100percentf_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     output: 
         trimmed = base_dir + '{sample}_assembly/{subset}percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:
