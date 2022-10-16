@@ -43,11 +43,12 @@ will be subsetting only unmapped reads.
 : subsetting rules: (done) (done)
     : creating framework to adjust time (and resources) for subiterative assembly (here)
 
-TODO: make an 100% assembly only rule
+Done: make an 100% assembly only rule
     Done: Make seperate subassembly and subtractive iterative assembly command line args
     Done: make config file update according to subassembly and subtractive iterative assembly
-    TODO: have rules in snakefile all change acccording to config file
-TODO: below
+    Done: have rules in snakefile all change acccording to config file
+
+TODO: Make resource params adjust according to [par, ser] and [percentage_reads]
 
 Focus in on one sample 
 Make config file hold resource values to use e.g. 
