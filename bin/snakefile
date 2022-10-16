@@ -37,14 +37,15 @@ rule all:
         #expand(base_dir +"{sample}_assembly/100percent_par/binning/dastools/metabat_contigs2bin.tsv", sample=config['input'])
         # checkm_table = expand(base_dir + "{sample}_assemblly/100percent_par/checkm/dastools/output_table.txt", sample=config['input'])
 
+ruleorder: metaspades_assembly > subset_reads_par 
 
 # this sickle trim rule acts as a starting point (trims the 100% raw fastq fil)
 rule sickle_trim_full:
     input:
         fastq = lambda wildcards: config['input'][wildcards.sample]
     output:
-        singles=base_dir + '{sample}_assembly/100percentf_par/sickle_trimmed/{sample}_all_singles.fastq',
-        trimmed=base_dir + '{sample}_assembly/100percentf_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        singles=base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_singles.fastq',
+        trimmed=base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     conda: "../envs/sickle.yml"
     threads: 16
     resources:
@@ -258,7 +259,7 @@ rule evaluate_bins_checkm:
 # add subset percentage list
 rule subset_reads_par:
     input:
-        trimmed = base_dir + '{sample}_assembly/100percentf_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed = base_dir + '{sample}_assembly/100_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     output: 
         trimmed = base_dir + '{sample}_assembly/{subset}percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:
