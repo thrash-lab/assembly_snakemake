@@ -117,7 +117,8 @@ def add_arguments():
     p.add_argument('-o', help="path to output dir. If output dir does not exist, it will be created", required=True)
     p.add_argument('--resource-req', help='path to yaml file that stores the resource requirements if using slurm', required = False, dest='slurm_config')
     p.add_argument('-n', help='dry run through snakemake workflow', default=False, action='store_true')
-    p.add_argument('--additional-args', help='insert additional snakemake args e.g. "--rerun incomplete -d -f"', default=False, type=str, required=False, dest="opt")
+    p.add_argument('--additional-args', help='insert additional snakemake args e.g. "-n" NOTE: insert args with equal sign \n'
+                   '--additional-args="--rerun-incomplete"', default=False, type=str, required=False, dest="opt", action="store")
     p.add_argument('--dag', help='create DAG pdf. Enter path to output dag.pdf', default=False, type=str, required=False)
     p.add_argument('--sub', help='percentage of reads to keep for subassemblies. Enter as comma delimited list of percentages \n'
                    'e.g. 5,10,25,50', type=str, required=False)
