@@ -99,9 +99,12 @@ def main():
         dry_run_addon = "-n"
     # subprocess and call snakemake with temp config file   --dag | dot -Tpdf > dag_all_07.pdf
     print(profile_path)
-    subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3} --dag | dot -Tpdf > dag_all_13.pdf".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
-    # TODO: configure snakemake to use config file
-    # TODO: delete config file 
+    if args.n:
+        subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3} -n".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
+    elif args.dag:
+        subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3} --dag | dot -Tpdf > {4}".format(snakefile_path, profile_path, dry_run_addon, config_filename, args.dag), shell=True)
+    else:
+        subprocess.run("snakemake -s {0} --profile {1} {2} --configfile {3}".format(snakefile_path, profile_path, dry_run_addon, config_filename), shell=True)
 
 def add_arguments():
     p = argparse.ArgumentParser(prog="Assembly workflow", description="Run Streamlined Assembly Protocols")
@@ -112,6 +115,7 @@ def add_arguments():
     p.add_argument('-o', help="path to output dir. If output dir does not exist, it will be created", required=True)
     p.add_argument('--resource-req', help='path to yaml file that stores the resource requirements if using slurm', required = False, dest='slurm_config')
     p.add_argument('-n', help='dry run through snakemake workflow', default=False, action='store_true')
+    p.add_argument('--dag', help='create DAG pdf. Enter path to output dag.pdf', default=False, type=str, required=False)
     p.add_argument('--sub', help='percentage of reads to keep for subassemblies. Enter as comma delimited list of percentages \n'
                    'e.g. 5,10,25,50', type=str, required=False)
     p.add_argument('--subiter', help='percentage of reads to keep for subtractive iterative assemblies. Enter as comma delimited list of percentages \n'
