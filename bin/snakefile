@@ -40,11 +40,11 @@ rule sickle_trim_full:
     resources:
         #unpack(param_controller.calculate_params_sickle_trim_full)
         # time = "00:20:00",
-        # mem_mb = 125000, #125GB
-        # partition = "epyc-64"
+        mem_mb = 125000, #125GB
+        partition = "epyc-64"
         time = param_controller.calculate_sickle_trim_full_time,
-        mem_mb = param_controller.calculate_sickle_trim_full_mem,
-        partition = param_controller.calculate_sickle_trim_full_partition,
+        #mem_mb = param_controller.calculate_sickle_trim_full_mem,
+        #partition = param_controller.calculate_sickle_trim_full_partition,
     shell:
         "sickle pe -c {input.fastq} -t sanger -m {output.trimmed} -s {output.singles}"
 
