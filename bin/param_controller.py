@@ -1,9 +1,6 @@
 import yaml
 import os
 
-def printhello():
-    print("helloooooooo")
-    
 def get_yaml_fields():
     config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
     with open(yaml_file, 'r') as file:

@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule sickle_trim_full in line 33 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile:
+Missing input files for rule sickle_trim_full:
+    output: /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_singles.fastq, /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/A1_assembly/full_par/sickle_trimmed/A1_all_trimmed.fastq
+    wildcards: sample=A1
+    affected files:
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/A1_all.fastq
