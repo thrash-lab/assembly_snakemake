@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule subset_reads_par in line 260 of /Users/connerkojima/thrash/assembly_EAGER/bin/snakefile:
+Missing input files for rule subset_reads_par:
+    output: /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/1percent_par/sickle_trimmed/A1_all_trimmed.fastq
+    wildcards: sample=A1, subset=1
+    affected files:
+        /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/A1_assembly/100_par/sickle_trimmed/A1_all_trimmed.fastq

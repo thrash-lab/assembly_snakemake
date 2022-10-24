@@ -51,6 +51,7 @@ Done: make an 100% assembly only rule
 Test command in discovery hpc:
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml -n
 
+Done: make slurm resource config from assembly show up in snakemake config
 TODO: Make resource params adjust according to [par, ser] and [percentage_reads]
 
 Focus in on one sample 
@@ -81,18 +82,18 @@ def main():
     args = add_arguments()
 
     ref_args = preprocess_arguments(args)
-    samples, filenames = ref_args['samples'], ref_args['filenames']
+    samples, filenames, resources = ref_args['samples'], ref_args['filenames'], ref_args['slurm']
     snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snakefile")
     profile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.config/slurm/")
     config_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
     if args.sub and args.subiter:
-        create_config_file(config_filename, args, samples, filenames, subper=ref_args['sub'], subiterper=ref_args['subiter'])
+        create_config_file(config_filename, args, samples, filenames, resources, subper=ref_args['sub'], subiterper=ref_args['subiter'])
     elif args.sub:
-        create_config_file(config_filename, args, samples, filenames, subper=ref_args['sub'], subiterper=False)
+        create_config_file(config_filename, args, samples, filenames, resources, subper=ref_args['sub'], subiterper=False)
     elif args.subiter:
-        create_config_file(config_filename, args, samples, filenames, subper=False, subiterper=ref_args['subiter'])
+        create_config_file(config_filename, args, samples, filenames, resources, subper=False, subiterper=ref_args['subiter'])
     else:
-        create_config_file(config_filename, args, samples, filenames, subper=False, subiterper=False)
+        create_config_file(config_filename, args, samples, filenames, resources, subper=False, subiterper=False)
     dry_run_addon = ""
     if args.n:
         dry_run_addon = "-n"
@@ -161,8 +162,9 @@ def preprocess_arguments(args):
     if args.slurm_config:
         with open(args.slurm_config, 'r') as f:
             lines = f.readlines()
-            lines = ["  {0}".format(line) for line in lines]
-        ref_args['slurm'] = lines
+            lines = ["      {0}".format(line) for line in lines]
+            resources_str = "".join(lines)
+        ref_args['slurm'] = resources_str
     
     if os.path.isdir(args.i):
         if not args.s:
@@ -191,7 +193,7 @@ def preprocess_arguments(args):
     return ref_args
         
 
-def create_config_file(filename, args, samples, filenames, subper=False, subiterper=False):
+def create_config_file(filename, args, samples, filenames, resources, subper=False, subiterper=False):
 
     pairs = []
     for i in range(len(samples)):
@@ -219,10 +221,11 @@ def create_config_file(filename, args, samples, filenames, subper=False, subiter
       {0}
     output:
       output_dir: {1}
-    slurm_resources: {2}
+    {2}
     {3}
-    {4}
-    """.format("\n      ".join(pairs), args.o, args.slurm_config, subper_str, subiterper_str)
+    slurm_resources: 
+{4}
+    """.format("\n      ".join(pairs), args.o, subper_str, subiterper_str, resources)
 
     with open(filename, 'w') as f:
         f.writelines(yml_lines)
