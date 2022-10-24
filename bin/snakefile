@@ -1,5 +1,4 @@
 import snakemake
-import numpy
 import os
 import yaml
 import sys
