@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionExceptionin line 32 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile:
+Error:
+  KeyError: 'slurm resources'
+Wildcards:
+  sample=A1
+Traceback:
+  File "/Users/connerkojima/thrash/assembly_snakemake/bin/param_controller.py", line 20, in calculate_sickle_trim_full_mem
