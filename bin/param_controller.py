@@ -3,7 +3,7 @@ import os
 
 def get_yaml_fields():
     config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
-    with open(yaml_file, 'r') as file:
+    with open(config_file, 'r') as file:
         config = yaml.safe_load(file)
 
     return config
