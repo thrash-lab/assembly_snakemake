@@ -1,4 +1,4 @@
-sickle_trim:
+sickle_trim_full:
   ntasks: 1
   time: 00:20:00
   cpus-per-task: 16
