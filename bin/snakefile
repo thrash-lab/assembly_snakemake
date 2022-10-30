@@ -44,7 +44,9 @@ rule sickle_trim_full:
         # partition = "epyc-64",
         time = param_controller.calculate_sickle_trim_full_time,
         mem_mb = param_controller.calculate_sickle_trim_full_mem,
-        partition = param_controller.calculate_sickle_trim_full_partition,
+        partition = param_controller.calculate_sickle_trim_full_partition
+        # unpack(param_controller.calculate_sickle_trim_full)
+        
     shell:
         "sickle pe -c {input.fastq} -t sanger -m {output.trimmed} -s {output.singles}"
 

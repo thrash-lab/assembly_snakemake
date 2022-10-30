@@ -9,19 +9,22 @@ def get_yaml_fields():
     return config
 
 def calculate_sickle_trim_full_time(wildcards):
-    params = {}
     config = get_yaml_fields()
     return config['slurm_resources']['sickle_trim_full']['time']
 
-
 def calculate_sickle_trim_full_mem(wildcards):
-    params = {}
     config = get_yaml_fields()
     return config['slurm_resources']['sickle_trim_full']['mem']
 
 def calculate_sickle_trim_full_partition(wildcards):
-    params = {}
     config = get_yaml_fields()
     return config['slurm_resources']['sickle_trim_full']['partition']
 
-    
+# def calculate_sickle_trim_full(wildcards):
+#     params = {}
+#     config = get_yaml_fields()
+#     params['time'] = config['slurm_resources']['sickle_trim_full']['time']
+#     params['mem'] = config['slurm_resources']['sickle_trim_full']['mem']
+#     params['partition'] = config['slurm_resources']['sickle_trim_full']['partition']
+
+#     return params

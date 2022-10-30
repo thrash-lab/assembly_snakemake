@@ -2,7 +2,7 @@ sickle_trim_full:
   ntasks: 1
   time: 00:20:00
   cpus-per-task: 16
-  mem: 125GB
+  mem: 125000
   partition: epyc-64
 
 metaspades_assembly:

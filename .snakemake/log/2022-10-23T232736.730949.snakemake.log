@@ -1,0 +1,3 @@
+RuleExceptionin line 51 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile:
+Resources have to be named.
+  File "/Users/connerkojima/thrash/assembly_snakemake/bin/snakefile", line 51, in <module>
