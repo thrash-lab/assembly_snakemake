@@ -2,7 +2,7 @@ import snakemake
 import os
 import yaml
 import sys
-import param_controller
+import param_controller2 as param_controller
 
 # make rules generalizable in terms of paths
 # determine output structure ()
@@ -33,19 +33,14 @@ rule sickle_trim_full:
     input:
         fastq = lambda wildcards: config['input'][wildcards.sample]
     output:
-        singles=base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_singles.fastq',
-        trimmed=base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        singles=base_dir + '{sample}_assembly/full_par/sickle_trimmed/{sample}_all_singles.fastq',
+        trimmed=base_dir + '{sample}_assembly/full_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     conda: "../envs/sickle.yml"
     threads: 16
     resources:
-        #unpack(param_controller.calculate_params_sickle_trim_full)
-        # time = "00:20:00",
-        # mem_mb = 125000, #125GB
-        # partition = "epyc-64",
         time = param_controller.calculate_sickle_trim_full_time,
         mem_mb = param_controller.calculate_sickle_trim_full_mem,
         partition = param_controller.calculate_sickle_trim_full_partition
-        # unpack(param_controller.calculate_sickle_trim_full)
         
     shell:
         "sickle pe -c {input.fastq} -t sanger -m {output.trimmed} -s {output.singles}"
@@ -59,9 +54,9 @@ rule metaspades_assembly:
     conda: "../envs/spades.yml"
     threads: 64
     resources:
-        time = "16:00:00",
-        mem_mb = 998000, #998GB
-        partition = "largemem"
+        time = param_controller.calculate_m_assembly_time,
+        mem_mb = param_controller.calculate_m_assembly_mem,
+        partition = param_controller.calculate_m_assembly_partition
     shell:
         "metaspades.py --12 {input} -o {output.spades_dir} --memory 998 -t {threads}"
 
@@ -254,7 +249,7 @@ rule evaluate_bins_checkm:
 # add subset percentage list
 rule subset_reads_par:
     input:
-        trimmed = base_dir + '{sample}_assembly/100percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
+        trimmed = base_dir + '{sample}_assembly/full_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     output: 
         trimmed = base_dir + '{sample}_assembly/{subset}percent_par/sickle_trimmed/{sample}_all_trimmed.fastq'
     shell:

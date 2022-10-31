@@ -15,7 +15,10 @@ Here's a better idea. I make a separate test code environment where I test the s
 for 1, 5, 10, 20, and 50 on a single sample. I guess and check the time constraints until they are done
 
 TODO: 
-make separate framework to test time limits
+make separate framework to test time limits (done)
+make functions in param_controller2 to have different time limits (IP)
+test subassemblies one by one (e.g. --sub 1) on hpc
+adjust number accordingly
 
 
 
@@ -36,5 +39,17 @@ def calculate_sickle_trim_full_mem(wildcards):
     return config['slurm_resources']['sickle_trim_full']['mem']
 
 def calculate_sickle_trim_full_partition(wildcards):
+    config = get_yaml_fields()
+    return config['slurm_resources']['sickle_trim_full']['partition']
+
+def calculate_m_assembly_time(wildcards):
+    config = get_yaml_fields()
+    return config['slurm_resources']['sickle_trim_full']['time']
+
+def calculate_m_assembly_mem(wildcards):
+    config = get_yaml_fields()
+    return config['slurm_resources']['sickle_trim_full']['mem']
+
+def calculate_m_assembly_partition(wildcards):
     config = get_yaml_fields()
     return config['slurm_resources']['sickle_trim_full']['partition']

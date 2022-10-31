@@ -32,9 +32,11 @@ will be subsetting only unmapped reads.
 
         cmds
             conda activate snakemake
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 1,5,10,20,50
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 1,5,10,20,50
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 10,20 --subiter 15,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 1,5,10,20,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 1,5,10,20,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 10,20 --subiter 15,50
+
+            full_assembly2 -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 1,5,10,20,50
 
 : sub assemblies (done)
     : subsetting rule: (done)
@@ -49,9 +51,9 @@ Done: make an 100% assembly only rule
     Done: have rules in snakefile all change acccording to config file
 
 Test command in discovery hpc:
-/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml -n
-/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml --additional-args="--rerun-incomplete --rerun-triggers mtime"
-/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml --additional-args="--rerun-incomplete --rerun-triggers mtime -n"
+/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml -n
+/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --additional-args="--rerun-incomplete --rerun-triggers mtime"
+/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --additional-args="--rerun-incomplete --rerun-triggers mtime -n"
 
 
 Done: make slurm resource config from assembly show up in snakemake config
@@ -86,7 +88,7 @@ def main():
 
     ref_args = preprocess_arguments(args)
     samples, filenames, resources = ref_args['samples'], ref_args['filenames'], ref_args['slurm']
-    snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snakefile")
+    snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snakefile2")
     profile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.config/slurm/")
     config_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
     if args.sub and args.subiter:
