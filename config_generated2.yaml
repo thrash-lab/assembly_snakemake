@@ -1,0 +1,113 @@
+
+    input:
+      B1: /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/B1_all.fastq
+      A1: /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/A1_all.fastq
+      C1: /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/C1_all.fastq
+    output:
+      output_dir: /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/
+    subassembly_percentages:
+      - 1
+      - 5
+      - 10
+      - 20
+      - 50
+    subiterassembly_percentages: none
+    slurm_resources: 
+        sickle_trim_full:
+          ntasks: 1
+          time: 00:20:00
+          cpus-per-task: 16
+          mem: 125000
+          partition: main
+        metaspades_assembly:
+          ntasks: 1
+          nodes: 1
+          time: 
+            1_per: "0:15:00"
+            5_per: "1:15:00"
+            10_per: "3:00:00"
+            20_per: "4:00:00"
+            50_per: "8:00:00"
+            100_per: "16:00:00"
+          cpus-per-task: 64
+          mem: 998000
+          partition: largemem
+        bowtie2_map_reads: 
+          ntasks: 1
+          time: 
+            1_per: "0:10:00"
+            5_per: 0:10:00
+            10_per: 0:10:00
+            20_per: 0:15:00
+            50_per: 0:30:00
+            100_per: "1:00:00"
+          cpus-per-task: 32
+          mem: 125000
+          partition: main
+        generate_depth_files:
+          ntasks: 1
+          time:
+            1_per: 0:10:00
+            5_per: 0:10:00
+            10_per: 0:10:00
+            20_per: 0:15:00
+            50_per: 0:30:00
+            100_per: "1:00:00"
+          cpus-per-task: 16
+          mem: 125000
+          partition: main
+        bin_metabat2:
+          ntasks: 1
+          time:
+            1_per: 0:10:00
+            5_per: 0:10:00
+            10_per: 0:10:00
+            20_per: 0:15:00
+            50_per: 0:30:00
+            100_per: 1:00:00
+          cpus-per-task: 16
+          mem: 125000
+          partition: main
+        bin_concoct:
+          ntasks: 1
+          time:
+            1_per: 1:10:00
+            5_per: 1:30:00
+            10_per: 3:00:00
+            20_per: 6:00:00
+            50_per: 12:00:00
+            100_per: 24:00:00
+          cpus-per-task: 16
+          mem: 125000
+          partition: epyc-64
+        bin_maxbin2:
+          ntasks: 1
+          time:
+            1_per: 0:20:00
+            5_per: 0:30:00
+            10_per: 1:00:00
+            20_per: 2:00:00
+            50_per: 3:30:00
+            100_per: 7:00:00
+          cpus-per-task: 32
+          mem: 125000
+          partition: epyc-64
+        generate_consensus_bins_dastools:
+          ntasks: 1
+          time:
+            1_per: 0:20:00
+            5_per: 0:30:00
+            10_per: 1:00:00
+            20_per: 1:00:00
+            50_per: 1:30:00
+            100_per: 2:30:00
+          cpus-per-task: 32
+          mem: 125000
+          partition: epyc-64
+        evaluate_bins_checkm:
+          ntasks: 1
+          time: 0:25:00
+          cpus-per-task: 16
+          mem: 50000
+          partition: main
+    

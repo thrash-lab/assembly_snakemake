@@ -92,7 +92,7 @@ def main():
     samples, filenames, resources = ref_args['samples'], ref_args['filenames'], ref_args['slurm']
     snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snakefile2")
     profile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.config/slurm/")
-    config_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
+    config_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated2.yaml')
     if args.sub and args.subiter:
         create_config_file(config_filename, args, samples, filenames, resources, subper=ref_args['sub'], subiterper=ref_args['subiter'])
     elif args.sub:
