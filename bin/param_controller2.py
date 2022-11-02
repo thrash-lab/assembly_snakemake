@@ -42,14 +42,15 @@ def calculate_sickle_trim_full_partition(wildcards):
     config = get_yaml_fields()
     return config['slurm_resources']['sickle_trim_full']['partition']
 
+#
 def calculate_m_assembly_time(wildcards):
     config = get_yaml_fields()
-    return config['slurm_resources']['sickle_trim_full']['time']
+    return config['slurm_resources']['metaspades_assembly']['time'][str("{0}_per".format(wildcards.subset[:-7]))]
 
 def calculate_m_assembly_mem(wildcards):
     config = get_yaml_fields()
-    return config['slurm_resources']['sickle_trim_full']['mem']
+    return config['slurm_resources']['metaspades_assembly']['mem']
 
 def calculate_m_assembly_partition(wildcards):
     config = get_yaml_fields()
-    return config['slurm_resources']['sickle_trim_full']['partition']
+    return config['slurm_resources']['metaspades_assembly']['partition']
