@@ -27,6 +27,7 @@ rule all:
         unpack(determine_inputs)
 
 ruleorder: metaspades_assembly > subset_reads_par 
+ruleorder: sickle_trim_full > subset_reads_par
 
 # this sickle trim rule acts as a starting point (trims the 100% raw fastq fil)
 rule sickle_trim_full:
