@@ -1,0 +1,10 @@
+Building DAG of jobs...
+InputFunctionExceptionin line 49 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile2:
+Error:
+  TypeError: 'int' object is not subscriptable
+Wildcards:
+  sample=B1
+  subset=1percent
+  modifier=par
+Traceback:
+  File "/Users/connerkojima/thrash/assembly_snakemake/bin/param_controller2.py", line 48, in calculate_m_assembly_time

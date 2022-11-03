@@ -35,7 +35,7 @@ will be subsetting only unmapped reads.
             full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 1,5,10,20,50
             full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 1,5,10,20,50
             full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 10,20 --subiter 15,50
-            full_assembly2 -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml --sub 1,5,10,20,50 --additional-args="-n"
+            full_assembly2 -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/sample2.csv -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml --sub 1,5,10,20,50 --additional-args="-n"
 
             full_assembly2 -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 1,5,10,20,50
 
@@ -58,7 +58,13 @@ Test command in discovery hpc:
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --additional-args="--rerun-incomplete --rerun-triggers mtime -n"
 
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/samples.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --additional-args="-n"
-/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly2 -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/samples.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --additional-args="-n"
+
+
+# test commands for sub assemblies
+# for local
+full_assembly2 -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 1,5,10,20,50
+# for hpc
+/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly2 -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/samples2.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --additional-args="-n"
 
 
 Done: make slurm resource config from assembly show up in snakemake config

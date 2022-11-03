@@ -24,7 +24,7 @@ adjust number accordingly
 
 """
 def get_yaml_fields():
-    config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
+    config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated2.yaml')
     with open(config_file, 'r') as file:
         config = yaml.safe_load(file)
 

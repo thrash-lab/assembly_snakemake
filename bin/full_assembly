@@ -48,13 +48,17 @@ Done: make an 100% assembly only rule
     Done: make config file update according to subassembly and subtractive iterative assembly
     Done: have rules in snakefile all change acccording to config file
 
-Test command in discovery hpc:
+execute command in discovery hpc: for thrash metaGs
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml -n
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml --additional-args="--rerun-incomplete --rerun-triggers mtime"
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml --additional-args="--rerun-incomplete --rerun-triggers mtime -n"
 
-# remove Tbon_V2_S22 and LKB_V7_S19 from list
+test command on fake file (dry run only)
+/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/samples2.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml -n
+
+TODO: add Tbon_V2_S22 and LKB_V7_S19 back to list
 Done: make slurm resource config from assembly show up in snakemake config
+
 TODO: Make resource params adjust according to [par, ser] and [percentage_reads]
 
 Focus in on one sample 
