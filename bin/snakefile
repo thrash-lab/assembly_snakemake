@@ -258,7 +258,7 @@ rule subset_reads_par:
         mem_mb = 120000, #120GB
         partition = "main"
     params: 
-        percentage = lambda wc: "{:02d}".format(wc.get("percentage")[:-7]) 
+        percentage = lambda wc: "{:02d}".format(wc.subset) 
     conda: "../envs/bbmap.yml"
     shell:
         """
