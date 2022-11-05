@@ -258,7 +258,7 @@ rule subset_reads_par:
         mem_mb = 120000, #120GB
         partition = "main"
     params: 
-        percentage = lambda wc: "{:02d}".format(wc.subset) 
+        percentage = lambda wc: "{:02d}".format(int(wc.subset)) 
     conda: "../envs/bbmap.yml"
     shell:
         """
@@ -354,7 +354,7 @@ rule subset_reads_ser:
         mem_mb = 120000, #120GB
         partition = "epyc-64"
     params: 
-        percentage = lambda wc: "{:02d}".format(wc.get("percentage")[:-7]) 
+        percentage = lambda wc: "{:02d}".format(int(wc.get("percentage")[:-7])) 
         # https://stackoverflow.com/questions/71326692/passing-wildcard-values-in-params-in-snakemake
     shell:
         """
