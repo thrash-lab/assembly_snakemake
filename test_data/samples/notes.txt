@@ -1,0 +1,124 @@
+# snakemaked (no work to be done)
+CJ_V7_S12,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V7_S12_all.fastq
+LKB_V4_S16,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V4_S16_all.fastq
+LKB_V8_S20,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V8_S20_all.fastq
+Tbon_V5_S24,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V5_S24_all.fastq
+CJ_V3_S9,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V3_S9_all.fastq
+CJ_V8_S13,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V8_S13_all.fastq
+LKB_V5_S17,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V5_S17_all.fastq
+Tbon_V10_S28,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V10_S28_all.fastq
+Tbon_V6_S25,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V6_S25_all.fastq
+LKB_V10_S21,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V10_S21_all.fastq
+LKB_V6_S18,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V6_S18_all.fastq
+Tbon_V7_S26,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V7_S26_all.fastq
+CJ_V5_S11,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V5_S11_all.fastq
+LKB_V2_S15,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V2_S15_all.fastq
+Tbon_V4_S23,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V4_S23_all.fastq
+Tbon_V8_S27,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V8_S27_all.fastq
+
+# full assembly but none to be done
+ARD_V2_S1_assembly_dir:
+ARD_V3_S2_assembly_dir:
+ARD_V5_S3_assembly_dir:
+ARD_V6_S4_assembly_dir:
+ARD_V7_S5_assembly_dir:
+ARD_V8_S6_assembly_dir:
+ARD_V9_S7_assembly_dir:
+CJ_V10_S14_assembly_dir:
+CJ_V2_S8_assembly_dir:
+CJ_V3_S9_assembly_dir:
+CJ_V4_S10_assembly_dir:
+
+# assemble individually)
+Tbon_V2_S22
+LKB_V7_S19 back to list
+
+#snakemaked
+.
+└── 100percent_par
+    ├── binning
+    │   ├── concoct_subcontigs
+    │   │   └── fasta_bins
+    │   ├── dastools
+    │   │   └── CJ_V7_S12_DASTool_bins
+    │   ├── maxbin2
+    │   └── metabat2
+    ├── checkm
+    │   └── dastools
+    │       ├── bins
+    │       │   ├── concoct.23_sub
+    │       │   ├── concoct.28
+    │       │   ├── concoct.35_sub
+    ├── read_mapping
+    ├── sickle_trimmed
+    └── spades_assembly
+        ├── corrected
+        ├── K21
+        ├── K33
+        ├── K55
+
+
+# ARD_V2_S1_assembly_dir
+.
+├── binning
+│   ├── 2k_K55
+│   ├── K55
+│   │   ├── concoct_subcontigs
+│   │   ├── dastools
+│   │   ├── maxbin2
+│   │   └── metabat2
+│   └── K99
+│       ├── concoct_subcontigs
+│       ├── dastools
+│       ├── maxbin2
+│       └── metabat2
+├── checkm
+│   ├── K55
+│   │   ├── concoct
+│   │   ├── das_tools
+│   │   ├── maxbin2
+│   │   └── metabat2
+│   └── K99
+│       ├── bins
+│       ├── concoct
+│       ├── das_tools
+│       ├── maxbin2
+│       ├── metabat2
+│       └── storage
+├── metaquast_analysis
+├── read_counts
+├── read_mapping
+├── sickle_trimmed
+├── spades_assembly
+│   ├── corrected
+│   ├── K21
+│   ├── K33
+│   ├── K55
+│   ├── K77
+│   ├── K99
+└── spades_old
+    └── spades_assembly
+        ├── corrected
+        ├── K21
+        ├── K33
+        ├── K55
+
+# ARD_V3_S2_assembly_dir
+├── binning
+│   ├── concoct_subcontigs
+│   │   └── fasta_bins
+│   ├── dastools
+│   │   └── ARD_V3_S2_DASTool_bins
+│   ├── maxbin2
+│   └── metabat2
+├── checkm
+│   └── dastools
+│       ├── bins
+│       └── storage
+├── read_mapping
+├── sickle_trimmed
+└── spades_assembly
+    ├── corrected
+    ├── K21
+    ├── K33
+    ├── K55

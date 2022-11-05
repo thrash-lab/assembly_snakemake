@@ -1,0 +1,7 @@
+name: checkm
+channels:
+  - bioconda
+  - defaults
+  - conda-forge
+dependencies:
+  - bbmap=38.18

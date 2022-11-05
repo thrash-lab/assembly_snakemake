@@ -32,9 +32,9 @@ will be subsetting only unmapped reads.
 
         cmds
             conda activate snakemake
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 1,5,10,20,50
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 1,5,10,20,50
-            full_assembly -i /Users/connerkojima/thrash/assembly_EAGER/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_EAGER/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_EAGER/job_resources.yml -n --sub 10,20 --subiter 15,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources.yml -n --sub 1,5,10,20,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources.yml -n --sub 1,5,10,20,50
+            full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources.yml -n --sub 10,20 --subiter 15,50
 
 : sub assemblies (done)
     : subsetting rule: (done)
@@ -52,6 +52,7 @@ execute command in discovery hpc: for thrash metaGs
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml -n
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml --additional-args="--rerun-incomplete --rerun-triggers mtime"
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml --additional-args="--rerun-incomplete --rerun-triggers mtime -n"
+full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml --dag "dag_test.pdf" --sub 1
 
 test command on fake file (dry run only)
 /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/samples2.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml -n
@@ -93,14 +94,19 @@ def main():
     snakefile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "snakefile")
     profile_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.config/slurm/")
     config_filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../config_generated.yaml')
+    
+    full = "True"
+    if args.no_full:
+        full = "False"
+    
     if args.sub and args.subiter:
-        create_config_file(config_filename, args, samples, filenames, resources, subper=ref_args['sub'], subiterper=ref_args['subiter'])
+        create_config_file(full, config_filename, args, samples, filenames, resources, subper=ref_args['sub'], subiterper=ref_args['subiter'])
     elif args.sub:
-        create_config_file(config_filename, args, samples, filenames, resources, subper=ref_args['sub'], subiterper=False)
+        create_config_file(full, config_filename, args, samples, filenames, resources, subper=ref_args['sub'], subiterper=False)
     elif args.subiter:
-        create_config_file(config_filename, args, samples, filenames, resources, subper=False, subiterper=ref_args['subiter'])
+        create_config_file(full, config_filename, args, samples, filenames, resources, subper=False, subiterper=ref_args['subiter'])
     else:
-        create_config_file(config_filename, args, samples, filenames, resources, subper=False, subiterper=False)
+        create_config_file(full, config_filename, args, samples, filenames, resources, subper=False, subiterper=False)
     dry_run_addon = ""
     if args.n:
         dry_run_addon = "-n"
@@ -132,6 +138,7 @@ def add_arguments():
                    'e.g. 5,10,25,50', type=str, required=False)
     p.add_argument('--subiter', help='percentage of reads to keep for subtractive iterative assemblies. Enter as comma delimited list of percentages \n'
                    'e.g. 5,10,25,50', type=str, required=False)
+    p.add_argument('--no-full', help='do not assemble and bin for 100 percent of the reads', default=False, action='store_true', dest='no_full')
 
     #TODO: add additional options to specify subassemblies and iterative subtractive assembly
 
@@ -200,7 +207,7 @@ def preprocess_arguments(args):
     return ref_args
         
 
-def create_config_file(filename, args, samples, filenames, resources, subper=False, subiterper=False):
+def create_config_file(full, filename, args, samples, filenames, resources, subper=False, subiterper=False):
 
     pairs = []
     for i in range(len(samples)):
@@ -224,15 +231,16 @@ def create_config_file(filename, args, samples, filenames, resources, subper=Fal
 
     # string to write to config file
     yml_lines = """
+    full: {0}
     input:
-      {0}
+      {1}
     output:
-      output_dir: {1}
-    {2}
+      output_dir: {2}
     {3}
+    {4}
     slurm_resources: 
-{4}
-    """.format("\n      ".join(pairs), args.o, subper_str, subiterper_str, resources)
+{5}
+    """.format(full, "\n      ".join(pairs), args.o, subper_str, subiterper_str, resources)
 
     with open(filename, 'w') as f:
         f.writelines(yml_lines)

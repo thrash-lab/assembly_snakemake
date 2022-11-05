@@ -1,88 +1,110 @@
 
+    full: False
     input:
-      CJ_V7_S12: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V7_S12_all.fastq
-      LKB_V4_S16: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V4_S16_all.fastq
-      LKB_V8_S20: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V8_S20_all.fastq
-      Tbon_V5_S24: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V5_S24_all.fastq
-      CJ_V3_S9: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V3_S9_all.fastq
-      CJ_V8_S13: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V8_S13_all.fastq
-      LKB_V5_S17: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V5_S17_all.fastq
-      Tbon_V10_S28: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V10_S28_all.fastq
-      Tbon_V6_S25: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V6_S25_all.fastq
-      LKB_V10_S21: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V10_S21_all.fastq
-      LKB_V6_S18: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V6_S18_all.fastq
-      Tbon_V2_S22: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V2_S22_all.fastq
-      Tbon_V7_S26: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V7_S26_all.fastq
-      CJ_V5_S11: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/CJ_V5_S11_all.fastq
-      LKB_V2_S15: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V2_S15_all.fastq
-      LKB_V7_S19: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/LKB_V7_S19_all.fastq
-      Tbon_V4_S23: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V4_S23_all.fastq
-      Tbon_V8_S27: /project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/Tbon_V8_S27_all.fastq
+      B1: /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/B1_all.fastq
+      A1: /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/A1_all.fastq
+      C1: /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/C1_all.fastq
     output:
-      output_dir: /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/
-    subassembly_percentages: none
+      output_dir: /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/
+    subassembly_percentages:
+      - 1
     subiterassembly_percentages: none
     slurm_resources: 
-      sickle_trim_full:
-        ntasks: 1
-        time: 00:20:00
-        cpus-per-task: 16
-        mem: 125000
-        partition: epyc-64
-      
-      metaspades_assembly:
-        ntasks: 1
-        nodes: 1
-        time: 16:00:00
-        cpus-per-task: 64
-        mem: 998000
-        partition: largemem
-      
-      bowtie2_map_reads: 
-        ntasks: 1
-        time: 1:00:00
-        cpus-per-task: 32
-        mem: 125000
-        partition: epyc-64
-      
-      generate_depth_files:
-        ntasks: 1
-        time: 1:00:00
-        cpus-per-task: 16
-        mem: 125000
-        partition: epyc-64
-      
-      bin_metabat2:
-        ntasks: 1
-        time: 1:00:00
-        cpus-per-task: 16
-        mem: 125000
-        partition: epyc-64
-      
-      bin_concoct:
-        ntasks: 1
-        time: 24:00:00
-        cpus-per-task: 16
-        mem: 125000
-        partition: epyc-64
-      
-      bin_maxbin2:
-        ntasks: 1
-        time: 6:30:00
-        cpus-per-task: 32
-        mem: 125000
-        partition: epyc-64
-      
-      generate_consensus_bins_dastools:
-        ntasks: 1
-        time: 2:30:00
-        cpus-per-task: 32
-        mem: 125000
-        partition: epyc-64
-      
-      evaluate_bins_checkm:
-        ntasks: 1
-        time: 0:25:00
-        cpus-per-task: 16
-        mem: 50000
-        partition: epyc-64
+        sickle_trim_full:
+          ntasks: 1
+          time: 00:20:00
+          cpus-per-task: 16
+          mem: 125000
+          partition: main
+        metaspades_assembly:
+          ntasks: 1
+          nodes: 1
+          time: 
+            1_per: "0:15:00"
+            5_per: "1:15:00"
+            10_per: "3:00:00"
+            20_per: "4:00:00"
+            50_per: "8:00:00"
+            100_per: "16:00:00"
+          cpus-per-task: 64
+          mem: 998000
+          partition: largemem
+        bowtie2_map_reads: 
+          ntasks: 1
+          time: 
+            1_per: "0:10:00"
+            5_per: 0:10:00
+            10_per: 0:10:00
+            20_per: 0:15:00
+            50_per: 0:30:00
+            100_per: "1:00:00"
+          cpus-per-task: 32
+          mem: 125000
+          partition: main
+        generate_depth_files:
+          ntasks: 1
+          time:
+            1_per: 0:10:00
+            5_per: 0:10:00
+            10_per: 0:10:00
+            20_per: 0:15:00
+            50_per: 0:30:00
+            100_per: "1:00:00"
+          cpus-per-task: 16
+          mem: 125000
+          partition: main
+        bin_metabat2:
+          ntasks: 1
+          time:
+            1_per: 0:10:00
+            5_per: 0:10:00
+            10_per: 0:10:00
+            20_per: 0:15:00
+            50_per: 0:30:00
+            100_per: 1:00:00
+          cpus-per-task: 16
+          mem: 125000
+          partition: main
+        bin_concoct:
+          ntasks: 1
+          time:
+            1_per: 1:10:00
+            5_per: 1:30:00
+            10_per: 3:00:00
+            20_per: 6:00:00
+            50_per: 12:00:00
+            100_per: 24:00:00
+          cpus-per-task: 16
+          mem: 125000
+          partition: epyc-64
+        bin_maxbin2:
+          ntasks: 1
+          time:
+            1_per: 0:20:00
+            5_per: 0:30:00
+            10_per: 1:00:00
+            20_per: 2:00:00
+            50_per: 3:30:00
+            100_per: 7:00:00
+          cpus-per-task: 32
+          mem: 125000
+          partition: epyc-64
+        generate_consensus_bins_dastools:
+          ntasks: 1
+          time:
+            1_per: 0:20:00
+            5_per: 0:30:00
+            10_per: 1:00:00
+            20_per: 1:00:00
+            50_per: 1:30:00
+            100_per: 2:30:00
+          cpus-per-task: 32
+          mem: 125000
+          partition: epyc-64
+        evaluate_bins_checkm:
+          ntasks: 1
+          time: 0:25:00
+          cpus-per-task: 16
+          mem: 50000
+          partition: main
+    

@@ -1,0 +1,10 @@
+Building DAG of jobs...
+InputFunctionExceptionin line 49 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile:
+Error:
+  KeyError: '15_per'
+Wildcards:
+  sample=A1
+  subset=15percent
+  modifier=par
+Traceback:
+  File "/Users/connerkojima/thrash/assembly_snakemake/bin/param_controller.py", line 49, in calculate_m_assembly_time

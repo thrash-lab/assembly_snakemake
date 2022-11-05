@@ -64,7 +64,8 @@ Test command in discovery hpc:
 # for local
 full_assembly2 -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources2.yml -n --sub 1,5,10,20,50
 # for hpc
-/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly2 -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/samples2.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --additional-args="-n"
+/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly2 -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/samples2.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --sub 1,5,10,20,50 --additional-args="-n"
+/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly2 -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/samples2.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources2.yml --sub 1 --dag "dag_thrash_a1_sub1.pdf"
 
 
 Done: make slurm resource config from assembly show up in snakemake config
