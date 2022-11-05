@@ -85,16 +85,16 @@ def calculate_checkm_time(wildcards):
 
 def calculate_subset_par_time(wildcards):
     config = get_yaml_fields()
-    return config['slurm_resources']['subset_reads_par']['time']
+    return config['slurm_resources']['subset_reads_par']['time'][str("{0}_per".format(wildcards.subset))]
 
 def calculate_map_subassembly_time(wildcards):
     config = get_yaml_fields()
-    return config['slurm_resources']['map_subassembly_reads']['time']
+    return config['slurm_resources']['map_subassembly_reads']['time'][str("{0}_per".format(wildcards.subset[:-7]))]
 
 def calculate_convert_bam_time(wildcards):
     config = get_yaml_fields()
-    return config['slurm_resources']['convert_bam_to_fastq']['time']
+    return config['slurm_resources']['convert_bam_to_fastq']['time'][str("{0}_per".format(wildcards.subset[:-7]))]
 
 def subset_reads_ser(wildcards):
     config = get_yaml_fields()
-    return config['slurm_resources']['subset_reads_ser']['time']
+    return config['slurm_resources']['subset_reads_ser']['time'][str("{0}_per".format(wildcards.subset[:-7]))]

@@ -1,0 +1,3 @@
+SyntaxErrorin line 88 of /Users/connerkojima/thrash/assembly_snakemake/bin/param_controller.py:
+invalid syntax (param_controller.py, line 88)
+  File "/Users/connerkojima/thrash/assembly_snakemake/bin/snakefile", line 5, in <module>

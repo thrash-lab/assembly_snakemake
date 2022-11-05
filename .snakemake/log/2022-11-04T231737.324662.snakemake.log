@@ -1,0 +1,9 @@
+Building DAG of jobs...
+InputFunctionExceptionin line 251 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile:
+Error:
+  KeyError: '_per'
+Wildcards:
+  sample=B1
+  subset=1
+Traceback:
+  File "/Users/connerkojima/thrash/assembly_snakemake/bin/param_controller.py", line 90, in calculate_subset_par_time
