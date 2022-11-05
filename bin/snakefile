@@ -257,10 +257,12 @@ rule subset_reads_par:
         time = param_controller.calculate_subset_par_time,
         mem_mb = 120000, #120GB
         partition = "main"
+    params: 
+        percentage = lambda wc: "{:02d}".format(wc.get("percentage")[:-7]) 
     conda: "../envs/bbmap.yml"
     shell:
         """
-        reformat.sh in={input} out={output} samplerate={wildcards.subset} sampleseed=42
+        reformat.sh in={input} out={output} samplerate=.{params.percentage} sampleseed=42
         """
 
 # map assembly to reads
@@ -352,9 +354,9 @@ rule subset_reads_ser:
         mem_mb = 120000, #120GB
         partition = "epyc-64"
     params: 
-        percentage = lambda wc: wc.get("percentage")[:-7] 
+        percentage = lambda wc: "{:02d}".format(wc.get("percentage")[:-7]) 
         # https://stackoverflow.com/questions/71326692/passing-wildcard-values-in-params-in-snakemake
     shell:
         """
-        reformat.sh in={input} out={output.trimmed} samplerate={params.percentage} sampleseed=42
+        reformat.sh in={input} out={output.trimmed} samplerate=.{params.percentage} sampleseed=42
         """

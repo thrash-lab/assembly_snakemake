@@ -66,6 +66,9 @@ Done: make slurm resource config from assembly show up in snakemake config
 
 TODO: Make resource params adjust according to [par, ser] and [percentage_reads]
 
+#test subassebmly 1command on hpc
+/project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/full_assembly -i /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/test_data/samples/EAGER_actual2.csv -o /project/thrash_89/db/EAGER_metaG_for_ck/pipeline_assemblies/ --resource-req /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/job_resources.yml --no-full --sub 1 --additional-args="-n"
+
 Focus in on one sample 
 Make config file hold resource values to use e.g. 
 
