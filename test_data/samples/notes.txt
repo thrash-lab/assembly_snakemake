@@ -24,7 +24,7 @@ ARD_V6_S4_assembly_dir:
 ARD_V7_S5_assembly_dir:
 ARD_V8_S6_assembly_dir:
 ARD_V9_S7_assembly_dir:
-CJ_V10_S14_assembly_dir:
+CJ_V10_S14_assembly_dir:---no maxbin
 CJ_V2_S8_assembly_dir:
 CJ_V3_S9_assembly_dir:
 CJ_V4_S10_assembly_dir:
@@ -33,8 +33,10 @@ CJ_V4_S10_assembly_dir:
 Tbon_V2_S22
 LKB_V7_S19 back to list
 
+
+"LKB_V10_S21_assembly LKB_V2_S15_assembly LKB_V4_S16_assembly LKB_V5_S17_assembly LKB_V6_S18_assembly LKB_V8_S20_assembly Tbon_V10_S28_assembly Tbon_V2_S22_assembly Tbon_V4_S23_assembly Tbon_V5_S24_assembly Tbon_V6_S25_assembly Tbon_V7_S26_assembly Tbon_V8_S27_assembly"
 #snakemaked
-.
+
 └── 100percent_par
     ├── binning
     │   ├── concoct_subcontigs

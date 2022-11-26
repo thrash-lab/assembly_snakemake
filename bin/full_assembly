@@ -67,6 +67,9 @@ Done: /project/thrash_89/db/EAGER_metaG_for_ck/scripts/assembly_snakemake/bin/fu
 test command locally
 full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/ -s _all.fastq -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources.yml -n --sub 1 --no-full
 
+test command local full, sub, subiter on one file
+full_assembly -i /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/samples.csv -o /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/ --resource-req /Users/connerkojima/thrash/assembly_snakemake/job_resources.yml --sub 1,5,10,20,50 --subiter 1,5,10,20,50 --dag "dag_one_sample_all_approaches.pdf"
+
 TODO: add Tbon_V2_S22 and LKB_V7_S19 back to list
 Done: make slurm resource config from assembly show up in snakemake config
 
@@ -179,8 +182,8 @@ def preprocess_arguments(args):
         sub_per = [int(a) for a in sub_per]
 
         # check if "a" is in proper range.
-        if len(set(sub_per) - set(range(1, 99))) > 0: # can use also min(a)>=1 and max(a)<=50
-            raise Exception("subassembly percentages are not in range [1,99]")
+        if len(set(sub_per) - set(range(1, 101))) > 0: # can use also min(a)>=1 and max(a)<=50
+            raise Exception("iterative subtractive assembly percentages are not in range [1,100]")
         print(sub_per)
         ref_args['subiter'] = sub_per
 

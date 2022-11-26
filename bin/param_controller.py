@@ -97,4 +97,4 @@ def calculate_convert_bam_time(wildcards):
 
 def subset_reads_ser(wildcards):
     config = get_yaml_fields()
-    return config['slurm_resources']['subset_reads_ser']['time'][str("{0}_per".format(wildcards.subset[:-7]))]
+    return config['slurm_resources']['subset_reads_ser']['time'][str("{0}_per".format(wildcards.percentage[:-7]))]
