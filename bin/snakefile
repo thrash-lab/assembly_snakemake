@@ -13,21 +13,56 @@ base_dir=config['output']['output_dir']
 
 def determine_inputs(wildcards):
     inputs = {}
-    if config['subiterassembly_percentages'] != 'none':
-        inputs["subiter_assemblies"]=expand(base_dir + "{sample}_assembly/{subset}percent_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subiterassembly_percentages'][1:])
-        inputs["subiterative_init"]=expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subiterassembly_percentages'][0])
     if config['subassembly_percentages'] != 'none':
         inputs["subassemblies"]=expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subassembly_percentages'])
     if config['full']:
         inputs['full'] = expand(base_dir + "{sample}_assembly/100percent_par/checkm/dastools/output_table.txt", sample=config['input'])
-    
+    if config['subiterassembly_percentages'] != 'none':
+        inputs["subiterative_init"]=expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subiterassembly_percentages'][0])
+        inputs["subiter_assemblies"]=expand(base_dir + "{sample}_assembly/{subset}percent_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subiterassembly_percentages'][1:])
+        inputs["subiter_assemblies_full"] = base_dir + "A1_assembly/100percent_ser/checkm/dastools/output_table.txt"
+
+    #inputs["test"] = base_dir + "A1_assembly/100percent_ser/sickle_trimmed/A1_all_trimmed.fastq"
+    #inputs["test2"] = base_dir + "A1_assembly/100percent_ser/checkm/dastools/output_table.txt"
+    # print(inputs)
     return inputs
 
 rule all:
     input: 
         unpack(determine_inputs)
+        # base_dir + "A1_assembly/100percent_ser/sickle_trimmed/A1_all_trimmed.fastq"
 
-ruleorder: metaspades_assembly > subset_reads_par 
+ruleorder: metaspades_assembly > subset_reads_par
+ruleorder: subset_reads_ser > subset_reads_par
+ruleorder: subset_reads_ser > evaluate_bins_checkm
+ruleorder: subset_reads_ser > metaspades_assembly
+ruleorder: convert_bam_to_fastq > evaluate_bins_checkm
+
+ruleorder: generate_consensus_bins_dastools > subset_reads_par
+ruleorder: generate_consensus_bins_dastools > subset_reads_ser
+ruleorder: map_subassembly_reads > generate_consensus_bins_dastools
+ruleorder: generate_consensus_bins_dastools > subset_reads_ser
+ruleorder: generate_consensus_bins_dastools > convert_bam_to_fastq
+ruleorder: generate_consensus_bins_dastools > metaspades_assembly
+ruleorder: generate_consensus_bins_dastools > bin_metabat2
+ruleorder: generate_consensus_bins_dastools > bin_concoct
+ruleorder: generate_consensus_bins_dastools > bowtie2_map_reads
+ruleorder: evaluate_bins_checkm > generate_consensus_bins_dastools
+ruleorder: generate_consensus_bins_dastools > sickle_trim_full
+
+ruleorder: generate_consensus_bins_dastools > sickle_trim_full
+
+ruleorder: sickle_trim_full > subset_reads_par
+ruleorder: sickle_trim_full > subset_reads_ser
+ruleorder: sickle_trim_full > map_subassembly_reads
+ruleorder: sickle_trim_full > subset_reads_ser
+ruleorder: sickle_trim_full > convert_bam_to_fastq
+ruleorder: sickle_trim_full > metaspades_assembly
+ruleorder: sickle_trim_full > bin_metabat2
+ruleorder: sickle_trim_full > bin_concoct
+ruleorder: sickle_trim_full > bowtie2_map_reads
+ruleorder: sickle_trim_full > generate_consensus_bins_dastools
+ruleorder: generate_consensus_bins_dastools > sickle_trim_full
 
 # this sickle trim rule acts as a starting point (trims the 100% raw fastq fil)
 rule sickle_trim_full:
@@ -324,8 +359,11 @@ rule convert_bam_to_fastq:
 
  
 def iterate_subset(wcs):
+
+    # set n to to the output percentage
     n = wcs.percentage[:-7]
-    # if output percentage is first subassembly percentage (which shouldn't exist)
+
+    # if output percentage is the first subassembly percentage (which shouldn't exist) (this if statement should never flag)
     if n == config['subiterassembly_percentages'][0]:
         raise ValueError("bad snakemake")
     
@@ -333,6 +371,7 @@ def iterate_subset(wcs):
     for i in range(len(config['subiterassembly_percentages'])):
         if int(n) == config['subiterassembly_percentages'][i] or int(n) == 100:
             if i == 1:
+                # if the second subassembly percentage
                 orig_percentage = config['subiterassembly_percentages'][i-1]
                 return '%s%s_assembly/%d%s_%s/subiterative_mapping/%s.fastq' % (base_dir, wcs.sample, orig_percentage, 'percent', 'par', wcs.sample)
             else:

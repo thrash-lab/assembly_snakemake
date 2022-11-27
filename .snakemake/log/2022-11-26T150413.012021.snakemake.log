@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardErrorin line 26 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile:
+Wildcards in input files cannot be determined from output files:
+'sample'

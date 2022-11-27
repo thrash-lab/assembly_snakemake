@@ -1,0 +1,3 @@
+Building DAG of jobs...
+CyclicGraphException in rule generate_consensus_bins_dastools in line 211 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile:
+Cyclic dependency on rule generate_consensus_bins_dastools.

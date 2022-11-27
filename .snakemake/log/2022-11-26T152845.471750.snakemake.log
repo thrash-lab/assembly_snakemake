@@ -1,0 +1,2 @@
+SyntaxErrorin line 49 of /Users/connerkojima/thrash/assembly_snakemake/bin/snakefile:
+Expected a descending order of rule names, e.g. rule1 > rule2 > rule3 ... (snakefile, line 49)

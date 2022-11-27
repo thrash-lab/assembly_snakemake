@@ -4,18 +4,10 @@
       A1: /Users/connerkojima/thrash/assembly_snakemake/test_data/samples/A1_all.fastq
     output:
       output_dir: /Users/connerkojima/thrash/assembly_snakemake/test_data/output_dir/
-    subassembly_percentages:
-      - 1
-      - 5
-      - 10
-      - 20
-      - 50
+    subassembly_percentages: none
     subiterassembly_percentages:
       - 1
       - 5
-      - 10
-      - 20
-      - 50
     slurm_resources: 
         sickle_trim_full:
           ntasks: 1
