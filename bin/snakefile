@@ -4,9 +4,7 @@ import yaml
 import sys
 import param_controller
 
-# make rules generalizable in terms of paths
-# determine output structure ()
-# make option to do just 100 percent assembly of all samples
+# TODO make 100% subiter generalizable to all samples (with expand) deploy and test
 
 fastq_dir='/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat'
 base_dir=config['output']['output_dir']
@@ -20,7 +18,7 @@ def determine_inputs(wildcards):
     if config['subiterassembly_percentages'] != 'none':
         inputs["subiterative_init"]=expand(base_dir + "{sample}_assembly/{subset}percent_par/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subiterassembly_percentages'][0])
         inputs["subiter_assemblies"]=expand(base_dir + "{sample}_assembly/{subset}percent_ser/checkm/dastools/output_table.txt", sample=config['input'], subset=config['subiterassembly_percentages'][1:])
-        inputs["subiter_assemblies_full"] = base_dir + "A1_assembly/100percent_ser/checkm/dastools/output_table.txt"
+        #inputs["subiter_assemblies_full"] = base_dir + "A1_assembly/100percent_ser/checkm/dastools/output_table.txt"
 
     #inputs["test"] = base_dir + "A1_assembly/100percent_ser/sickle_trimmed/A1_all_trimmed.fastq"
     #inputs["test2"] = base_dir + "A1_assembly/100percent_ser/checkm/dastools/output_table.txt"

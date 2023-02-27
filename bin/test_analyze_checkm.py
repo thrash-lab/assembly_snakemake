@@ -24,6 +24,7 @@ counth = 0
 countl = 0
 countm = 0
 countx = 0
+count = 0
 for file in os.listdir("/Users/connerkojima/thrash/checkm_outputs/"):
     with open("/Users/connerkojima/thrash/checkm_outputs/{}".format(file)) as f:
         lines = f.readlines()
@@ -54,14 +55,16 @@ for file in os.listdir("/Users/connerkojima/thrash/checkm_outputs/"):
                 countl = countl + 1
             if float(tokens[12]) > 90 and float(tokens[13]) < 5 and tokens[1] == "c__Alphaproteobacteria":
                 countx = countx + 1
+            count = count + 1
             
 
 data = pd.DataFrame(dict)
-data_10 = data.nlargest(20, "quality_metric")
+data_300 = data.nlargest(300, "quality_metric")
 
-data_10.to_csv("/Users/connerkojima/thrash/20_best.csv")
+data_300.to_csv("/Users/connerkojima/thrash/300_best.csv")
 
-# print(counth)
-# print(countm)
-# print(countl)
-# print(countx)
+print(counth)
+print(countm)
+print(countl)
+print(countx)
+print(count)
