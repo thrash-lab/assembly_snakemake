@@ -29,6 +29,10 @@ CJ_V2_S8_assembly_dir:
 CJ_V3_S9_assembly_dir:
 CJ_V4_S10_assembly_dir:
 
+
+#left out of all
+ARD_V2_S1,/project/thrash_89/db/EAGER_metaG_for_ck/interleaved_metaG/qual_trim_after_interleaving/brett_cat/ARD_V2_S1_all.fastq
+
 # assemble individually)
 Tbon_V2_S22
 LKB_V7_S19 back to list
